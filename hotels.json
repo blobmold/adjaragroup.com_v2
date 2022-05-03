@@ -1,0 +1,38 @@
+[
+  {
+    "property": "Rooms Hotel Tbilisi",
+    "logoBlack": "/assets/img/logos/rh-tbilisi.svg",
+    "logoWhite": "/assets/img/logos/white/rh-tbilisi-white.svg",
+    "image": "/assets/img/imgs-of-bldings/rh-tbilisi.jpg"
+  },
+  {
+    "property": "Rooms Hotel Kazbegi",
+    "logoBlack": "/assets/img/logos/rh-kazbegi.svg",
+    "logoWhite": "/assets/img/logos/white/rh-kazbegi-white.svg",
+    "image": "/assets/img/imgs-of-bldings/rh-kazbegi.jpg"
+  },
+  {
+    "property": "Rooms Hotel Kokhta",
+    "logoBlack": "/assets/img/logos/rh-kokhta.svg",
+    "logoWhite": "/assets/img/logos/white/rh-kokhta-white.svg",
+    "image": "/assets/img/imgs-of-bldings/rh-kokhta.png"
+  },
+  {
+    "property": "Fabrika",
+    "logoBlack": "/assets/img/logos/fabrika.svg",
+    "logoWhite": "/assets/img/logos/white/fabrika-white.svg",
+    "image": "/assets/img/imgs-of-bldings/fabrika.png"
+  },
+  {
+    "property": "Holiday Inn",
+    "logoBlack": "//assets/img/logos/holiday-inn.svg",
+    "logoWhite": "/assets/img/logos/white/holiday-inn-white.svg",
+    "image": "/assets/img/imgs-of-bldings/holiday-inn.jpg"
+  },
+  {
+    "property": "Stamba",
+    "logoBlack": "/assets/img/logos/stamba.svg",
+    "logoWhite": "/assets/img/logos/white/stamba-white.svg",
+    "image": "/assets/img/imgs-of-bldings/stamba.jpg"
+  }
+]

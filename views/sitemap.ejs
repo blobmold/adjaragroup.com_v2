@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+    <link rel="stylesheet" href="/css/sitemap.css" />
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <section class="ag-section sitemap-headline">
+        <div class="sitemap-title global-width">
+          <h1 class="title">Adjara Group Sitemap</h1>
+        </div>
+      </section>
+      <section class="ag-section sitemap global-width global-grid">
+        <% for(let group of siteMap) { %>
+        <div class="sitemap-grp">
+          <h2 class="sitemap-grp-title"><%= Object.keys(group) %></h2>
+          <ul class="sitemap-grp-list">
+            <% for(let value of Object.values(group)[0]) { %>
+            <li class="sitemap-grp-item"><a class="sitemap-grp-link underline" href=""><%= value %></a></li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %>
+      </section>
+    </main>
+    <%- include('layouts/footer') %>
+  </body>
+</html>

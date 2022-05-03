@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <h1 class="visuallyhidden">Newsroom</h1>
+      <% if(typeof featuredArticles !== 'undefined') { %>
+      <section class="ag-section featured-news global-width">
+        <div class="news-container">
+          <h2 class="title">Featured News</h2>
+          <div class="ag-news-cards global-grid">
+            <% for(let article of featuredArticles) { %>
+            <article class="ag-news-card">
+              <div class="ag-article-card-background" style="background: url('<%= article.image%>') center / cover">
+                <div class="overlay darker"></div>
+              </div>
+              <div class="container">
+                <div class="content">
+                  <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
+                  <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
+                  <h3 class="ag-article-title"><%= article.title %></h3>
+                  <p class="ag-article-descr"><%- article.description %></p>
+                </div>
+                <a href="/newsroom/<%= article._id %>" class="ag-article-readMore ag-cta underline u-light">Read More →</a>
+              </div>
+            </article>
+            <% } %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+  
+      <section class="ag-section recent-news global-width global-grid">
+        <h2 class="title">Recent News</h2>
+        <div class="recent-news-container">
+          <ol class="ag-news-recent-list">
+            <% for(let article of articles) { %>
+            <li class="ag-news-recent-item">
+              <a href="/newsroom/<%= article._id %>" class="ag-news-recent-link">
+                <article class="ag-news-recent-article">
+                  <picture class="ag-news-recent-article-img-container">
+                    <img class="ag-news-recent-article-img lazy" src="" data-src="<%= article.image %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
+                  </picture>
+                  <div class="ag-news-recent-article-copy">
+                    <div class="ag-recent-article-data">
+                      <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
+                      <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
+                    </div>
+                    <h3><%= article.title %></h3>
+                    <p class="ag-recent-article-descr"><%= article.description %></p>
+                  </div>
+                </article>
+              </a>
+            </li>
+            <% } %>
+          </ol>
+          <template id="articleLiTemplate">
+            <li class="ag-news-recent-item">
+              <a href="" class="ag-news-recent-link">
+                <article class="ag-news-recent-article">
+                  <picture class="ag-news-recent-article-img-container">
+                    <img class="ag-news-recent-article-img lazy" src="" data-src="" data-srcset="" alt="" loading="lazy" />
+                  </picture>
+                  <div class="ag-news-recent-article-copy">
+                    <div class="ag-recent-article-data">
+                      <div class="ag-article-category" data-category=""></div>
+                      <time class="ag-article-date" datetime=""></time>
+                    </div>
+                    <h3></h3>
+                    <p class="ag-recent-article-descr"></p>
+                  </div>
+                </article>
+              </a>
+            </li>
+          </template>
+          <button id="loadMore" data-loading="1">Load More</button>
+        </div>
+        <%- include('layouts/categoryNav', articleCategories) %>
+      </section>  
+    </main>
+    <%- include('layouts/footer') %>
+  </body>
+</html>

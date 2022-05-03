@@ -1,0 +1,30 @@
+.ag-section.sitemap-headline {
+  background-color: var(--global-black);
+}
+.sitemap-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sitemap-title .title {
+  color: var(--global-white);
+}
+.ag-section.sitemap.global-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+.sitemap-grp {
+  margin: 20px 0;
+}
+.sitemap-grp-title {
+  font-size: 16px;
+}
+.sitemap-grp-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sitemap-grp-link {
+  text-decoration: none;
+  opacity: 0.7;
+  font-size: 14px;
+}

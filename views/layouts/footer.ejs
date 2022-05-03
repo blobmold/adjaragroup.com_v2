@@ -1,0 +1,25 @@
+<footer class="footer global-width" id="footer">
+  <h2 class="visuallyhidden">Adjara Group Footer</h2>
+
+  <nav class="ag-gfn">
+    <div class="ag-gfn-content">
+      <% for(let column of gf) { %>
+        <div class="ag-gf-grp">
+          <h3 class="ag-gf-grp-title"><%= Object.keys(column) %></h3>
+          <ul class="ag-gf-grp-list">
+            <% for( let el of Object.values(column)[0] ) { %>
+              <li class="ag-gf-grp-item"><a href="/<%- encodeURIComponent(el.toLowerCase()) %>" class="ag-gf-grp-link underline"><%- el %></a></li>
+            <% } %>
+          </ul>
+        </div>
+      <% } %>
+    </div>
+  </nav>
+
+  <div class="ag-gf-base">
+    <div class="ag-gf-legal en">Adjara Group LLC 205090890 Georgia, Tbilisi, Mtatsminda District, 14 Kostava str.</div>
+    <div class="ag-gf-legal ge">შპს აჭარა ჯგუფი 205090890 საქართველო, ქ. თბილისი, მთაწმინდის რაიონი, კოსტავას ქ., N 14</div>
+    <img src="/assets/img/Logos/adjara-group.svg" alt="Adjara Group Logo" class="ag-gf-logo" height="25" />
+    <div class="ag-gf-copyright">Copyright © Adjara Group All Rights Reserved</div>
+  </div>
+</footer>

@@ -1,0 +1,71 @@
+/* Global Navigation (GN) */
+.ag-gh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+}
+.ag-gn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99999;
+}
+.ag-gn-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+.ag-gn-item {
+  margin-left: 40px;
+}
+.ag-gn-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 12px;
+  position: relative;
+}
+
+/* ** Hamburger ** */
+.ag-gn-hamburger_container {
+  display: none;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.ag-gn-hamburger,
+.ag-gn-hamburger::before,
+.ag-gn-hamburger::after {
+  width: 30px;
+  height: 2px;
+  background-color: var(--global-black);
+}
+.ag-gn-hamburger {
+  position: relative;
+}
+.ag-gn-hamburger::before {
+  content: '';
+  position: absolute;
+  transform: translateY(-5px);
+}
+.ag-gn-hamburger::after {
+  content: '';
+  position: absolute;
+  transform: translateY(5px);
+}
+.navbar-overlay {
+  cursor: pointer;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+}

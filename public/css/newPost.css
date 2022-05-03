@@ -1,0 +1,16 @@
+.section-new-post {
+  width: var(--global-width);
+  margin: 0 auto;
+}
+.section-new-post h1 {
+  font-size: 70px;
+}
+.form-control {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 20px;
+}
+input,
+textarea {
+  padding: 5px;
+}

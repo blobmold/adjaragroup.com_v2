@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+    <link rel="stylesheet" href="/css/newPost.css" />
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <section class="section-new-post">
+        <h1>Create a New Post</h1>
+        <form action="/articles/store" method="post" enctype="multipart/form-data">
+          <div class="form-control">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" placeholder="Title" />
+          </div>
+          <div class="form-control">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" placeholder="Description" />
+          </div>
+          <div class="form-control">
+            <label for="body">Body</label>
+            <textarea name="body" id="body" style="height: 300px"></textarea>
+          </div>
+          <div class="form-control">
+            <label for="image">Image</label>
+            <input type="file" name="image" id="image" />
+          </div>
+          <div class="form-control">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+              <option default value="Hotels">Hotels</option>
+              <option value="Restaurants">Restaurants</option>
+              <option value="Agriculture">Agriculture</option>
+              <option value="Development">Development</option>
+            </select>
+          </div>
+          <button type="submit">Create</button>
+        </form>
+      </section>  
+    </main>
+    <%- include('layouts/footer') %>
+    <script src="https://htmeditor.com/js/htmeditor.min.js" htmeditor_textarea="body" full_screen="no" editor_height="480" run_local="no"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+[
+  {
+    "Hospitality": [
+      "Hotels",
+      "Restaurants",
+      "Events",
+      "Tours"
+    ]
+  },
+  {
+    "Hotels": [
+      "Rooms Hotel Tbilisi",
+      "Rooms Hotel Kazbegi",
+      "Rooms Hotel Kokhta",
+      "Hostel Fabrika",
+      "Holiday Inn Tbilisi"
+    ]
+  },
+  {
+    "Agriculture": [
+      "Udabno",
+      "Almond Orchard",
+      "Diary & Poultry",
+      "Farm to Table"
+    ]
+  },
+  {
+    "About AG": [
+      "Company",
+      "Newsroom",
+      "Career Opportunities",
+      "Sitemap"
+    ]
+  },
+  {
+    "Legal": [
+      "Privacy",
+      "Contact Us"
+    ]
+  }
+]

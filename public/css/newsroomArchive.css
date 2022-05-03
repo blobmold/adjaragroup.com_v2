@@ -1,0 +1,33 @@
+.ag-section.archive-title {
+  height: 200px;
+  background-color: var(--global-black);
+}
+.archive-title-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+}
+.archive-title h1,
+.archive-title p {
+  color: var(--global-white);
+}
+.ag-section.archive {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ag-archive-article {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.ag-article-category {
+  display: inline-block;
+  font-weight: 500;
+}
+.ag-article-link {
+  text-decoration: none;
+  font-size: 14px;
+}

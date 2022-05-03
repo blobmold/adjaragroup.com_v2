@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "strict": ["error", "global"],
+    "spaced-comment": ["error", "always"],
+    "semi": ["error", "always"],
+    "semi-spacing": "error",
+    "no-extra-semi": "error",
+    "no-unexpected-multiline": "error"
+  }
+}

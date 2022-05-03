@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <progressBar role="progressbar" class="ag-article-progressBar"></progressBar>
+      <div class="ag-article-container global-width global-grid">
+        <%- include('layouts/categoryNav', articleCategories) %>
+        <!-- Article  -->
+        <section class="ag-section-article">
+          <article class="ag-articleDetail" data-id="817341">
+            <!-- Article Heading -->
+            <div class="ag-article-headingBlock">
+              <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>">
+                <a href="/newsroom?category=<%= article.category %>" class="underline" style="text-decoration: none"><%= article.category %></a>
+              </div>
+              <h1 class="ag-article-title"><%= article.title %></h1>
+              <div class="ag-article-subheadling-container">
+                <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
+                <%- include('layouts/social', article) %>
+              </div>
+            </div>
+            <picture class="ag-article-img-container">
+              <img class="ag-article-img" src="<%= article.image %>" alt="<%= article.title %>" loading="lazy" />
+            </picture>
+            <!-- Article Body -->
+            <div class="ag-article-body"><%- article.body %></div>
+          </article>
+          <div class="ag-article-divider"></div>
+          <div class="ag-article-share-copy">Share this page:</div>
+          <%- include('layouts/social', article) %>
+        </section>
+        <!-- Related Articles -->
+        <% if(relatedArticles.length > 0) { %>
+        <aside class="ag-news-related">
+          <h2 class="ag-news-related-title visuallyhidden">Related News</h2>
+          <div class="ag-news-related-viewport">
+            <div class="ag-news-related-content">
+              <ol class="ag-news-related-list">
+                <% for(let article of relatedArticles) { %> <% if(!article) { break } %>
+                <li class="ag-news-related-item">
+                  <a href="/newsroom/<%= article._id %>" class="ag-news-related-link">
+                    <article class="ag-news-related-article">
+                      <picture class="ag-news-related-article-img-container">
+                        <img class="ag-news-related-article-img" width="100" height="60" src="<%= article.image %>" alt="<%= article.title %>" loading="lazy" />
+                      </picture>
+                      <div class="ag-news-related-article-copy">
+                        <div class="ag-related-article-data">
+                          <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
+                          <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
+                        </div>
+                        <h3><%= article.title %></h3>
+                      </div>
+                    </article>
+                  </a>
+                </li>
+                <% } %>
+              </ol>
+            </div>
+          </div>
+        </aside>
+        <% } %>
+      </div>
+    </main>
+
+    <%- include('layouts/footer') %>
+  </body>
+</html>
