@@ -75,3 +75,31 @@ button:hover {
 .careers-nav-link {
   text-decoration: none;
 }
+
+.job-results {
+  grid-column: 4 / end;
+}
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 75px;
+  align-items: center;
+}
+.job-results div {
+  font-weight: 600;
+}
+.job-results-th {
+  font-size: 12px;
+  opacity: 60%;
+  border-bottom: 1px solid var(--border-color);
+}
+.job-results-tr {
+  font-size: 12px;
+}
+.job-results-tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.job-results-tr > div:not(:first-child) {
+  font-weight: normal;
+}
