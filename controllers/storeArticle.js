@@ -10,8 +10,8 @@ export default async (req, res) => {
   await image.mv(resolve(__dirname, "../public/assets/img/articles", image.name));
   await Article.create({
     ...req.body,
-    image: '/assets/img/articles/' + image.name,
+    image: "/assets/img/articles/" + image.name,
   });
 
-  res.redirect('/')
+  res.redirect("/");
 };

@@ -1,5 +1,3 @@
-"use strict";
-
 import Article from "../models/Article.js";
 import express from "express";
 
@@ -20,17 +18,17 @@ router.get("/api/articles/list", async (req, res) => {
   let pageType = "list";
   let pageNum = await getPageNum();
   let pageSize = 10;
-  let totalCount = await Article.find(req.query, {body: 0}).count();
+  let totalCount = await Article.find(req.query, { body: 0 }).count();
 
   async function getPageNum() {
-    let num = Number(req.query.pageNum)
-    if(!num) return num = 1
+    let num = Number(req.query.pageNum);
+    if (!num) return (num = 1);
     return num;
   }
 
   let articlesModified = {
-    articles: await Article.find(req.query, {body: 0})
-      .sort({postDate: -1})
+    articles: await Article.find(req.query, { body: 0 })
+      .sort({ postDate: -1 })
       .limit(pageSize)
       .skip(pageNum * pageSize - pageSize),
     pageType,
