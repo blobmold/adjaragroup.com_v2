@@ -42,6 +42,7 @@ import sitemapCtrl from "./controllers/sitemap.js";
 import newsroomCtrl from "./controllers/newsroom.js";
 import newsroomArchiveCtrl from "./controllers/newsroomArchive.js";
 import articleCtrl from "./controllers/article.js";
+import careersCtrl from "./controllers/careers.js";
 
 app.get("/", homeCtrl);
 app.get("/company", companyCtrl);
@@ -53,6 +54,7 @@ app.get("/sitemap", sitemapCtrl);
 app.get("/newsroom", newsroomCtrl);
 app.get("/newsroom/archive", newsroomArchiveCtrl);
 app.get("/newsroom/:id", articleCtrl);
+app.get("/careers", careersCtrl);
 
 import articleAPICtrl from "./controllers/articleAPI.js";
 app.use(articleAPICtrl);
