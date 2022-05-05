@@ -1,3 +1,9 @@
+import Career from "../models/Career.js";
+
 export default async (req, res) => {
-  res.render("careers");
+  const careers = await Career.find({});
+
+  res.render("careers", {
+    careers,
+  });
 };

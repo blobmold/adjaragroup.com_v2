@@ -6,15 +6,18 @@ const CareerSchema = new Schema({
   category: String,
   position: String,
   location: String,
-  employmentType: String,
+  employmentType: {
+    type: String,
+    default: "Full-time",
+  },
   postDate: {
     type: Date,
-    default: new Date().toDateString(),
+    default: new Date().toLocaleDateString(),
   },
   deadline: Date,
   description: {
     type: String,
-    default: `${this.location} is pleased to announce an opening for the position ${this.position}`
+    default: `${this} is pleased to announce an opening for the position ${this}`
   },
   remote: Boolean,
   salary: {

@@ -129,7 +129,7 @@ async function lazyLoader() {
   let lazyImages = document.querySelectorAll("img.lazy");
 
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver((entries, observer) => {
+    let lazyImageObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
@@ -146,3 +146,18 @@ async function lazyLoader() {
     });
   }
 }
+
+// (async () => {
+//   let jobTemplate = document.getElementById('jobTemplate');
+
+//   if(jobTemplate) {
+
+//     if("content" in document.createElement('template')) {
+//       let jobRow = jobTemplate.content.cloneNode(true);
+
+//       jobRow.
+//     } else {
+//       ``;
+//     }
+//   }
+// })();
