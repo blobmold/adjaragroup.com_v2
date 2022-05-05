@@ -40,11 +40,13 @@
               <div data-jobCol="posted date">Posted Date</div>
             </div>
               <% for (let job of careers) { %>
-              <div class="job-results-tr jobs-grid">
+              <div class="job-result-tr jobs-grid">
                 <div data-jobCol="position"><%= job.position %></div>
                 <div data-jobCol="location"><%= job.location %></div>
                 <div data-jobCol="employmentType"><%= job.employmentType %></div>
                 <div data-jobCol="postDate"><%= job.postDate.toLocaleDateString() %></div>
+                <div class="job-result-tr-content"><%= job.description %></div>
+                <div class="job-result-tr-content"><%= job.description %></div>
               </div>
               <% } %>
           </div>
@@ -53,6 +55,7 @@
           <% } %>
         </div>
       </section>
+
     </main>
     <%- include('layouts/footer') %>
   </body>

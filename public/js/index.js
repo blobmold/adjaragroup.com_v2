@@ -147,6 +147,16 @@ async function lazyLoader() {
   }
 }
 
+(async () => {
+  let jobResults = document.querySelectorAll('.job-result-tr');
+
+  for(let job of jobResults) {
+    job.addEventListener('click', () => {
+      job.classList.toggle('open');
+    });
+  }
+})();
+
 // (async () => {
 //   let jobTemplate = document.getElementById('jobTemplate');
 

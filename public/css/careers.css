@@ -93,19 +93,27 @@ button:hover {
   opacity: 60%;
   border-bottom: 1px solid var(--border-color);
 }
-.job-results-tr {
+.job-result-tr {
   font-size: 14px;
   transition: background 0.1s ease;
   padding: 0 5px;
 }
-.job-results-tr:hover {
+.job-result-tr:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.job-results-tr:not(:last-of-type) {
+.job-result-tr:not(:last-of-type) {
   border-bottom: 1px solid var(--border-color);
 }
-
-.job-results-tr > div:not(:first-child) {
+.job-result-tr > div:not(:first-child) {
   font-weight: normal;
   opacity: 0.7;
+}
+.job-result-tr-content {
+  max-height: 0;
+  overflow: hidden;
+  grid-column: span 2;
+  transition: 0.2s ease;
+}
+.job-result-tr.open .job-result-tr-content {
+  max-height: 300px;
 }
