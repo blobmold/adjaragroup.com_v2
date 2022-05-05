@@ -82,11 +82,11 @@ button:hover {
 .jobs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 75px;
+  grid-template-rows: 60px;
   align-items: center;
 }
 .job-results div {
-  font-weight: 600;
+  font-weight: 500;
 }
 .job-results-th {
   font-size: 12px;
@@ -94,7 +94,12 @@ button:hover {
   border-bottom: 1px solid var(--border-color);
 }
 .job-results-tr {
-  font-size: 12px;
+  font-size: 14px;
+  transition: background 0.1s ease;
+  padding: 0 5px;
+}
+.job-results-tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .job-results-tr:not(:last-of-type) {
   border-bottom: 1px solid var(--border-color);
@@ -102,4 +107,5 @@ button:hover {
 
 .job-results-tr > div:not(:first-child) {
   font-weight: normal;
+  opacity: 0.7;
 }
