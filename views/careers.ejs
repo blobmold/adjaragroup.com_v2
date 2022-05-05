@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('layouts/head') %>
-    <link rel="stylesheet" href="/css/careers.css">
+    <link rel="stylesheet" href="/css/careers.css" />
   </head>
   <body>
     <%- include('layouts/navbar') %>
@@ -10,34 +10,28 @@
       <h1 class="visuallyhidden">Adjara Group Careers</h1>
       <section class="ag-careers hero">
         <figure class="ag-careers-hero-bg inh-size">
-          <img class="ag-careers-bg inh-size" src="/assets/img/logos/ag-careers-hero.png" alt="">
+          <img class="ag-careers-bg inh-size" src="/assets/img/logos/ag-careers-hero.png" alt="" />
         </figure>
         <div class="ag-careers-hero-content">
           <h2 class="ag-careers-title">Work With Us</h2>
           <button>Send Resume</button>
         </div>
       </section>
-      
+
       <section class="ag-careers-explore global-width">
-        
-        <h2 class="title">Explore Careers</h2>
-        <p style="font-size: 14px;"><a href="#">Write to us</a> if there is no suitable vacancy for you in the list</p>
+        <h2 id="exploreCareers" class="title">Explore Careers</h2>
+        <p style="font-size: 14px"><a href="#">Write to us</a> if there is no suitable vacancy for you in the list</p>
 
         <div class="careers-container global-grid">
           <nav class="careers-nav">
             <ul class="careers-nav-list">
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Food & Beverage</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Housekeeping</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Engineering</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Front Desk & Guest Services</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Human Resources</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Sales & Marketing</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Finance & Accounting</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Information Technology</a></li>
-              <li class="careers-nav-item"><a href="" class="careers-nav-link underline">Operations Management</a></li>
+              <li class="careers-nav-item careers-nav-item-all"><a href="/careers#exploreCareers" class="careers-nav-link underline">All Jobs</a></li>
+              <% for(let category of careerCategories) {%>
+              <li class="careers-nav-item"><a href="/careers?category=<%= encodeURIComponent(category) %>#exploreCareers" class="careers-nav-link underline"><%= category %></a></li>
+              <% } %>
             </ul>
           </nav>
-
+          <% if(careers.length > 0) { %>
           <div class="job-results">
             <div class="job-results-th jobs-grid">
               <div data-jobCol="position">Position</div>
@@ -45,29 +39,19 @@
               <div data-jobCol="employment type">Employment Type</div>
               <div data-jobCol="posted date">Posted Date</div>
             </div>
-
-            <% for(let job of careers) { %>
+              <% for (let job of careers) { %>
               <div class="job-results-tr jobs-grid">
                 <div data-jobCol="position"><%= job.position %></div>
                 <div data-jobCol="location"><%= job.location %></div>
                 <div data-jobCol="employmentType"><%= job.employmentType %></div>
                 <div data-jobCol="postDate"><%= job.postDate.toLocaleDateString() %></div>
-              </div>  
-            <% } %>
-
-            <!-- <template id="jobTemplate">
-              <div class="job-results-tr jobs-grid">
-                <div data-jobCol="position">Waiter/Waitress</div>
-                <div data-jobCol="location">Rooms Hotel Tbilisi</div>
-                <div data-jobCol="employment type">Full-time</div>
-                <div data-jobCol="posted date">05/04/2022</div>
-              </div>  
-            </template> -->
-
+              </div>
+              <% } %>
           </div>
-
+          <% } else { %>
+            <h3 style="grid-column: 3 / end; justify-self: center; align-self: center;">No Jobs Available</h3>
+          <% } %>
         </div>
-
       </section>
     </main>
     <%- include('layouts/footer') %>

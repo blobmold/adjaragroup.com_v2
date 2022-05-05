@@ -24,6 +24,7 @@ body {
   padding: 0;
   width: 100%;
   background-color: var(--global-white);
+  scroll-behavior: smooth;
 }
 main {
   max-width: 2560px;
