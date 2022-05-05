@@ -12,7 +12,15 @@ const CareerSchema = new Schema({
     default: new Date().toDateString(),
   },
   deadline: Date,
+  description: {
+    type: String,
+    default: `${this.location} is pleased to announce an opening for the position ${this.position}`
+  },
   remote: Boolean,
+  salary: {
+    type: Number,
+    default: `N/A`
+  }
 });
 
 const Career = mongoose.model("Careers", CareerSchema);
