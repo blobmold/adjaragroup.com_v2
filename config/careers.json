@@ -1,282 +1,440 @@
 [
- {
-  "position": "Waiter\/Waitress ",
-  "location": "Fabrika Hostel ",
-  "postDate": "5-May",
-  "deadline": "20-May",
-  "description": " Fabrika Hostel is pleased to announce an opening for the position of Waiter\/Waitress."
- },
- {
-  "position": "Mixologist ",
-  "location": "Fabrika Hostel ",
-  "postDate": "5-May",
-  "deadline": "20-May",
-  "description": " Fabrika Hostel is pleased to announce an opening for the position of Mixologist."
- },
- {
-  "position": "Waiter\/Waitress ",
-  "location": "Rooms Hotel Tbilisi ",
-  "postDate": "2-May",
-  "deadline": "15-May",
-  "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Waiter\/Waitress."
- },
- {
-  "position": "Mini Bar Waiter ",
-  "location": "Stamba Hotel ",
-  "postDate": "2-May",
-  "deadline": "15-May",
-  "description": " Stamba Hotel is pleased to announce an opening for the position of Mini Bar Waiter."
- },
- {
-  "position": "Cook - Tsikhisdziri ",
-  "location": "Adjara Group ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Adjara Group is pleased to announce an opening for the position of Cook."
- },
- {
-  "position": "Hostess ",
-  "location": "Lolita Restaurant ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Lolita Restaurant is pleased to announce an opening for the position of Hostess."
- },
- {
-  "position": "Dishwasher ",
-  "location": "Lolita ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Lolita is pleased to announce an opening for the position of Dishwasher."
- },
- {
-  "position": "Cleaner ",
-  "location": "Lolita Restaurant ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Lolita Restaurant is pleased to announce an opening for the position of Cleaner."
- },
- {
-  "position": "Mixologist ",
-  "location": "Lolita Restaurant ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Lolita is pleased to announce an opening for the position of Waiter\/Waitress."
- },
- {
-  "position": "Waiter\/Waitress ",
-  "location": "Lolita ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Lolita is pleased to announce an opening for the position of Waiter\/Waitress."
- },
- {
-  "position": "Dish Washer ",
-  "location": "Rooms Hotel Tbilisi ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Dish Washer."
- },
- {
-  "position": "Cleaning Service Staff ",
-  "location": "Rooms Hotel Tbilisi ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Cleaning Service Staff."
- },
- {
-  "position": "Registration Officer ",
-  "location": "Rooms Hotel Tbilisi ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Registration Officer."
- },
- {
-  "position": "Waiter\/Waitress ",
-  "location": "Rooms Hotel Tbilisi ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Waiter\/Waitress."
- },
- {
-  "position": "Mixologist ",
-  "location": "Stamba Hotel ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Stamba is pleased to announce an opening for the position of Mixologist."
- },
- {
-  "position": "Butcher ",
-  "location": "Stamba Hotel ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Stamba Hotel is pleased to announce an opening for the position of Butcher."
- },
- {
-  "position": "Receptionist ",
-  "location": "Stamba Hotel ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Stamba Hotel is pleased to announce an opening for the position of Receptionist."
- },
- {
-  "position": "Cleaner ",
-  "location": "Stamba Hotel ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Stamba Hotel is pleased to announce an opening for the position of Cleaner."
- },
- {
-  "position": "Dishwasher ",
-  "location": "Stamba Hotel ",
-  "postDate": "30-Apr",
-  "deadline": "15-May",
-  "description": " Stamba Hotel is pleased to announce an opening for the position of Dishwasher."
- },
- {
-  "position": "Service Supervisor ",
-  "location": "Stamba Hotel ",
-  "postDate": "29-Apr",
-  "deadline": "29-May",
-  "description": " Stamba Hotel is pleased to announce an opening for the position of Service Supervisor."
- },
- {
-  "position": "Cleaner ",
-  "location": "Hostel Fabrika ",
-  "postDate": "28-Apr",
-  "deadline": "28-May",
-  "description": " Hostel Fabrika is pleased to announce an opening for the position of Cleaner."
- },
- {
-  "position": "Confectioner ",
-  "location": "Rooms Hotel Tbilisi ",
-  "postDate": "27-Apr",
-  "deadline": "15-May",
-  "description": " Lolita Restaurant is pleased to announce an opening for the position of Confectioner."
- },
- {
-  "position": "Cook ",
-  "location": "Hostel Fabrika ",
-  "postDate": "27-Apr",
-  "deadline": "13-May",
-  "description": " Hostel Fabrika is pleased to announce an opening for the position of Cook."
- },
- {
-  "position": "Mixologist ",
-  "location": "Fabrika Hostel ",
-  "postDate": "27-Apr",
-  "deadline": "13-May",
-  "description": " Fabrika Hostel is pleased to announce an opening for the position of Mixologist."
- },
- {
-  "position": "Security Officer ",
-  "location": "Fabrika Hostel ",
-  "postDate": "27-Apr",
-  "deadline": "13-May",
-  "description": " Fabrika Hostel is pleased to announce an opening for the position of Security Officer."
- },
- {
-  "position": "Network Administrator ",
-  "location": "Adjara Group ",
-  "postDate": "26-Apr",
-  "deadline": "26-May",
-  "description": " Adjara Group is pleased to announce an opening for the position of Network Administrator."
- },
- {
-  "position": "Video Monitoring Officer ",
-  "location": "Adjara Group ",
-  "postDate": "26-Apr",
-  "deadline": "26-May",
-  "description": " Adjara Group is pleased to announce an opening for the position of Video Monitoring Officer."
- },
- {
-  "position": "HR Soft Product Owner ",
-  "location": "Adjara Group ",
-  "postDate": "26-Apr",
-  "deadline": "26-May",
-  "description": " Adjara Group is pleased to announce an opening for the position of HR Soft Product Owner."
- },
- {
-  "position": "Junior Sous Chef - Kazbegi ",
-  "location": "Rooms Hotel Kazbegi ",
-  "postDate": "25-Apr",
-  "deadline": "25-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Junior Sous Chef."
- },
- {
-  "position": "Dishwasher - Kazbegi ",
-  "location": "Adjara Group ",
-  "postDate": "25-Apr",
-  "deadline": "25-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Dishwasher."
- },
- {
-  "position": "Assistant to Waiter\/Waitress - Kazbegi ",
-  "location": "Rooms Hotel Kazbegi ",
-  "postDate": "25-Apr",
-  "deadline": "25-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Assistant to Waiter\/Waitress."
- },
- {
-  "position": "Cook - Kazbegi ",
-  "location": "Rooms Hotel Kazbegi ",
-  "postDate": "25-Apr",
-  "deadline": "25-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Cook."
- },
- {
-  "position": "Waiter\/Waitress - Kazbegi ",
-  "location": "Rooms Hotel Kazbegi ",
-  "postDate": "25-Apr",
-  "deadline": "25-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Waiter\/Waitress."
- },
- {
-  "position": "Housekeeper - Kazbegi ",
-  "location": "Rooms Kazbegi Hotel ",
-  "postDate": "25-Apr",
-  "deadline": "25-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Housekeeper."
- },
- {
-  "position": "Receptionist - Kazbegi ",
-  "location": "Rooms Hotel Kazbegi ",
-  "postDate": "22-Apr",
-  "deadline": "21-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Receptionist."
- },
- {
-  "position": "Room Service Waiter\/Waitress - Kazbegi ",
-  "location": "Rooms Kazbegi Hotel ",
-  "postDate": "16-Apr",
-  "deadline": "15-May",
-  "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Room Service Waiter\/Waitress."
- },
- {
-  "position": "Service Supervisor - Kazbegi ",
-  "location": "Rooms Kazbegi Hotel ",
-  "postDate": "13-Apr",
-  "deadline": "5-May",
-  "description": " Rooms Kazbegi is pleased to announce an opening for the position of Service Supervisor ."
- },
- {
-  "position": "Food distributor ",
-  "location": "Adjara Group ",
-  "postDate": "12-Apr",
-  "deadline": "12-May",
-  "description": " Adjara Group is pleased to announce an opening for the position of Food distributor."
- },
- {
-  "position": "Cook ",
-  "location": "Adjara Group ",
-  "postDate": "12-Apr",
-  "deadline": "12-May",
-  "description": " Adjara Group is pleased to announce an opening for the position of Cook."
- },
- {
-  "position": "Cook ",
-  "location": "Lolita ",
-  "postDate": "4-Dec",
-  "deadline": "15-Dec",
-  "description": " Lolita is pleased to announce an opening for the position of Cook."
- }
+  {
+    "category": "Food & Beverage",
+    "position": "Waiter/Waitress",
+    "location": "Fabrika Hostel ",
+    "employmentType": "Full-time",
+    "postDate": "5-May",
+    "deadline": "20-May",
+    "description": " Fabrika Hostel is pleased to announce an opening for the position of Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Mixologist ",
+    "location": "Fabrika Hostel ",
+    "employmentType": "Full-time",
+    "postDate": "5-May",
+    "deadline": "20-May",
+    "description": " Fabrika Hostel is pleased to announce an opening for the position of Mixologist.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Waiter\/Waitress ",
+    "location": "Rooms Hotel Tbilisi ",
+    "employmentType": "Full-time",
+    "postDate": "2-May",
+    "deadline": "15-May",
+    "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Mini Bar Waiter ",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "2-May",
+    "deadline": "15-May",
+    "description": " Stamba Hotel is pleased to announce an opening for the position of Mini Bar Waiter.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Cook",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Adjara Group is pleased to announce an opening for the position of Cook.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Hostess",
+    "location": "Lolita Restaurant ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Lolita Restaurant is pleased to announce an opening for the position of Hostess.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Dishwasher ",
+    "location": "Lolita ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Lolita is pleased to announce an opening for the position of Dishwasher.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Housekeeping",
+    "position": "Cleaner",
+    "location": "Lolita Restaurant ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Lolita Restaurant is pleased to announce an opening for the position of Cleaner.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Mixologist ",
+    "location": "Lolita Restaurant ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Lolita is pleased to announce an opening for the position of Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Waiter\/Waitress ",
+    "location": "Lolita ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Lolita is pleased to announce an opening for the position of Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Dish Washer",
+    "location": "Rooms Hotel Tbilisi ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Dish Washer.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Housekeeping",
+    "position": "Cleaning Service Staff",
+    "location": "Rooms Hotel Tbilisi ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Cleaning Service Staff.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Front Desk & Guest Services",
+    "position": "Registration Officer ",
+    "location": "Rooms Hotel Tbilisi ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Registration Officer.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Waiter\/Waitress ",
+    "location": "Rooms Hotel Tbilisi ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Rooms Hotel Tbilisi is pleased to announce an opening for the position of Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Mixologist ",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Stamba is pleased to announce an opening for the position of Mixologist.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Butcher ",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Stamba Hotel is pleased to announce an opening for the position of Butcher.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Front Desk & Guest Services",
+    "position": "Receptionist ",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Stamba Hotel is pleased to announce an opening for the position of Receptionist.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Housekeeping",
+    "position": "Cleaner",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Stamba Hotel is pleased to announce an opening for the position of Cleaner.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Dishwasher ",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "30-Apr",
+    "deadline": "15-May",
+    "description": " Stamba Hotel is pleased to announce an opening for the position of Dishwasher.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "position": "Service Supervisor",
+    "location": "Stamba Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "29-Apr",
+    "deadline": "29-May",
+    "description": " Stamba Hotel is pleased to announce an opening for the position of Service Supervisor.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Housekeeping",
+    "position": "Cleaner",
+    "location": "Hostel Fabrika ",
+    "employmentType": "Full-time",
+    "postDate": "28-Apr",
+    "deadline": "28-May",
+    "description": " Hostel Fabrika is pleased to announce an opening for the position of Cleaner.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Confectioner ",
+    "location": "Rooms Hotel Tbilisi ",
+    "employmentType": "Full-time",
+    "postDate": "27-Apr",
+    "deadline": "15-May",
+    "description": " Lolita Restaurant is pleased to announce an opening for the position of Confectioner.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Cook ",
+    "location": "Hostel Fabrika ",
+    "employmentType": "Full-time",
+    "postDate": "27-Apr",
+    "deadline": "13-May",
+    "description": " Hostel Fabrika is pleased to announce an opening for the position of Cook.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Mixologist ",
+    "location": "Fabrika Hostel ",
+    "employmentType": "Full-time",
+    "postDate": "27-Apr",
+    "deadline": "13-May",
+    "description": " Fabrika Hostel is pleased to announce an opening for the position of Mixologist.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Security",
+    "position": "Security Officer ",
+    "location": "Fabrika Hostel ",
+    "employmentType": "Full-time",
+    "postDate": "27-Apr",
+    "deadline": "13-May",
+    "description": " Fabrika Hostel is pleased to announce an opening for the position of Security Officer.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Information Technology",
+    "position": "Network Administrator ",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "26-Apr",
+    "deadline": "26-May",
+    "description": " Adjara Group is pleased to announce an opening for the position of Network Administrator.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Security",
+    "position": "Video Monitoring Officer ",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "26-Apr",
+    "deadline": "26-May",
+    "description": " Adjara Group is pleased to announce an opening for the position of Video Monitoring Officer.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Human Resources",
+    "position": "HR Soft Product Owner ",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "26-Apr",
+    "deadline": "26-May",
+    "description": " Adjara Group is pleased to announce an opening for the position of HR Soft Product Owner.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Junior Sous Chef",
+    "location": "Rooms Hotel Kazbegi ",
+    "employmentType": "Full-time",
+    "postDate": "25-Apr",
+    "deadline": "25-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Junior Sous Chef.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Dishwasher",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "25-Apr",
+    "deadline": "25-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Dishwasher.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Assistant to Waiter\/Waitress",
+    "location": "Rooms Hotel Kazbegi ",
+    "employmentType": "Full-time",
+    "postDate": "25-Apr",
+    "deadline": "25-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Assistant to Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Cook",
+    "location": "Rooms Hotel Kazbegi ",
+    "employmentType": "Full-time",
+    "postDate": "25-Apr",
+    "deadline": "25-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Cook.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Waiter\/Waitress",
+    "location": "Rooms Hotel Kazbegi ",
+    "employmentType": "Full-time",
+    "postDate": "25-Apr",
+    "deadline": "25-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Housekeeping",
+    "position": "Housekeeper",
+    "location": "Rooms Kazbegi Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "25-Apr",
+    "deadline": "25-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Housekeeper.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Front Desk & Guest Services",
+    "position": "Receptionist",
+    "location": "Rooms Hotel Kazbegi ",
+    "employmentType": "Full-time",
+    "postDate": "22-Apr",
+    "deadline": "21-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Receptionist.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Room Service Waiter\/Waitress",
+    "location": "Rooms Kazbegi Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "16-Apr",
+    "deadline": "15-May",
+    "description": " Rooms Hotel Kazbegi is pleased to announce an opening for the position of Room Service Waiter\/Waitress.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "position": "Service Supervisor",
+    "location": "Rooms Kazbegi Hotel ",
+    "employmentType": "Full-time",
+    "postDate": "13-Apr",
+    "deadline": "5-May",
+    "description": " Rooms Kazbegi is pleased to announce an opening for the position of Service Supervisor .",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Food distributor ",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "12-Apr",
+    "deadline": "12-May",
+    "description": " Adjara Group is pleased to announce an opening for the position of Food distributor.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Cook ",
+    "location": "Adjara Group ",
+    "employmentType": "Full-time",
+    "postDate": "12-Apr",
+    "deadline": "12-May",
+    "description": " Adjara Group is pleased to announce an opening for the position of Cook.",
+    "remote": false,
+    "salary": "N/A"
+  },
+  {
+    "category": "Food & Beverage",
+    "position": "Cook ",
+    "location": "Lolita ",
+    "employmentType": "Full-time",
+    "postDate": "4-Dec",
+    "deadline": "15-Dec",
+    "description": " Lolita is pleased to announce an opening for the position of Cook.",
+    "remote": false,
+    "salary": "N/A"
+  }
 ]
