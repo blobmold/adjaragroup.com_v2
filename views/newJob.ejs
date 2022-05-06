@@ -13,7 +13,7 @@
 
           <div class="form-control">
             <label for="category">Category</label>
-            <select name="category" id="category">
+            <select name="category" id="category" required>
               <% for(let category of jobCategories) { %>
               <option value="<%= category %>"><%= category %></option>
               <% } %>
@@ -22,17 +22,17 @@
 
           <div class="form-control">
             <label for="position">Position</label>
-            <input type="text" name="position" id="position" placeholder="Position" />
+            <input type="text" name="position" id="position" placeholder="Position" required/>
           </div>
 
           <div class="form-control">
             <label for="location">Location</label>
-            <input type="text" name="location" id="location" placeholder="Location" />
+            <input type="text" name="location" id="location" placeholder="Location" required/>
           </div>
 
           <div class="form-control">
             <label for="emplomentType">Employment Type</label>
-            <select name="emplomentType" id="emplomentType">
+            <select name="emplomentType" id="emplomentType" required>
               <option value="Full-time">Full-time</option>
               <option value="Part-time">Part-time</option>
             </select>
@@ -45,7 +45,7 @@
 
           <div class="form-control">
             <label for="description">Description</label>
-            <textarea name="description" id="description" style="height: 300px"></textarea>
+            <textarea name="description" id="description" style="height: 300px" required></textarea>
           </div>
 
           <div class="form-control" style="justify-items: start;">
@@ -55,7 +55,7 @@
 
           <div class="form-control">
             <label for="salary">Salary</label>
-            <input type="text" name="salary" id="salary" placeholder="Salary" />
+            <input type="number" name="salary" id="salary" placeholder="Salary" />
           </div>
 
           <button type="submit">Create</button>

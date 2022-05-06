@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .ag-careers.hero {
   width: 100%;
   height: 100%;
@@ -77,13 +80,14 @@ button:hover {
 }
 
 .job-results {
-  grid-column: 4 / end;
+  grid-column: 3 / end;
 }
 .jobs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 60px;
   align-items: center;
+  column-gap: 5px;
 }
 .job-results div {
   font-weight: 500;
@@ -121,8 +125,18 @@ button:hover {
   padding-top: 20px;
   padding-bottom: 20px;
   grid-template-columns: repeat(2, 1fr);
+  min-height: 250px;
 }
 div.job-content {
   font-weight: normal;
   align-self: center;
+}
+.job-cat-title {
+  opacity: 0.6;
+}
+.job-cat-txt {
+  margin-bottom: 20px;
+}
+div.job-content > div {
+  text-align: center;
 }

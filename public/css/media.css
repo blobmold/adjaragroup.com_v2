@@ -8,6 +8,9 @@
   :root {
     --global-width: 1380px;
   }
+  .careers-nav-link {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 1280px) {
   :root {
@@ -16,11 +19,18 @@
   .ag-news-related {
     display: none;
   }
+  .careers-nav {
+    grid-column: 1 / span 3;
+  }
+  .job-results {
+    grid-column: 4 / end;
+  }
 }
 @media screen and (max-width: 1140px) {
   :root {
     --footer-grid-columns: repeat(3, 1fr);
     --footer-content-max-width: 80%;
+    --global-grid-columns: 1fr;
   }
   .ag-gn-list-container {
     position: fixed;
@@ -71,10 +81,6 @@
   .ag-news-categoryNav {
     display: none;
   }
-  .ag-section .recent-news-container,
-  .ag-section-article {
-    grid-column: 1 / end;
-  }
   .ag-news-cards.global-grid {
     grid-template-columns: 1fr;
     row-gap: 10px;
@@ -93,6 +99,13 @@
   /* ARTICLES */
   .ag-article-title {
     font-size: 35px;
+  }
+  /* JOBS */
+  .careers-nav {
+    display: none;
+  }
+  .job-results {
+    grid-column: 1 / end;
   }
 }
 @media screen and (max-width: 740px) {
@@ -116,6 +129,16 @@
   .ag-article-title {
     font-size: 26px;
   }
+  /* JOBS */
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr) 100px;
+  }
+  .job-result-tr {
+    font-size: 12px;
+  }
+  [data-jobcol="employmentType"] {
+    display: none;
+  }
 }
 @media screen and (max-width: 480px) {
   :root {
@@ -128,4 +151,5 @@
   .ag-intro-content {
     padding: 20px;
   }
+
 }

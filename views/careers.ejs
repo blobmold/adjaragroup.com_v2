@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <%- include('layouts/head') %>
-    <link rel="stylesheet" href="/css/careers.css" />
   </head>
   <body>
     <%- include('layouts/navbar') %>
@@ -36,8 +35,8 @@
             <div class="job-results-th jobs-grid">
               <div data-jobCol="position">Position</div>
               <div data-jobCol="location">Location</div>
-              <div data-jobCol="employment type">Employment Type</div>
-              <div data-jobCol="posted date">Posted Date</div>
+              <div data-jobCol="employmentType">Employment Type</div>
+              <div data-jobCol="postDate">Posted Date</div>
             </div>
             <% for (let job of careers) { %>
             <div class="job-result-tr">
@@ -49,10 +48,18 @@
               </div>
               <div class="job-item-content">
                 <div class="job-content">
-                  Category: <%= job.category %> <br>
-                  Deadline: <%= job.deadline.toLocaleDateString() %> <br>
-                  Remote: <%= job.remote %> <br>
-                  Salary: <%= job.salary %>
+                  <div class="job-cat-title">Category</div>
+                  <div class="job-cat-txt"><%= job.category %></div>
+                  <div class="job-cat-title">Deadline</div>
+                  <div class="job-cat-txt"><%= job.deadline.toLocaleDateString() %></div>
+                  <% if(job.remote) { %>
+                    <div class="job-cat-title">Remote</div>
+                    <div class="job-cat-txt"><%= job.remote %></div>
+                  <% } %>
+                  <% if(job.salary) { %>
+                    <div class="job-cat-title">Salary</div>
+                    <div class="job-cat-txt"><%= job.salary %></div>  
+                  <% } %>
                 </div>
                 <div class="job-content"><%- job.description %></div>
               </div>
