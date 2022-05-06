@@ -27,6 +27,13 @@ app.use(
 );
 app.use(compression());
 
+global.loggedIn = null;
+
+app.use("*", (req, res, next) => {
+  global.loggedIn = req.session.userId;
+  next();
+});
+
 import navigationMiddleware from "./middleware/navigation.js";
 app.use(navigationMiddleware);
 
