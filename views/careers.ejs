@@ -48,8 +48,13 @@
                 <div data-jobCol="postDate"><%= job.postDate.toLocaleDateString() %></div>
               </div>
               <div class="job-item-content">
-                <div class="job-content"><%= job.description %></div>
-                <div class="job-content">Candidate qualification criteria: 2 years of experience in technology; Knowledge of React; Knowledge of Redux, Redux-Saga; Typescript; NextJS; Experience in Rest-API, Graph-QL; At least B1 Engish level. Can be your advantage: Storybook; Basic knowledge CI/CD. What you get in return: long-term professional relationship; own flexible work schedule; partly remote; 7-hours working day; offices in Lviv and Kropyvnytskyi; paid business trips to one of them every 3-6 months (on request); option to relocate to one of the offices; Performance review twice a year with wage review; focus on hobbies and interests of every teammate; possibility to change primary technology within the project and earn new ones on the company dime; 24 days of paid vacation per year (+Ukrainian state holidays); free Engish courses; other benefits.</div>
+                <div class="job-content">
+                  Category: <%= job.category %> <br>
+                  Deadline: <%= job.deadline.toLocaleDateString() %> <br>
+                  Remote: <%= job.remote %> <br>
+                  Salary: <%= job.salary %>
+                </div>
+                <div class="job-content"><%- job.description %></div>
               </div>
             </div>
             <% } %>

@@ -8,7 +8,9 @@ const __dirname = path.dirname(__filename);
 
 export default async (req, res) => {
   try {
-    let careers = await Career.find(req.query);
+    let careers = await Career.find(req.query).sort({
+      postDate: -1,
+    });
 
     let careerCategories = await fs.readFile(path.resolve(__dirname, "../config/careerCategories.json"));
 
@@ -16,7 +18,6 @@ export default async (req, res) => {
       careers,
       careerCategories: JSON.parse(careerCategories),
     });
-
   } catch (error) {
     console.log(error);
     res.render("404", {

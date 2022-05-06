@@ -122,3 +122,7 @@ button:hover {
   padding-bottom: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
+div.job-content {
+  font-weight: normal;
+  align-self: center;
+}

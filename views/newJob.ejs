@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+    <link rel="stylesheet" href="/css/newPost.css" />
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <section class="section-new-post">
+        <h1>Create a New Post</h1>
+        <form action="/careers/store" method="post" enctype="multipart/form-data">
+
+          <div class="form-control">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+              <% for(let category of jobCategories) { %>
+              <option value="<%= category %>"><%= category %></option>
+              <% } %>
+            </select>
+          </div>
+
+          <div class="form-control">
+            <label for="position">Position</label>
+            <input type="text" name="position" id="position" placeholder="Position" />
+          </div>
+
+          <div class="form-control">
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" placeholder="Location" />
+          </div>
+
+          <div class="form-control">
+            <label for="emplomentType">Employment Type</label>
+            <select name="emplomentType" id="emplomentType">
+              <option value="Full-time">Full-time</option>
+              <option value="Part-time">Part-time</option>
+            </select>
+          </div>
+          
+          <div class="form-control">
+            <label for="deadline">Deadline</label>
+            <input type="date" name="deadline" id="deadline">
+          </div>
+
+          <div class="form-control">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" style="height: 300px"></textarea>
+          </div>
+
+          <div class="form-control" style="justify-items: start;">
+            <label for="remote">Remote</label>
+            <input type="radio" name="remote" id="remote">
+          </div>
+
+          <div class="form-control">
+            <label for="salary">Salary</label>
+            <input type="text" name="salary" id="salary" placeholder="Salary" />
+          </div>
+
+          <button type="submit">Create</button>
+        </form>
+      </section>
+    </main>
+    <%- include('layouts/footer') %>
+    <script src="https://htmeditor.com/js/htmeditor.min.js" htmeditor_textarea="description" full_screen="no" editor_height="480" run_local="no"></script>
+  </body>
+</html>
