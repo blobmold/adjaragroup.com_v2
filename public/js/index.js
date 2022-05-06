@@ -32,7 +32,7 @@
       ease: "ease",
     },
   );
-  tl.seek(1)
+  tl.seek(1);
 
   navbarOverlay.addEventListener("click", closeNav);
   hamburgerContainer.addEventListener("click", closeNav);
@@ -148,26 +148,26 @@ async function lazyLoader() {
 }
 
 (async () => {
+  let jobRow = document.querySelectorAll('.job-item-row');
   let jobResults = document.querySelectorAll('.job-result-tr');
 
-  for(let job of jobResults) {
-    job.addEventListener('click', () => {
-      job.classList.toggle('open');
+  function hideJobRows(elements, exclude) {
+    for(let el of elements) {
+      if (el !== exclude) {
+        el.classList.remove('open');
+      }
+    }
+  }
+
+  for(let row of jobRow) {
+    row.addEventListener('click', () => {
+      let parent = row.closest('.job-result-tr');
+
+      hideJobRows(jobResults, parent);
+
+      parent.classList.toggle('open');
+      
     });
   }
+
 })();
-
-// (async () => {
-//   let jobTemplate = document.getElementById('jobTemplate');
-
-//   if(jobTemplate) {
-
-//     if("content" in document.createElement('template')) {
-//       let jobRow = jobTemplate.content.cloneNode(true);
-
-//       jobRow.
-//     } else {
-//       ``;
-//     }
-//   }
-// })();
