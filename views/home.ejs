@@ -83,25 +83,7 @@
             <li class="ag-news-item"><a class="ag-news-link underline" href="/newsroom">All News</a></li>
             <li class="ag-news-item"><a class="ag-news-link underline" href="/newsroom/archive">Archive</a></li>
           </ul>
-          <div class="ag-news-cards global-grid">
-            <% for(let article of recentArticles) { %>
-            <article class="ag-news-card">
-              <div class="ag-article-card-background" style="background: url('<%= article.image%>') center / cover">
-                <div class="overlay darker"></div>
-              </div>
-  
-              <div class="container">
-                <div class="content">
-                  <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-                  <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
-                  <h3 class="ag-article-title"><%= article.title %></h3>
-                  <p class="ag-article-descr"><%- article.description %></p>
-                </div>
-                <a href="/newsroom/<%= article._id %>" class="ag-article-readMore ag-cta underline u-light">Read More →</a>
-              </div>
-            </article>
-            <% } %>
-          </div>
+          <%- include('layouts/recentArticles', {recentArticles}) %>
         </div>
       </section>
   
