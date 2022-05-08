@@ -7,12 +7,12 @@
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <section class="ag-section sitemap global-width">
+      <section class="ag-section global-width">
         <h1 class="title">Adjara Group Sitemap</h1>
-        <ul class="list-nobullet" style="columns: 3 auto">
+        <ul class="sitemap list-nobullet">
           <% for(let group of siteMap) { %>
           <li class="sitemap-grp">
-            <section style="display: inline-block; vertical-align: top;">
+            <section style="display: inline-block;">
               <h2 class="sitemap-grp-title"><%= Object.keys(group) %></h2>
               <ul class="sitemap-grp-list list-nobullet">
                 <% for(let value of Object.values(group)[0]) { %>

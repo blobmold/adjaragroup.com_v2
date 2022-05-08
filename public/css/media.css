@@ -112,6 +112,9 @@
   }
 }
 @media screen and (max-width: 740px) {
+  :root {
+    --global-columns: 2;
+  }
   /* HOMEPAGE */
   .ag-section.hero .hero.title {
     width: 100%;
@@ -147,6 +150,7 @@
   :root {
     --footer-grid-columns: repeat(2, 1fr);
     --global-padding: 0 20px;
+    --global-columns: 1;
   }
   .ag-news-recent-article-img-container {
     height: 200px;

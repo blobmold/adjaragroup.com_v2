@@ -6,6 +6,7 @@
   --global-padding: 0;
   --global-grid-gap: 20px;
   --global-grid-columns: repeat(12, 1fr);
+  --global-columns: 3;
   --footer-grid-columns: repeat(5, 1fr);
   --footer-content-max-width: 980px;
   --border-color: rgb(36, 33, 36, 0.1);

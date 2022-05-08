@@ -1,3 +1,6 @@
+.sitemap {
+  columns: var(--global-columns) auto;
+}
 .sitemap-grp-title {
   font-size: 16px;
   margin: 20px 0 15px 0;
