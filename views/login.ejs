@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layouts/head') %>
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <h1>Login</h1>
+      <form action="/users/login" method="post">
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" placeholder="Username">
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </main>
+    <%- include('layouts/footer') %>
+  </body>
+</html>

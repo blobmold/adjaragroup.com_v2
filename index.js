@@ -67,17 +67,8 @@ import articleAPICtrl from "./controllers/articleAPI.js";
 app.use(articleAPICtrl);
 
 // Admin pages
-import newArticleCtrl from "./controllers/newArticle.js";
-import newJobCtrl from "./controllers/newJob.js";
-
-app.get("/articles/new", newArticleCtrl);
-app.get("/careers/new", newJobCtrl);
-
-import storeArticleCtrl from "./controllers/storeArticle.js";
-import storeJobCtrl from "./controllers/storeJob.js";
-
-app.post("/articles/store", storeArticleCtrl);
-app.post("/careers/store", storeJobCtrl);
+import userCtrl from "./controllers/user.js";
+app.use(userCtrl);
 
 // 404
 app.use(async (req, res, next) => {
