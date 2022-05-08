@@ -6,18 +6,20 @@
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <h1>Register</h1>
-      <form action="/users/register" method="post">
-        <div class="form-control">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Username">
-        </div>
-        <div class="form-control">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password">
-        </div>
-        <button type="submit">Register</button>
-      </form>
+      <section class="global-width">
+        <h1>Register</h1>
+        <form action="/users/register" method="post">
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Username" />
+          </div>
+          <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </section>
     </main>
     <%- include('layouts/footer') %>
   </body>

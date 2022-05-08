@@ -3,7 +3,6 @@
   --global-black: #242124;
   --global-white: #f4f4f4;
   --global-hover-black: rgba(36, 33, 36, 0.03);
-  /* --global-margins: 120px; */
   --global-padding: 0;
   --global-grid-gap: 20px;
   --global-grid-columns: repeat(12, 1fr);
@@ -57,13 +56,19 @@ img {
 p {
   line-height: 2;
 }
-a[target="_blank"]::after {
-  content: '\2197';
-  margin: 0 3px 0 5px;
-}
 .main {
   margin-top: 50px;
 }
+.form-control {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 20px;
+}
+input,
+textarea {
+  padding: 5px;
+}
+
 .visuallyhidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -288,29 +293,22 @@ a[target="_blank"]::after {
 }
 .ag-section .recent-news-container {
   grid-column: 1 / span 9;
-  background-color: var(--conatiner-background-color);
 }
 .ag-news-recent-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  padding: 20px;
 }
 .ag-news-recent-item {
   box-sizing: border-box;
   padding: 20px 0;
-  /* border-style: solid;
-  border-image: linear-gradient(to right, #24212435 0%, rgba(56, 56, 56, 0) 100%) 1;
-  border-width: 0 0 1px 0; */
 }
 .ag-news-recent-item:not(:last-of-type) {
   border-bottom: 1px solid rgba(36, 33, 36, 0.1);
 }
-/* .ag-news-recent-item:not(:first-child):not(:last-child) {
-  padding: 50px 0;
-} */
 .ag-news-recent-article {
   display: flex;
+  transition: all 0.2s ease;
 }
 .ag-news-recent-link {
   text-decoration: none;
@@ -325,8 +323,6 @@ a[target="_blank"]::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0%);
-  transition: filter 300ms ease, transform 300ms ease;
 }
 .ag-news-recent-article-copy {
   padding-left: 20px;
@@ -343,11 +339,10 @@ a[target="_blank"]::after {
   font-size: 12px;
   margin-bottom: 0;
 }
-.ag-news-recent-article:hover .ag-news-recent-article-img,
-.ag-news-recent-article:focus .ag-news-recent-article-img,
-.ag-news-recent-article:active .ag-news-recent-article-img {
-  filter: saturate(100%);
-  transform: scale(1.1);
+.ag-news-recent-article:hover,
+.ag-news-recent-article:focus,
+.ag-news-recent-article:active {
+  transform: translateX(7px);
 }
 /* Category Navigation  */
 .recent-news .ag-news-categoryNav {

@@ -19,6 +19,9 @@
   .ag-news-related {
     display: none;
   }
+  .ag-section-article {
+    grid-column-end: span 9;
+  }
   .careers-nav {
     grid-column: 1 / span 3;
   }

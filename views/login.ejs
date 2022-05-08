@@ -2,22 +2,25 @@
 <html lang="en">
   <head>
     <%- include('layouts/head') %>
+    <link rel="stylesheet" href="/css/newPost.css" />
   </head>
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <h1>Login</h1>
-      <form action="/users/login" method="post">
-        <div class="form-control">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Username">
-        </div>
-        <div class="form-control">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password">
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <section class="global-width">
+        <h1>Login</h1>
+        <form action="/users/login" method="post">
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Username" />
+          </div>
+          <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </section>
     </main>
     <%- include('layouts/footer') %>
   </body>
