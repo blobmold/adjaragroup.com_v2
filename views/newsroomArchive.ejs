@@ -7,12 +7,7 @@
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <section class="ag-section archive-title">
-        <div class="archive-title-conatiner global-width">
-          <h1 class="title">News Archive</h1>
-          <p style="margin:0;">Find related links to news and updates from Adjara Group</p>  
-        </div>
-      </section>
+      <h1 class="title global-width">News Archive</h1>
       <section class="ag-section archive global-width global-grid">
         <% for (let date of sortedArticles.keys()) { %>
         <div class="ag-archive-column">
@@ -27,7 +22,7 @@
           <% } %>
         </div>
         <% } %>
-      </section>  
+      </section>
     </main>
     <%- include('layouts/footer') %>
   </body>
