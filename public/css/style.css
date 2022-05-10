@@ -99,6 +99,9 @@ textarea {
   grid-template-columns: var(--global-grid-columns);
   column-gap: var(--global-grid-gap);
 }
+.ag-section {
+  overflow: hidden;
+}
 /* CTA */
 .ag-cta-content {
   box-sizing: border-box;
