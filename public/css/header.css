@@ -1,6 +1,6 @@
 /* Global Navigation (GN) */
 .ag-gh {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   z-index: 999999;
+  background-color: var(--global-white);
 }
 .ag-gn {
   width: 100%;
