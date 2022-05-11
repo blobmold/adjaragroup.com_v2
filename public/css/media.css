@@ -139,8 +139,12 @@
   .ag-careers-hero-content {
     flex-direction: column;
   }
+  .ag-careers-hero-content button {
+    margin-left: 0;
+  }
   .ag-careers-title {
     border: 0;
+    padding-right: 0;
   }
   .jobs-grid {
     grid-template-columns: repeat(2, 1fr) 100px;
