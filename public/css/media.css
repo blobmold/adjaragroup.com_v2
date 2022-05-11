@@ -96,9 +96,6 @@
   .intro-container {
     grid-template-columns: 1fr;
   }
-  .ag-section.archive {
-    grid-template-columns: repeat(3, 1fr);
-  }
   /* ARTICLES */
   .ag-article-title {
     font-size: 35px;
