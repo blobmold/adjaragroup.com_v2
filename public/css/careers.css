@@ -72,7 +72,12 @@ button:hover {
 .careers-nav-link {
   text-decoration: none;
 }
-
+.careers-alternate-nav {
+  display: none;
+}
+#jobFilter {
+  margin-left: 15px;
+}
 .job-results {
   grid-column: 3 / end;
 }

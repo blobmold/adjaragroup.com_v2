@@ -101,8 +101,11 @@
     font-size: 35px;
   }
   /* JOBS */
-  .careers-nav {
+  .careers-nav-list {
     display: none;
+  }
+  .careers-alternate-nav {
+    display: block;
   }
   .job-results {
     grid-column: 1 / end;

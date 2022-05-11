@@ -27,6 +27,15 @@
               <li class="careers-nav-item"><a href="/careers?category=<%= encodeURIComponent(category) %>#exploreCareers" class="careers-nav-link underline"><%= category %></a></li>
               <% } %>
             </ul>
+            <div class="careers-alternate-nav">
+              <label for="jobFilter">Filter Positions: </label>
+              <select name="jobFilter" id="jobFilter">
+                <option value="/careers#exploreCareers">All Jobs</option>
+                <% for(let category of careerCategories) {%>
+                  <option value="/careers?category=<%= encodeURIComponent(category) %>#exploreCareers"><%= category %></option>
+                <% } %>
+              </select>  
+            </div>
           </nav>
           <% if(careers.length > 0) { %>
           <div class="job-results">

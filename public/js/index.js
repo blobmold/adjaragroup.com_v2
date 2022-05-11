@@ -171,3 +171,18 @@ async function lazyLoader() {
   }
 
 })();
+
+(async () => {
+  const careersSelector = document.getElementById('jobFilter');
+  if(careersSelector) {
+    for(let option of careersSelector.children) {
+      if(option.value === location.pathname + location.search + location.hash) {
+        option.selected = true;
+        break;
+      }
+    }
+    careersSelector.addEventListener('change', (e) => {
+      location = e.target.value;
+    });
+  }
+})();
