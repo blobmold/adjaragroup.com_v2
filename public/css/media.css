@@ -136,6 +136,12 @@
     font-size: 26px;
   }
   /* JOBS */
+  .ag-careers-hero-content {
+    flex-direction: column;
+  }
+  .ag-careers-title {
+    border: 0;
+  }
   .jobs-grid {
     grid-template-columns: repeat(2, 1fr) 100px;
   }
