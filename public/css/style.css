@@ -293,10 +293,10 @@ textarea {
   color: var(--global-white);
 }
 /* Newsroom */
-.ag-section.recent-news .title {
+.recent-news .title {
   grid-column: 1 / span 9;
 }
-.ag-section .recent-news-container {
+.recent-news-container {
   grid-column: 1 / span 9;
 }
 .ag-news-recent-item {
