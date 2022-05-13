@@ -51,6 +51,7 @@
   width: 30px;
   height: 2px;
   background-color: var(--global-black);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 .ag-gn-hamburger {
   position: relative;
@@ -69,4 +70,13 @@
   cursor: pointer;
   display: none;
   background: rgba(0, 0, 0, 0.7);
+}
+.nav-visible .ag-gn-hamburger {
+  background: transparent;
+}
+.nav-visible .ag-gn-hamburger::after {
+  transform: rotate(45deg);
+}
+.nav-visible .ag-gn-hamburger::before {
+  transform: rotate(135deg);
 }
