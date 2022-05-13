@@ -1,4 +1,4 @@
-import Article from "../models/Article.js";
+import Article from "../../models/Article.js";
 import express from "express";
 
 let router = express.Router();

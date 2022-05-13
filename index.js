@@ -65,7 +65,7 @@ app.get("/newsroom/archive", newsroomArchiveCtrl);
 app.get("/newsroom/:id", articleCtrl);
 app.get("/careers", careersCtrl);
 
-import articleAPICtrl from "./controllers/articleAPI.js";
+import articleAPICtrl from "./controllers/API/articleAPI.js";
 app.use(articleAPICtrl);
 
 // Admin pages
