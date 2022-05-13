@@ -20,18 +20,15 @@
 
   let tl = gsap.timeline();
 
-  tl.from(
-    ".ag-gn-item",
-    {
-      opacity: 0,
-      xPercent: 100,
-      duration: 0.5,
-      stagger: {
-        amount: 0.2,
-      },
-      ease: "ease",
+  tl.from(".ag-gn-item", {
+    opacity: 0,
+    xPercent: 100,
+    duration: 0.5,
+    stagger: {
+      amount: 0.2,
     },
-  );
+    ease: "ease",
+  });
   tl.seek(1);
 
   navbarOverlay.addEventListener("click", closeNav);
@@ -81,8 +78,8 @@
   }
 
   if (!articleAPILoader) {
-    let ArticleAPILoader = (await import("./loadMore.js")).default;
-    articleAPILoader = new ArticleAPILoader(recentList, loadMoreBtn, filter);
+    let APILoader = (await import("./loadMore.js")).default;
+    articleAPILoader = new APILoader(recentList, loadMoreBtn, filter);
   }
 
   // If next page does not exist, remove loader
@@ -137,41 +134,128 @@ async function lazyLoader() {
 }
 
 (async () => {
-  let jobRow = document.querySelectorAll('.job-item-row');
-  let jobResults = document.querySelectorAll('.job-result-tr');
+  let jobRow = document.querySelectorAll(".job-item-row");
+  let jobResults = document.querySelectorAll(".job-result-tr");
 
   function hideJobRows(elements, exclude) {
-    for(let el of elements) {
+    for (let el of elements) {
       if (el !== exclude) {
-        el.classList.remove('open');
+        el.classList.remove("open");
       }
     }
   }
 
-  for(let row of jobRow) {
-    row.addEventListener('click', () => {
-      let parent = row.closest('.job-result-tr');
+  for (let row of jobRow) {
+    row.addEventListener("click", () => {
+      let parent = row.closest(".job-result-tr");
 
       hideJobRows(jobResults, parent);
 
-      parent.classList.toggle('open');
-      
+      parent.classList.toggle("open");
     });
   }
-
 })();
 
 (async () => {
-  const careersSelector = document.getElementById('jobFilter');
-  if(careersSelector) {
-    for(let option of careersSelector.children) {
-      if(option.value === location.pathname + location.search + location.hash) {
+  const careersSelector = document.getElementById("jobFilter");
+  if (careersSelector) {
+    for (let option of careersSelector.children) {
+      if (option.value === location.pathname + location.search + location.hash) {
         option.selected = true;
         break;
       }
     }
-    careersSelector.addEventListener('change', (e) => {
+    careersSelector.addEventListener("change", (e) => {
       location = e.target.value;
     });
   }
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// (async () => {
+//   let careerCategories = document.querySelectorAll(".careers-nav-item");
+//   for (let category of careerCategories) {
+//     category.addEventListener("click", async (e) => {
+//       let rows = document.querySelectorAll(".job-result-tr");
+
+//       rows.forEach((row) => row.remove());
+//       if ("content" in document.createElement("template")) {
+//         if (history.pushState) {
+//           history.pushState(null, null, "careers?category=" + encodeURIComponent(e.target.textContent));
+//         }
+//         let careers = await getPages(location.search);
+
+//         let list = document.querySelector('.job-results');
+
+//         for(let career of await careers) {
+//           createCareerRows(career, list);
+//         }
+
+//         await openJobRow();
+//       }
+//     });
+//   }
+
+//   async function getPages(filter) {
+//     const APIURL = new URL("/api/careers", location.origin);
+//     APIURL.search = new URLSearchParams(filter);
+//     try {
+//       let response = await fetch(APIURL);
+//       if (response.ok) {
+//         return await response.json();
+//       } else {
+//         throw response.status;
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
+
+//   async function createCareerRows(career, list) {
+//     let listItem = document.getElementById("careerTemplate").content.cloneNode(true);
+//     (listItem.querySelector('[data-jobCol="position"]')).textContent = career.position;
+//     (listItem.querySelector('[data-jobCol="location"]')).textContent = career.location;
+//     (listItem.querySelector('[data-jobCol="employmentType"]')).textContent = career.employmentType;
+//     (listItem.querySelector('[data-jobCol="postDate"]')).textContent = career.postDate;
+//     // console.log(career.position);
+//     // console.log(listItem.querySelector('[data-jobCol="position"]').textContent);
+//     list.append(listItem);
+//   }
+
+//   async function openJobRow() {
+//     let jobRow = document.querySelectorAll(".job-item-row");
+//     let jobResults = document.querySelectorAll(".job-result-tr");
+  
+//     function hideJobRows(elements, exclude) {
+//       for (let el of elements) {
+//         if (el !== exclude) {
+//           el.classList.remove("open");
+//         }
+//       }
+//     }
+  
+//     for (let row of jobRow) {
+//       row.addEventListener("click", () => {
+//         let parent = row.closest(".job-result-tr");
+  
+//         hideJobRows(jobResults, parent);
+  
+//         parent.classList.toggle("open");
+//       });
+//     }
+//   }
+  
+// })();

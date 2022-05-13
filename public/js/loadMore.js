@@ -1,4 +1,4 @@
-export default class ArticleAPILoader {
+export default class APILoader {
   constructor(list, loadMore, filter) {
     this.pageNum = 1;
     this.list = list;

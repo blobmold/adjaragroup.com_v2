@@ -66,7 +66,9 @@ app.get("/newsroom/:id", articleCtrl);
 app.get("/careers", careersCtrl);
 
 import articleAPICtrl from "./controllers/API/articleAPI.js";
+import careerAPICtrl from "./controllers/API/careersAPI.js";
 app.use(articleAPICtrl);
+app.use(careerAPICtrl);
 
 // Admin pages
 import userCtrl from "./controllers/user.js";
