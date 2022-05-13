@@ -40,18 +40,7 @@
   function closeNav() {
     document.body.classList.toggle("nav-visible");
     tl.play(0);
-
-    // fixBody("nav-visible");
   }
-
-  // Prevent body scrolling when hamburger menu is open
-  // let fixBody = (visibleClass) => {
-  //   if (document.body.classList.contains(visibleClass)) {
-  //     document.body.style.position = "fixed";
-  //   } else {
-  //     document.body.style.position = "unset";
-  //   }
-  // };
 
   // Launch Lazy Loader
   await lazyLoader();
