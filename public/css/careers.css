@@ -139,3 +139,8 @@ div.job-content {
 div.job-content > div {
   text-align: center;
 }
+.no-jobs {
+  grid-column: 3 / end; 
+  justify-self: center; 
+  align-self: center;
+}

@@ -104,11 +104,18 @@
   .careers-nav-list {
     display: none;
   }
+  .careers-nav {
+    grid-column: unset;
+    border-right: 0;
+  }
   .careers-alternate-nav {
     display: block;
   }
   .job-results {
-    grid-column: 1 / end;
+    grid-column: unset;
+  }
+  .no-jobs {
+    grid-column: unset;
   }
 }
 @media screen and (max-width: 740px) {
