@@ -58,8 +58,8 @@ button:hover {
   font-weight: 500;
 }
 .careers-nav {
-  grid-column: 1 / span 2;
   border-right: 1px solid var(--border-color);
+  grid-column: 1 / span 3;
 }
 .careers-nav-list {
   list-style-type: none;
@@ -68,6 +68,9 @@ button:hover {
 }
 .careers-nav-item {
   margin: 10px 0;
+}
+.careers-nav-item span {
+  cursor: pointer;
 }
 .careers-nav-link {
   text-decoration: none;
@@ -79,7 +82,7 @@ button:hover {
   margin-left: 15px;
 }
 .job-results {
-  grid-column: 3 / end;
+  grid-column: 4 / end;
 }
 .jobs-grid {
   display: grid;
@@ -136,6 +139,13 @@ div.job-content {
 .job-cat-txt {
   margin-bottom: 20px;
 }
+.job-cat-count {
+  color: var(--global-black);
+  opacity: 0.4;
+  padding-left: 10px;
+  font-weight: normal;
+}
+
 div.job-content > div {
   text-align: center;
 }

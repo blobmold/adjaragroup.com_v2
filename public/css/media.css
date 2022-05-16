@@ -22,9 +22,6 @@
   .ag-section-article {
     grid-column-end: span 9;
   }
-  .careers-nav {
-    grid-column: 1 / span 3;
-  }
   .job-results {
     grid-column: 4 / end;
   }

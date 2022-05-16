@@ -21,29 +21,23 @@
 
         <div class="careers-container global-grid">
           <nav class="careers-nav">
-            <!-- <ul class="careers-nav-list">
-              <li class="careers-nav-item careers-nav-item-all"><a href="/careers#exploreCareers" class="careers-nav-link underline">All Jobs</a></li>
-              <% for(let category of careerCategories) {%>
-              <li class="careers-nav-item"><a href="/careers?category=<%= encodeURIComponent(category) %>#exploreCareers" class="careers-nav-link underline"><%= category %></a></li>
-              <% } %>
-            </ul> -->
             <ul class="careers-nav-list">
-              <li class="careers-nav-item careers-nav-item-all"><a class="careers-nav-link underline" href="/careers">All Jobs</a></li>
-              <% for(let category of careerCategories) {%>
-              <li class="careers-nav-item"> <a href="/careers?category=<%= encodeURIComponent(category) %>#exploreCareers" class="careers-nav-link underline"><%= category %></a></li>
+              <li class="careers-nav-item careers-nav-item-all"><span class="nav-cat-title underline">All Jobs</span></li>
+              <% for(let category of careerCategories) { %>
+              <li class="careers-nav-item careers-nav-item"><span class="nav-cat-title underline"><%= category._id %></span><span class="job-cat-count">(<%= category.count %>)</span></li>
               <% } %>
             </ul>
             <div class="careers-alternate-nav">
               <label for="jobFilter">Filter Positions: </label>
               <select name="jobFilter" id="jobFilter">
                 <option value="/careers#exploreCareers">All Jobs</option>
-                <% for(let category of careerCategories) {%>
-                <option value="/careers?category=<%= encodeURIComponent(category) %>#exploreCareers"><%= category %></option>
+                <% for(let category of careerCategories) { %>
+                <option value="/careers?category=<%= encodeURIComponent(category._id) %>#exploreCareers"><%= category._id %></option>
                 <% } %>
               </select>
             </div>
           </nav>
-          <% if(careers.length > 0) { %>
+
           <div class="job-results">
             <div class="job-results-th jobs-grid">
               <div data-jobCol="position">Position</div>
@@ -51,36 +45,59 @@
               <div data-jobCol="employmentType">Employment Type</div>
               <div data-jobCol="postDate">Posted Date</div>
             </div>
-            <% for (let job of careers) { %>
+            <div class="job-rows">
+              <% for (let job of careers) { %>
+              <div class="job-result-tr">
+                <div class="job-item-row jobs-grid">
+                  <div data-jobCol="position"><%= job.position %></div>
+                  <div data-jobCol="location"><%= job.location %></div>
+                  <div data-jobCol="employmentType"><%= job.employmentType %></div>
+                  <div data-jobCol="postDate"><%= job.postDate.toLocaleDateString() %></div>
+                </div>
+                <div class="job-item-content">
+                  <div class="job-content">
+                    <div class="job-cat-title category">Category</div>
+                    <div class="job-cat-txt category"><%= job.category %></div>
+                    <div class="job-cat-title deadline">Deadline</div>
+                    <div class="job-cat-txt deadline"><%= job.deadline.toLocaleDateString() %></div>
+                    <% if(job.remote) { %>
+                    <div class="job-cat-title remote">Remote</div>
+                    <div class="job-cat-txt remote"><%= job.remote %></div>
+                    <% } %> <% if(job.salary) { %>
+                    <div class="job-cat-title salary">Salary</div>
+                    <div class="job-cat-txt salary"><%= job.salary %></div>
+                    <% } %>
+                  </div>
+                  <div class="job-content descr"><%- job.description %></div>
+                </div>
+              </div>
+              <% } %>
+            </div>
+          </div>
+
+          <template id="job-result-template">
             <div class="job-result-tr">
               <div class="job-item-row jobs-grid">
-                <div data-jobCol="position"><%= job.position %></div>
-                <div data-jobCol="location"><%= job.location %></div>
-                <div data-jobCol="employmentType"><%= job.employmentType %></div>
-                <div data-jobCol="postDate"><%= job.postDate.toLocaleDateString() %></div>
+                <div data-jobCol="position"></div>
+                <div data-jobCol="location"></div>
+                <div data-jobCol="employmentType"></div>
+                <div data-jobCol="postDate"></div>
               </div>
               <div class="job-item-content">
                 <div class="job-content">
-                  <div class="job-cat-title">Category</div>
-                  <div class="job-cat-txt"><%= job.category %></div>
-                  <div class="job-cat-title">Deadline</div>
-                  <div class="job-cat-txt"><%= job.deadline.toLocaleDateString() %></div>
-                  <% if(job.remote) { %>
-                  <div class="job-cat-title">Remote</div>
-                  <div class="job-cat-txt"><%= job.remote %></div>
-                  <% } %> <% if(job.salary) { %>
-                  <div class="job-cat-title">Salary</div>
-                  <div class="job-cat-txt"><%= job.salary %></div>
-                  <% } %>
+                  <div class="job-cat-title category">Category</div>
+                  <div class="job-cat-txt category"></div>
+                  <div class="job-cat-title deadline">Deadline</div>
+                  <div class="job-cat-txt category"></div>
+                  <div class="job-cat-title remote">Remote</div>
+                  <div class="job-cat-txt category"></div>
+                  <div class="job-cat-title salary">Salary</div>
+                  <div class="job-cat-txt category"></div>
                 </div>
-                <div class="job-content"><%- job.description %></div>
+                <div class="job-content descr"></div>
               </div>
             </div>
-            <% } %>
-          </div>
-          <% } else { %>
-          <h3 class="no-jobs">No Jobs Available</h3>
-          <% } %>
+          </template>
         </div>
       </section>
     </main>

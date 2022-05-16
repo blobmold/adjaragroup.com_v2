@@ -1,9 +1,10 @@
 export default class APILoader {
-  constructor(list, loadMore, filter) {
+  constructor(list, loadMore, filter, APIPATH) {
     this.pageNum = 1;
     this.list = list;
     this.loadMoreBtn = loadMore;
-    this.APIURL = new URL("/api/articles/list", location.origin);
+    this.APIPATH = APIPATH;
+    this.APIURL = new URL(APIPATH, location.origin);
     this.filter = filter;
     this.APIURL.search = new URLSearchParams(this.filter);
   }
@@ -12,7 +13,7 @@ export default class APILoader {
     this.APIURL.searchParams.set("pageNum", ++this.pageNum);
     let page = await this.getPage(this.APIURL);
     if (!page.articles) return;
-    await Promise.allSettled([this.checkNextPage(page), this.createPage(page)]);
+    await Promise.allSettled([this.checkNextPage(page), this.createPage(page, this.createArticleRow, "articles")]);
   }
 
   async checkNextPage(page) {
@@ -27,7 +28,7 @@ export default class APILoader {
   async getPage(url) {
     try {
       let response = await fetch(url);
-      if(response.ok) {
+      if (response.ok) {
         return await response.json();
       } else {
         throw response.status;
@@ -37,13 +38,36 @@ export default class APILoader {
     }
   }
 
-  async createPage(page) {
-    for (let article of page.articles) {
-      await this.createListItem(this.list, article);
+  async createPage(page, singleItemFunc, row) {
+    // If page is loaded separately assign default APIURL;
+    if (!page) page = await this.getPage(this.APIURL);
+
+    for (let el of page[row]) {
+      await singleItemFunc(this.list, el);
     }
   }
 
-  async createListItem(list, article) {
+  async createJobRow(list, job) {
+    if ("content" in document.createElement("template")) {
+      let row = document.getElementById("job-result-template").content.cloneNode(true);
+
+      row.querySelector('[data-jobCol="position"]').textContent = job.position;
+      row.querySelector('[data-jobCol="location"]').textContent = job.location;
+      row.querySelector('[data-jobCol="employmentType"]').textContent = job.employmentType;
+      row.querySelector('[data-jobCol="postDate"]').textContent = new Date(job.postDate).toLocaleDateString();
+
+      row.querySelector(".category").nextElementSibling.textContent = job.category;
+      row.querySelector(".deadline").nextElementSibling.textContent = new Date(job.deadline).toLocaleDateString();
+      row.querySelector(".remote").nextElementSibling.textContent = job.remote;
+      row.querySelector(".salary").nextElementSibling.textContent = job.salary;
+
+      row.querySelector('.job-content.descr').textContent = job.description;
+
+      list.append(row);
+    }
+  }
+
+  async createArticleRow(list, article) {
     if ("content" in document.createElement("template")) {
       let listItem = document.getElementById("articleLiTemplate").content.cloneNode(true);
       listItem.querySelector(".ag-news-recent-link").href = `/newsroom/${article._id}`;

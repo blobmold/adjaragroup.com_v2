@@ -209,6 +209,7 @@
     "salary": "N/A"
   },
   {
+    "category": "Housekeeping",
     "position": "Service Supervisor",
     "location": "Stamba Hotel ",
     "employmentType": "Full-time",
@@ -395,6 +396,7 @@
     "salary": "N/A"
   },
   {
+    "category": "Housekeeping",
     "position": "Service Supervisor",
     "location": "Rooms Kazbegi Hotel ",
     "employmentType": "Full-time",
