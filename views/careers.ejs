@@ -22,9 +22,9 @@
         <div class="careers-container global-grid">
           <nav class="careers-nav">
             <ul class="careers-nav-list">
-              <li class="careers-nav-item careers-nav-item-all"><span class="nav-cat-title underline">All Jobs</span><span class="job-cat-count">(<%= totalLen %>)</span></li>
+              <li class="careers-nav-item careers-nav-item-all"><a href="/careers" class="nav-cat-title underline">All Jobs</a><span class="job-cat-count">(<%= totalLen %>)</span></li>
               <% for(let category of careerCategories) { %>
-              <li class="careers-nav-item careers-nav-item"><span class="nav-cat-title underline"><%= category._id %></span><span class="job-cat-count">(<%= category.count %>)</span></li>
+              <li class="careers-nav-item careers-nav-item"><a href="/careers?category=<%= encodeURIComponent(category._id) %>" class="nav-cat-title underline"><%= category._id %></a><span class="job-cat-count">(<%= category.count %>)</span></li>
               <% } %>
             </ul>
             <div class="careers-alternate-nav">

@@ -152,7 +152,7 @@ async function lazyLoader() {
 })();
 
 (async () => {
-  let jobCategories = document.querySelectorAll(".careers-nav-item");
+  let jobCategories = document.querySelectorAll(".careers-nav-item a");
   let jobAPILoader;
   let jobList = document.querySelector(".job-rows");
   let APIPATH = "/api/careers";
@@ -172,17 +172,12 @@ async function lazyLoader() {
     }
 
     for (let c = 0; c < jobCategories.length; c++) {
-      jobCategories[c].addEventListener("click", async () => {
-        document.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
-
-        let catTxt = jobCategories[c].querySelector(".nav-cat-title").textContent;
+      jobCategories[c].addEventListener("click", async (e) => {
+        e.preventDefault();
+        jobList.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
 
         if (history.pushState) {
-          if (c === 0) {
-            history.pushState(null, null, "/careers");
-          } else {
-            history.pushState(null, null, "/careers?category=" + encodeURIComponent(catTxt));
-          }
+          window.history.pushState({}, "", jobCategories[c].href);
         }
 
         filter.category = new URLSearchParams(location.search).get("category");

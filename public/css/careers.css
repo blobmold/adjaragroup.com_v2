@@ -71,8 +71,8 @@ button:hover {
 .careers-nav-item {
   margin: 10px 0;
 }
-.careers-nav-item span {
-  cursor: pointer;
+.careers-nav-item a {
+  text-decoration: none;
 }
 .careers-nav-link {
   text-decoration: none;
