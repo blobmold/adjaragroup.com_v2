@@ -128,7 +128,7 @@ button:hover {
   display: grid;
   padding-top: 20px;
   padding-bottom: 20px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   min-height: 250px;
 }
 div.job-content {

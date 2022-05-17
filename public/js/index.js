@@ -69,29 +69,31 @@
   let categories = document.querySelectorAll(".ag-news-cat-item");
   let APIPATH = "/api/articles/list";
 
-  if (!recentList && !loadMoreBtn && !categories.length >= 0) return;
+  if (recentList) {
+    if (!recentList && !loadMoreBtn && !categories.length >= 0) return;
 
-  let articleAPILoader;
-  let filter = {};
+    let articleAPILoader;
+    let filter = {};
 
-  if (location.search) {
-    filter.category = new URLSearchParams(location.search).get("category");
-  }
+    if (location.search) {
+      filter.category = new URLSearchParams(location.search).get("category");
+    }
 
-  if (!articleAPILoader) {
-    let APILoader = (await import("./loadMore.js")).default;
-    articleAPILoader = new APILoader(recentList, loadMoreBtn, filter, APIPATH);
-  }
+    if (!articleAPILoader) {
+      let APILoader = (await import("./loadMore.js")).default;
+      articleAPILoader = new APILoader(recentList, loadMoreBtn, filter, APIPATH);
+    }
 
-  // If next page does not exist, remove loader
-  await articleAPILoader.checkNextPage();
-  loadMoreBtn.dataset.loading = 0;
-
-  loadMoreBtn.addEventListener("click", async () => {
-    loadMoreBtn.dataset.loading = 1;
-    articleAPILoader.loadMore().then(lazyLoader);
+    // If next page does not exist, remove loader
+    await articleAPILoader.checkNextPage();
     loadMoreBtn.dataset.loading = 0;
-  });
+
+    loadMoreBtn.addEventListener("click", async () => {
+      loadMoreBtn.dataset.loading = 1;
+      articleAPILoader.loadMore().then(lazyLoader);
+      loadMoreBtn.dataset.loading = 0;
+    });
+  }
 })();
 
 // gsap
@@ -156,43 +158,45 @@ async function lazyLoader() {
   let APIPATH = "/api/careers";
   let filter = {};
 
-  if (location.search) {
-    filter.category = new URLSearchParams(location.search).get("category");
-  }
-
-  // Initialize job row toggler
-  await toggleJobRows();
-
-  if (!jobAPILoader) {
-    let APILoader = (await import("./loadMore.js")).default;
-    jobAPILoader = new APILoader(jobList, undefined, filter, APIPATH);
-  }
-
-  for (let c = 0; c < jobCategories.length; c++) {
-    jobCategories[c].addEventListener("click", async () => {
-      document.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
-
-      let catTxt = jobCategories[c].querySelector(".nav-cat-title").textContent;
-
-      if (history.pushState) {
-        if (c === 0) {
-          history.pushState(null, null, "/careers");
-        } else {
-          history.pushState(null, null, "/careers?category=" + encodeURIComponent(catTxt));
-        }
-      }
-
+  if (jobList) {
+    if (location.search) {
       filter.category = new URLSearchParams(location.search).get("category");
-      if (filter.category) {
-        jobAPILoader.APIURL.searchParams.set("category", filter.category);
-      } else {
-        jobAPILoader.APIURL.searchParams.delete("category");
-      }
+    }
 
-      await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+    // Initialize job row toggler
+    await toggleJobRows();
 
-      await toggleJobRows();
-    });
+    if (!jobAPILoader) {
+      let APILoader = (await import("./loadMore.js")).default;
+      jobAPILoader = new APILoader(jobList, undefined, filter, APIPATH);
+    }
+
+    for (let c = 0; c < jobCategories.length; c++) {
+      jobCategories[c].addEventListener("click", async () => {
+        document.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
+
+        let catTxt = jobCategories[c].querySelector(".nav-cat-title").textContent;
+
+        if (history.pushState) {
+          if (c === 0) {
+            history.pushState(null, null, "/careers");
+          } else {
+            history.pushState(null, null, "/careers?category=" + encodeURIComponent(catTxt));
+          }
+        }
+
+        filter.category = new URLSearchParams(location.search).get("category");
+        if (filter.category) {
+          jobAPILoader.APIURL.searchParams.set("category", filter.category);
+        } else {
+          jobAPILoader.APIURL.searchParams.delete("category");
+        }
+
+        await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+
+        await toggleJobRows();
+      });
+    }
   }
 })();
 
