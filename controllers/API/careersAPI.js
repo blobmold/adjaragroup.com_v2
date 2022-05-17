@@ -5,7 +5,7 @@ let router = express.Router();
 
 router.get("/api/careers", async (req, res) => {
   try {
-    let careers = await Career.find({ ...req.query });
+    let careers = await Career.find({ ...req.query }).sort({ postDate: -1 });
     res.status(201);
     res.send({ careers });
   } catch (error) {
