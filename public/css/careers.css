@@ -58,13 +58,15 @@ button:hover {
   font-weight: 500;
 }
 .careers-nav {
-  border-right: 1px solid var(--border-color);
   grid-column: 1 / span 3;
 }
 .careers-nav-list {
+  position: sticky;
+  top: 40px;
   list-style-type: none;
   margin: 35px 0 0 0;
   padding: 0;
+  border-right: 1px solid var(--border-color);
 }
 .careers-nav-item {
   margin: 10px 0;
@@ -135,6 +137,7 @@ div.job-content {
 }
 .job-cat-title {
   opacity: 0.6;
+  text-transform: capitalize;
 }
 .job-cat-txt {
   margin-bottom: 20px;

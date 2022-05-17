@@ -56,12 +56,21 @@ export default class APILoader {
       row.querySelector('[data-jobCol="employmentType"]').textContent = job.employmentType;
       row.querySelector('[data-jobCol="postDate"]').textContent = new Date(job.postDate).toLocaleDateString();
 
-      row.querySelector(".category").nextElementSibling.textContent = job.category;
-      row.querySelector(".deadline").nextElementSibling.textContent = new Date(job.deadline).toLocaleDateString();
-      row.querySelector(".remote").nextElementSibling.textContent = job.remote;
-      row.querySelector(".salary").nextElementSibling.textContent = job.salary;
+      let summary = ["category", "deadline", "remote", "salary"];
+      let summaryEl = row.querySelector('.job-content.summary');
+      let result = "";
 
-      row.querySelector('.job-content.descr').textContent = job.description;
+      for(let el of summary) {
+        if(job[el]) {
+          if(el === "deadline") job[el] = new Date(job[el]).toLocaleDateString(); 
+          result += `<div class="job-cat-title ${el}">${el}</div>`;          
+          result += `<div class="job-cat-txt ${el}">${job[el]}</div>`;          
+        }
+      }
+      
+      summaryEl.innerHTML = result;
+
+      row.querySelector('.job-content.descr').innerHTML = job.description;
 
       list.append(row);
     }
