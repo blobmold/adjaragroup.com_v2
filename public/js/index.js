@@ -150,14 +150,11 @@ async function lazyLoader() {
 })();
 
 (async () => {
-
   let jobCategories = document.querySelectorAll(".careers-nav-item");
   let jobAPILoader;
   let jobList = document.querySelector(".job-rows");
   let APIPATH = "/api/careers";
   let filter = {};
-
-  console.log(jobCategories);
 
   if (location.search) {
     filter.category = new URLSearchParams(location.search).get("category");
@@ -171,20 +168,30 @@ async function lazyLoader() {
     jobAPILoader = new APILoader(jobList, undefined, filter, APIPATH);
   }
 
-  for (let category of jobCategories) {
-    category.addEventListener("click", async () => {
+  for (let c = 0; c < jobCategories.length; c++) {
+    jobCategories[c].addEventListener("click", async () => {
       document.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
 
+      let catTxt = jobCategories[c].querySelector(".nav-cat-title").textContent;
+
       if (history.pushState) {
-        history.pushState(null, null, "/careers?category=" + encodeURIComponent(category.querySelector(".nav-cat-title").textContent));
+        if (c === 0) {
+          history.pushState(null, null, "/careers");
+        } else {
+          history.pushState(null, null, "/careers?category=" + encodeURIComponent(catTxt));
+        }
       }
 
       filter.category = new URLSearchParams(location.search).get("category");
-      jobAPILoader.APIURL.searchParams.set("category", filter.category);
+      if (filter.category) {
+        jobAPILoader.APIURL.searchParams.set("category", filter.category);
+      } else {
+        jobAPILoader.APIURL.searchParams.delete("category");
+      }
+
       await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
 
       await toggleJobRows();
-
     });
   }
 })();

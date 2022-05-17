@@ -6,6 +6,8 @@ export default async (req, res) => {
       postDate: -1,
     });
 
+    let totalLen = await Career.find().count();
+
     let careerCategories = await Career.aggregate([ 
       { $group: { _id: "$category", count: { $count: {} } } },
       { $sort: {
@@ -15,6 +17,7 @@ export default async (req, res) => {
 
     res.render("careers", {
       careers,
+      totalLen,
       careerCategories
     });
 
