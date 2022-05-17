@@ -57,7 +57,6 @@ export default class APILoader {
       row.querySelector('[data-jobCol="postDate"]').textContent = new Date(job.postDate).toLocaleDateString();
 
       let summary = ["category", "deadline", "remote", "salary"];
-      let summaryEl = row.querySelector('.job-content.summary');
       let result = "";
 
       for(let el of summary) {
@@ -67,10 +66,9 @@ export default class APILoader {
           result += `<div class="job-cat-txt ${el}">${job[el]}</div>`;          
         }
       }
-      
-      summaryEl.innerHTML = result;
 
-      row.querySelector('.job-content.descr').innerHTML = job.description;
+      row.querySelector('.job-content.summary').insertAdjacentHTML('beforeend', result);
+      row.querySelector('.job-content.descr').insertAdjacentHTML('beforeend', job.description);
 
       list.append(row);
     }
