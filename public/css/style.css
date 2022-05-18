@@ -358,7 +358,8 @@ select {
 .recent-news .ag-news-categoryNav {
   grid-column: 10 / end;
 }
-#loadMore {
+#loadMore,
+#loader {
   margin: 20px auto;
   padding: 15px 25px;
   border: 0.5px solid var(--global-black);
@@ -371,6 +372,18 @@ select {
   align-items: center;
   font-size: 10px;
 }
+#loader {
+  border: 0;
+  padding: 0;
+  cursor: auto;
+  display: none;
+}
+#loader[data-loading="0"] {
+  display: none;
+}
+#loader[data-loading="1"] {
+  display: flex;
+}
 #loadMore:hover {
   background: var(--global-black);
   color: var(--global-white);
@@ -380,7 +393,8 @@ select {
   background-color: transparent;
   border: none;
 }
-#loadMore[data-loading="1"]::before {
+#loadMore[data-loading="1"]::before,
+#loader[data-loading="1"]::before {
   content: "";
   display: block;
   position: absolute;

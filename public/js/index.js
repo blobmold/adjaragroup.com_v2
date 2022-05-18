@@ -178,6 +178,7 @@ async function lazyLoader() {
 
     for (let category of jobCategories) {
       category.addEventListener("click", async (e) => {
+        document.getElementById("loader").dataset.loading = 1;
         e.preventDefault();
         jobList.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
 
@@ -193,6 +194,8 @@ async function lazyLoader() {
         }
 
         window.onpopstate = await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+
+        document.getElementById('loader').dataset.loading = 0;
 
         await toggleJobRows();
       });
