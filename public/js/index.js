@@ -160,24 +160,29 @@ async function lazyLoader() {
 
   if (jobList) {
     if (location.search) {
-      filter.category = new URLSearchParams(location.search).get("category");
+      let currentLocationParams = new URLSearchParams(location.search);
+      if(currentLocationParams.has("category")) {
+        filter.category = currentLocationParams.get("category");
+      }
     }
-
-    // Initialize job row toggler
-    await toggleJobRows();
 
     if (!jobAPILoader) {
       let APILoader = (await import("./loadMore.js")).default;
       jobAPILoader = new APILoader(jobList, undefined, filter, APIPATH);
     }
 
-    for (let c = 0; c < jobCategories.length; c++) {
-      jobCategories[c].addEventListener("click", async (e) => {
+    await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+
+    // Initialize job row toggler
+    await toggleJobRows();
+
+    for (let category of jobCategories) {
+      category.addEventListener("click", async (e) => {
         e.preventDefault();
         jobList.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
 
         if (history.pushState) {
-          window.history.pushState({}, "", jobCategories[c].href);
+          window.history.pushState({}, "", category.href);
         }
 
         filter.category = new URLSearchParams(location.search).get("category");
@@ -187,7 +192,7 @@ async function lazyLoader() {
           jobAPILoader.APIURL.searchParams.delete("category");
         }
 
-        await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+        window.onpopstate = await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
 
         await toggleJobRows();
       });
@@ -200,9 +205,15 @@ async function toggleJobRows() {
   let jobResults = document.querySelectorAll(".job-result-tr");
 
   for (let row of jobRows) {
+    const url = new URL(window.location);
+
     row.addEventListener("click", () => {
       let parent = row.closest(".job-result-tr");
-      hideJobRows(jobResults, parent);
+      hideJobRows(jobResults, parent, url);
+      url.searchParams.set("id", row.id);
+      if (history.pushState) {
+        window.history.pushState({}, "", url);
+      }
       parent.classList.toggle("open");
     });
   }

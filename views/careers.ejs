@@ -45,34 +45,7 @@
               <div data-jobCol="employmentType">Employment Type</div>
               <div data-jobCol="postDate">Posted Date</div>
             </div>
-            <div class="job-rows">
-              <% for (let job of careers) { %>
-              <div class="job-result-tr">
-                <div class="job-item-row jobs-grid">
-                  <div data-jobCol="position"><%= job.position %></div>
-                  <div data-jobCol="location"><%= job.location %></div>
-                  <div data-jobCol="employmentType"><%= job.employmentType %></div>
-                  <div data-jobCol="postDate"><%= job.postDate.toLocaleDateString() %></div>
-                </div>
-                <div class="job-item-content">
-                  <div class="job-content">
-                    <div class="job-cat-title category">Category</div>
-                    <div class="job-cat-txt category"><%= job.category %></div>
-                    <div class="job-cat-title deadline">Deadline</div>
-                    <div class="job-cat-txt deadline"><%= job.deadline.toLocaleDateString() %></div>
-                    <% if(job.remote) { %>
-                    <div class="job-cat-title remote">Remote</div>
-                    <div class="job-cat-txt remote"><%= job.remote %></div>
-                    <% } %> <% if(job.salary) { %>
-                    <div class="job-cat-title salary">Salary</div>
-                    <div class="job-cat-txt salary"><%= job.salary %></div>
-                    <% } %>
-                  </div>
-                  <div class="job-content descr"><%- job.description %></div>
-                </div>
-              </div>
-              <% } %>
-            </div>
+            <div class="job-rows"></div>
           </div>
 
           <template id="job-result-template">

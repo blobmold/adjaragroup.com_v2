@@ -42,6 +42,8 @@ export default class APILoader {
     // If page is loaded separately assign default APIURL;
     if (!page) page = await this.getPage(this.APIURL);
 
+    console.log(page);
+
     for (let el of page[row]) {
       await singleItemFunc(this.list, el);
     }
@@ -51,6 +53,7 @@ export default class APILoader {
     if ("content" in document.createElement("template")) {
       let row = document.getElementById("job-result-template").content.cloneNode(true);
 
+      let rowId = row.querySelector('.job-item-row').id = job._id;
       row.querySelector('[data-jobCol="position"]').textContent = job.position;
       row.querySelector('[data-jobCol="location"]').textContent = job.location;
       row.querySelector('[data-jobCol="employmentType"]').textContent = job.employmentType;
@@ -69,6 +72,15 @@ export default class APILoader {
 
       row.querySelector('.job-content.summary').insertAdjacentHTML('beforeend', result);
       row.querySelector('.job-content.descr').insertAdjacentHTML('beforeend', job.description);
+
+      // Check if the url contains id parameter and matches row's id;
+      // and open the section if it is.
+      const url = new URL(window.location);
+      for(let entries of url.searchParams.entries()) {
+        if(entries[0] === "id" && rowId === entries[1]) {
+          row.firstElementChild.classList.add('open');
+        }
+      }
 
       list.append(row);
     }
