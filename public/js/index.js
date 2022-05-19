@@ -80,7 +80,7 @@
     }
 
     if (!articleAPILoader) {
-      let APILoader = (await import("./loadMore.js")).default;
+      let APILoader = (await import("./PageLoader.js")).default;
       articleAPILoader = new APILoader(recentList, loadMoreBtn, filter, APIPATH);
     }
 
@@ -199,7 +199,7 @@ async function lazyLoader() {
 
     // If jobAPILoader is not loaded, get it; Parameters are the API path, initial filter, and job list;
     if (!jobAPILoader) {
-      let APILoader = (await import("./loadMore.js")).default;
+      let APILoader = (await import("./PageLoader.js")).default;
       jobAPILoader = new APILoader(careersSettings.jobList, undefined, careersSettings.filter, careersSettings.APIPATH);
     }
 

@@ -1,4 +1,4 @@
-export default class APILoader {
+export default class PageGenerator {
   constructor(list, loadMore, filter, APIPATH) {
     this.pageNum = 1;
     this.list = list;
@@ -53,7 +53,7 @@ export default class APILoader {
     if ("content" in document.createElement("template")) {
       let row = document.getElementById("job-result-template").content.cloneNode(true);
 
-      let rowId = row.querySelector('.job-item-row').id = job._id;
+      let rowId = (row.querySelector(".job-item-row").id = job._id);
       row.querySelector('[data-jobCol="position"]').textContent = job.position;
       row.querySelector('[data-jobCol="location"]').textContent = job.location;
       row.querySelector('[data-jobCol="employmentType"]').textContent = job.employmentType;
@@ -62,23 +62,23 @@ export default class APILoader {
       let summary = ["category", "deadline", "remote", "salary"];
       let result = "";
 
-      for(let el of summary) {
-        if(job[el]) {
-          if(el === "deadline") job[el] = new Date(job[el]).toLocaleDateString(); 
-          result += `<div class="job-cat-title ${el}">${el}</div>`;          
-          result += `<div class="job-cat-txt ${el}">${job[el]}</div>`;          
+      for (let el of summary) {
+        if (job[el]) {
+          if (el === "deadline") job[el] = new Date(job[el]).toLocaleDateString();
+          result += `<div class="job-cat-title ${el}">${el}</div>`;
+          result += `<div class="job-cat-txt ${el}">${job[el]}</div>`;
         }
       }
 
-      row.querySelector('.job-content.summary').insertAdjacentHTML('beforeend', result);
-      row.querySelector('.job-content.descr').insertAdjacentHTML('beforeend', job.description);
+      row.querySelector(".job-content.summary").insertAdjacentHTML("beforeend", result);
+      row.querySelector(".job-content.descr").insertAdjacentHTML("beforeend", job.description);
 
       // Check if the url contains id parameter and matches row's id;
       // and open the section if it is.
       const url = new URL(window.location);
-      for(let entries of url.searchParams.entries()) {
-        if(entries[0] === "id" && rowId === entries[1]) {
-          row.firstElementChild.classList.add('open');
+      for (let entries of url.searchParams.entries()) {
+        if (entries[0] === "id" && rowId === entries[1]) {
+          row.firstElementChild.classList.add("open");
         }
       }
 
