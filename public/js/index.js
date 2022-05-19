@@ -152,43 +152,72 @@ async function lazyLoader() {
 })();
 
 (async () => {
-  let jobCategories = document.querySelectorAll(".careers-nav-item a");
-  let jobAPILoader;
-  let jobList = document.querySelector(".job-rows");
-  let APIPATH = "/api/careers";
-  let filter = {};
+  let careersSettings = {
+    jobCategories: document.querySelectorAll(".careers-nav-item a"),
+    jobList: document.querySelector(".job-rows"),
+    APIPATH: "/api/careers",
+    filter: {},
+    async toggleJobRows() {
+      let jobRows = document.querySelectorAll(".job-item-row");
+      let jobResults = document.querySelectorAll(".job-result-tr");
+    
+      for (let row of jobRows) {
+        const url = new URL(window.location);
+    
+        row.addEventListener("click", () => {
+          let parent = row.closest(".job-result-tr");
+          hideJobRows(jobResults, parent, url);
+          url.searchParams.set("id", row.id);
+          if (history.pushState) {
+            window.history.pushState({}, "", url);
+          }
+          parent.classList.toggle("open");
+        });
+      }
+    
+      function hideJobRows(elements, exclude) {
+        for (let el of elements) {
+          if (el !== exclude) {
+            el.classList.remove("open");
+          }
+        }
+      }
+    }
+  };
 
-  if (jobList) {
+  let jobAPILoader;
+
+  if (careersSettings.jobList) {
     if (location.search) {
       let currentLocationParams = new URLSearchParams(location.search);
       if(currentLocationParams.has("category")) {
-        filter.category = currentLocationParams.get("category");
+        careersSettings.filter.category = currentLocationParams.get("category");
       }
     }
 
     if (!jobAPILoader) {
       let APILoader = (await import("./loadMore.js")).default;
-      jobAPILoader = new APILoader(jobList, undefined, filter, APIPATH);
+      jobAPILoader = new APILoader(careersSettings.jobList, undefined, careersSettings.filter, careersSettings.APIPATH);
     }
 
     await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
 
     // Initialize job row toggler
-    await toggleJobRows();
+    await careersSettings.toggleJobRows();
 
-    for (let category of jobCategories) {
+    for (let category of careersSettings.jobCategories) {
       category.addEventListener("click", async (e) => {
         document.getElementById("loader").dataset.loading = 1;
         e.preventDefault();
-        jobList.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
+        careersSettings.jobList.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
 
         if (history.pushState) {
           window.history.pushState({}, "", category.href);
         }
 
-        filter.category = new URLSearchParams(location.search).get("category");
-        if (filter.category) {
-          jobAPILoader.APIURL.searchParams.set("category", filter.category);
+        careersSettings.filter.category = new URLSearchParams(location.search).get("category");
+        if (careersSettings.filter.category) {
+          jobAPILoader.APIURL.searchParams.set("category", careersSettings.filter.category);
         } else {
           jobAPILoader.APIURL.searchParams.delete("category");
         }
@@ -197,35 +226,8 @@ async function lazyLoader() {
 
         document.getElementById('loader').dataset.loading = 0;
 
-        await toggleJobRows();
+        await careersSettings.toggleJobRows();
       });
     }
   }
 })();
-
-async function toggleJobRows() {
-  let jobRows = document.querySelectorAll(".job-item-row");
-  let jobResults = document.querySelectorAll(".job-result-tr");
-
-  for (let row of jobRows) {
-    const url = new URL(window.location);
-
-    row.addEventListener("click", () => {
-      let parent = row.closest(".job-result-tr");
-      hideJobRows(jobResults, parent, url);
-      url.searchParams.set("id", row.id);
-      if (history.pushState) {
-        window.history.pushState({}, "", url);
-      }
-      parent.classList.toggle("open");
-    });
-  }
-
-  function hideJobRows(elements, exclude) {
-    for (let el of elements) {
-      if (el !== exclude) {
-        el.classList.remove("open");
-      }
-    }
-  }
-}
