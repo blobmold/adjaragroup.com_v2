@@ -237,7 +237,7 @@ async function lazyLoader() {
         }
 
         // assign createPage worker to onpopstate to make browser's "back" and "forward" buttons work;
-        window.onpopstate = await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+        await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
 
         // Stop the loader;
         document.getElementById("loader").dataset.loading = 0;
