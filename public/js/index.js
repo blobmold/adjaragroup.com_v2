@@ -160,10 +160,10 @@ async function lazyLoader() {
     async toggleJobRows() {
       let jobRows = document.querySelectorAll(".job-item-row");
       let jobResults = document.querySelectorAll(".job-result-tr");
-    
+
       for (let row of jobRows) {
         const url = new URL(window.location);
-    
+
         row.addEventListener("click", () => {
           let parent = row.closest(".job-result-tr");
           hideJobRows(jobResults, parent, url);
@@ -174,7 +174,7 @@ async function lazyLoader() {
           parent.classList.toggle("open");
         });
       }
-    
+
       function hideJobRows(elements, exclude) {
         for (let el of elements) {
           if (el !== exclude) {
@@ -182,50 +182,67 @@ async function lazyLoader() {
           }
         }
       }
-    }
+    },
   };
 
   let jobAPILoader;
 
+  // Check if job list HTML element is available;
   if (careersSettings.jobList) {
+    // If current location has "category", store it in filter.category object;
     if (location.search) {
       let currentLocationParams = new URLSearchParams(location.search);
-      if(currentLocationParams.has("category")) {
+      if (currentLocationParams.has("category")) {
         careersSettings.filter.category = currentLocationParams.get("category");
       }
     }
 
+    // If jobAPILoader is not loaded, get it; Parameters are the API path, initial filter, and job list;
     if (!jobAPILoader) {
       let APILoader = (await import("./loadMore.js")).default;
       jobAPILoader = new APILoader(careersSettings.jobList, undefined, careersSettings.filter, careersSettings.APIPATH);
     }
 
+    // Create initial page;
     await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
 
-    // Initialize job row toggler
+    // Initialize job row toggler;
     await careersSettings.toggleJobRows();
 
+    // Assign the "click" event listener to every single category (filter);
     for (let category of careersSettings.jobCategories) {
       category.addEventListener("click", async (e) => {
-        document.getElementById("loader").dataset.loading = 1;
+        // Prevent anchor's defalt action;
         e.preventDefault();
+
+        // Remove all current job rows;
         careersSettings.jobList.querySelectorAll(".job-result-tr").forEach((row) => row.remove());
 
+        // Start the loader when category is clicked and job rows are removed;
+        document.getElementById("loader").dataset.loading = 1;
+
+        // Push category href to the window location;
         if (history.pushState) {
           window.history.pushState({}, "", category.href);
         }
 
+        // Change the filter;
         careersSettings.filter.category = new URLSearchParams(location.search).get("category");
+
+        // if category in filter is not falsy, set jobAPILoader API URL to current filter; else delete;
         if (careersSettings.filter.category) {
           jobAPILoader.APIURL.searchParams.set("category", careersSettings.filter.category);
         } else {
           jobAPILoader.APIURL.searchParams.delete("category");
         }
 
+        // assign createPage worker to onpopstate to make browser's "back" and "forward" buttons work;
         window.onpopstate = await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
 
-        document.getElementById('loader').dataset.loading = 0;
+        // Stop the loader;
+        document.getElementById("loader").dataset.loading = 0;
 
+        // Start job row toggler;
         await careersSettings.toggleJobRows();
       });
     }
