@@ -42,14 +42,24 @@ export default class PageGenerator {
     // If page is loaded separately assign default APIURL;
     if (!page) page = await this.getPage(this.APIURL);
 
-    console.log(page);
-
     for (let el of page[row]) {
       await singleItemFunc(this.list, el);
     }
   }
 
-  async createJobRow(list, job) {
+  async generatePageArray(pageAPI, singleItemFunc, row) {
+    // if page is loaded separately, assign default APIURL;
+    if(!pageAPI) pageAPI = await this.getPage(this.APIURL);
+
+    let page = new DocumentFragment();
+
+    for(let el of pageAPI[row]) {
+      page.appendChild(await singleItemFunc(el));
+    }
+    return page;
+  }
+
+  async createJobEl(job) {
     if ("content" in document.createElement("template")) {
       let row = document.getElementById("job-result-template").content.cloneNode(true);
 
@@ -82,7 +92,7 @@ export default class PageGenerator {
         }
       }
 
-      list.append(row);
+      return row;
     }
   }
 

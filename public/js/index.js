@@ -157,6 +157,7 @@ async function lazyLoader() {
     jobList: document.querySelector(".job-rows"),
     APIPATH: "/api/careers",
     filter: {},
+    cache: new Map(),
     async toggleJobRows() {
       let jobRows = document.querySelectorAll(".job-item-row");
       let jobResults = document.querySelectorAll(".job-result-tr");
@@ -164,9 +165,9 @@ async function lazyLoader() {
       for (let row of jobRows) {
         const url = new URL(window.location);
 
-        row.addEventListener("click", () => {
+        row.addEventListener("click", async () => {
           let parent = row.closest(".job-result-tr");
-          hideJobRows(jobResults, parent, url);
+          await this.hideJobRows(jobResults, parent, url);
           url.searchParams.set("id", row.id);
           if (history.pushState) {
             window.history.pushState({}, "", url);
@@ -174,14 +175,27 @@ async function lazyLoader() {
           parent.classList.toggle("open");
         });
       }
+    },
 
-      function hideJobRows(elements, exclude) {
-        for (let el of elements) {
-          if (el !== exclude) {
-            el.classList.remove("open");
-          }
+    async hideJobRows(elements, exclude) {
+      for (let el of elements) {
+        if (el !== exclude) {
+          el.classList.remove("open");
         }
       }
+    },
+
+    async generatePage() {
+      if(this.cache.has(this.filter.category)) {
+        this.page = await this.cache.get(this.filter.category);
+        console.log('Called from cache');
+      } else {
+        this.page = await jobAPILoader.generatePageArray(undefined, jobAPILoader.createJobEl, "careers");
+        this.cache.set(this.filter.category, this.page);
+        console.log('Not called from cache');
+      }
+
+      this.jobList.append(await this.page.cloneNode(true));
     },
   };
 
@@ -198,13 +212,14 @@ async function lazyLoader() {
     }
 
     // If jobAPILoader is not loaded, get it; Parameters are the API path, initial filter, and job list;
+
     if (!jobAPILoader) {
       let APILoader = (await import("./PageLoader.js")).default;
       jobAPILoader = new APILoader(careersSettings.jobList, undefined, careersSettings.filter, careersSettings.APIPATH);
     }
 
     // Create initial page;
-    await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+    await careersSettings.generatePage();
 
     // Initialize job row toggler;
     await careersSettings.toggleJobRows();
@@ -237,7 +252,7 @@ async function lazyLoader() {
         }
 
         // assign createPage worker to onpopstate to make browser's "back" and "forward" buttons work;
-        await jobAPILoader.createPage(undefined, jobAPILoader.createJobRow, "careers");
+        await careersSettings.generatePage();
 
         // Stop the loader;
         document.getElementById("loader").dataset.loading = 0;
