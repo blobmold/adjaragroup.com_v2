@@ -187,12 +187,16 @@ async function lazyLoader() {
 
     async generatePage() {
       if(this.cache.has(this.filter.category)) {
+        let startCached = Date.now();
         this.page = await this.cache.get(this.filter.category);
         console.log('Called from cache');
+        console.log(`Non-cached: took ${Date.now() - startCached}`);
       } else {
+        let startNonCached = Date.now();
         this.page = await jobAPILoader.generatePageArray(undefined, jobAPILoader.createJobEl, "careers");
         this.cache.set(this.filter.category, this.page);
         console.log('Not called from cache');
+        console.log(`Non-cached: took ${Date.now() - startNonCached}`);
       }
 
       this.jobList.append(await this.page.cloneNode(true));
