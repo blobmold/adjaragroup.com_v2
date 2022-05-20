@@ -16,6 +16,7 @@ export default async (req, res) => {
     ]);
 
     res.render("careers", {
+      title: "Careers",
       careers,
       totalLen,
       careerCategories

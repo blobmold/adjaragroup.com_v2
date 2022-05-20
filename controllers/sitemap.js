@@ -9,6 +9,7 @@ export default async (req, res) => {
   let readSitemap = await fs.readFile(path.resolve(__dirname, "../config/sitemap.json"));
   let siteMap = JSON.parse(readSitemap);
   res.render("sitemap", {
+    title: "Sitemap",
     siteMap,
   });
 };

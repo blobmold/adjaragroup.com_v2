@@ -20,6 +20,7 @@ export default async (req, res) => {
   );
 
   await res.render("hotels", {
+    title: "Hotels",
     hotels,
   });
 };

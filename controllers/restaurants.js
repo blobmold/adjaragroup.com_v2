@@ -1,3 +1,5 @@
 export default async (req, res) => {
-  res.render("restaurants");
+  res.render("restaurants", {
+    title: "Restaurants"
+  });
 };

@@ -16,7 +16,7 @@ export default async (req, res) => {
   }
 
   res.render("newsroomArchive", {
-    // Sort articles by year (descending)
-    sortedArticles: new Map([...map.entries()].sort().reverse()),
+    title: "Newsroom Archive",
+    sortedArticles: new Map([...map.entries()].sort().reverse()),    // Sort articles by year (descending)
   });
 };

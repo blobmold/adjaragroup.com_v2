@@ -1,3 +1,5 @@
 export default async (req, res) => {
-  res.render("privacy");
+  res.render("privacy", {
+    title: "Privacy"
+  });
 };

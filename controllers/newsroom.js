@@ -15,6 +15,7 @@ export default async (req, res) => {
   const articleCategories = await Article.distinct("category");
 
   res.render("newsroom", {
+    title: "Newsroom",
     articles,
     featuredArticles,
     articleCategories,
