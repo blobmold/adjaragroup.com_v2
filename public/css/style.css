@@ -305,10 +305,10 @@ select {
 }
 /* Newsroom */
 .recent-news .title {
-  grid-column: 1 / span 9;
+  grid-column: 1 / span 11;
 }
 .recent-news-container {
-  grid-column: 1 / span 9;
+  grid-column-end: span 9;
 }
 .ag-news-recent-item {
   box-sizing: border-box;
@@ -340,7 +340,6 @@ select {
   flex: 2;
 }
 .ag-news-recent-article .ag-article-category {
-  font-size: 11px;
   font-weight: normal;
 }
 .ag-news-recent-article h3 {
@@ -354,10 +353,6 @@ select {
 .ag-news-recent-article:focus,
 .ag-news-recent-article:active {
   transform: translateX(7px);
-}
-/* Category Navigation  */
-.recent-news .ag-news-categoryNav {
-  grid-column: 10 / end;
 }
 #loadMore,
 #loader {

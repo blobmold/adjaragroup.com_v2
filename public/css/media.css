@@ -114,6 +114,10 @@
   .no-jobs {
     grid-column: unset;
   }
+  /* NEWSROOM */
+  .recent-news-container {
+    grid-column: span 11;
+  }
 }
 @media screen and (max-width: 740px) {
   :root {
