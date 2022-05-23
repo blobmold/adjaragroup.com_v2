@@ -10,7 +10,7 @@
   margin: 0;
   height: 100%;
   width: 100%;
-  background: url('/assets/img/logos/ag-careers-hero.png') no-repeat center / cover;
+  background: url("/assets/img/logos/ag-careers-hero.png") no-repeat center / cover;
 }
 .ag-careers-hero-content {
   display: flex;
@@ -35,7 +35,7 @@
   height: 50px;
   border: 0;
   border-radius: 0;
-  background: #E86D5E;
+  background: #e86d5e;
   color: var(--global-white);
   font-size: 15px;
   font-weight: 800;
@@ -43,7 +43,7 @@
   cursor: pointer;
 }
 button:hover {
-  background: #8FB3C0;
+  background: #8fb3c0;
   color: var(--global-black);
 }
 .ag-careers-explore .title {
@@ -71,17 +71,8 @@ button:hover {
 .careers-nav-item {
   margin: 10px 0;
 }
-.careers-nav-item a {
+.nav-cat-title {
   text-decoration: none;
-}
-.careers-nav-link {
-  text-decoration: none;
-}
-.careers-alternate-nav {
-  display: none;
-}
-#jobFilter {
-  margin-left: 15px;
 }
 .job-results {
   grid-column: 4 / end;
@@ -153,7 +144,27 @@ div.job-content > div {
   text-align: center;
 }
 .no-jobs {
-  grid-column: 3 / end; 
-  justify-self: center; 
+  grid-column: 3 / end;
+  justify-self: center;
   align-self: center;
+}
+
+
+
+
+
+
+.careers-alternate-nav {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+}
+label[for="jobFilter"] {
+  font-size: 14px;
+}
+#jobFilter {
+  padding: 0;
+  background-color: transparent;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: var(--global-black);
 }

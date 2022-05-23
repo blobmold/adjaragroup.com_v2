@@ -2,6 +2,7 @@
   --global-width: 1680px;
   --global-black: #242124;
   --global-white: #f4f4f4;
+  --global-white-80: rgba(244, 244, 244, 0.8);
   --global-hover-black: rgba(36, 33, 36, 0.03);
   --global-padding: 0;
   --global-grid-gap: 20px;
