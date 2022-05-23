@@ -155,6 +155,7 @@ div.job-content > div {
 
 
 .careers-alternate-nav {
+  display: none;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 20px;
 }
