@@ -312,7 +312,7 @@ select {
 }
 .ag-news-recent-item {
   transition: background 0.3s ease;
-  padding: 20px 0;
+  padding: 20px 5px;
   margin-top: -1px;
   border: 1px solid transparent;
 }

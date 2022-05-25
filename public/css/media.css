@@ -143,6 +143,11 @@
   .ag-article-title {
     font-size: 26px;
   }
+  .ag-news-recent-item:hover .ag-news-recent-article,
+  .ag-news-recent-item:focus .ag-news-recent-article,
+  .ag-news-recent-item:active .ag-news-recent-article {
+    transform: translateX(0px);
+  }
   /* JOBS */
   .ag-careers-hero-content {
     flex-direction: column;
@@ -176,5 +181,4 @@
   .ag-intro-content {
     padding: 20px;
   }
-
 }
