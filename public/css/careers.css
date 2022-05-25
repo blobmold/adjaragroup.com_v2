@@ -68,10 +68,6 @@ button:hover {
   padding: 0;
   border-right: 1px solid var(--border-color);
 }
-.careers-nav-item {
-  margin: 10px 0;
-  font-size: 14px;
-}
 .careers-nav-item-all {
   padding-bottom: 10px;
   margin-right: 20px;

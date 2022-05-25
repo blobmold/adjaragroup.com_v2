@@ -6,11 +6,11 @@
     <div class="ag-news-catnav-content">
       <h2 class="ag-news-cat-title">Topics</h2>
       <ul class="ag-news-cat-list">
-        <li class="ag-news-cat-item ag-news-cat-all"><a href="/newsroom" class="ag-news-cat-link underline">All Articles</a></li>
+        <li class="ag-news-cat-item ag-news-cat-all category-nav-item"><a href="/newsroom" class="ag-news-cat-link underline">All Articles</a></li>
         <% for(let category of articleCategories) { %>
-        <li class="ag-news-cat-item"><a href="/newsroom?category=<%= category %>" class="ag-news-cat-link underline"><%= category %></a></li>
+        <li class="ag-news-cat-item category-nav-item"><a href="/newsroom?category=<%= category %>" class="ag-news-cat-link underline"><%= category %></a></li>
         <% } %>
-        <li class="ag-news-cat-item ag-news-cat-archive"><a href="/newsroom/archive" class="ag-news-cat-link underline">News Archive</a></li>
+        <li class="ag-news-cat-item ag-news-cat-archive category-nav-item"><a href="/newsroom/archive" class="ag-news-cat-link underline">News Archive</a></li>
       </ul>
     </div>
   </div>

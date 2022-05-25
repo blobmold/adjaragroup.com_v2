@@ -50,7 +50,9 @@ a {
 div,
 span,
 p,
-a, ul, ol {
+a,
+ul,
+ol {
   font-family: "Open Sans", sans-serif;
 }
 img {
@@ -96,6 +98,11 @@ select {
   width: 1px;
   padding: 0;
   border: 0;
+}
+.category-nav-item {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
 }
 /* Sets global width accroding to the variable */
 .global-width {
@@ -320,7 +327,7 @@ select {
   border-bottom: 1px solid var(--border-color);
 }
 .ag-news-recent-item:hover {
-  background:rgba(36, 33, 36, 0.01);
+  background: rgba(36, 33, 36, 0.01);
   border: 1px solid var(--border-color);
 }
 .ag-news-recent-article {

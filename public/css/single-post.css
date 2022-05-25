@@ -18,7 +18,6 @@
   padding: 0;
 }
 .ag-news-cat-item {
-  margin: 10px 0;
 }
 .ag-news-cat-all {
   padding-bottom: 10px;
@@ -30,11 +29,6 @@
 }
 .ag-news-cat-link {
   text-decoration: none;
-  font-size: 14px;
-  opacity: 0.8;
-}
-.ag-news-cat-link:hover {
-  opacity: 1;
 }
 /* Related News */
 .ag-news-related {
