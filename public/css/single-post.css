@@ -36,7 +36,7 @@
 }
 .ag-news-related-title {
   margin: 0 0 30px 0;
-  padding: 10px;
+  padding-left: 10px;
   font-size: 20px;
 }
 .ag-news-related-list {
@@ -103,14 +103,11 @@
   grid-column: 1 / end;
 }
 .ag-article-headingBlock {
-  margin-bottom: 35px;
+  margin: 25px 0;
 }
 .ag-article-category {
   font-size: 12px;
   position: relative;
-  opacity: 0.8;
-}
-.ag-article-category a {
   opacity: 0.8;
 }
 .ag-article-category::before {
@@ -139,6 +136,7 @@
   font-weight: 700;
   font-size: 45px;
   text-transform: uppercase;
+  margin: 20px 0;
 }
 .ag-article-subheadling-container {
   display: flex;
