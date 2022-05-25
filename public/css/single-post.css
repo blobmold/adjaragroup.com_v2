@@ -101,6 +101,9 @@
 .ag-news-related-article h3 {
   font-size: 12px;
 }
+.ag-article-container {
+  margin-top: 50px;
+}
 .ag-section-article {
   grid-column-end: span 6;
 }

@@ -7,6 +7,11 @@
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
       <progressBar role="progressbar" class="ag-article-progressBar"></progressBar>
+      <div class="global-width">
+        <picture class="ag-article-img-container">
+          <img class="ag-article-img" src="<%= article.image %>" alt="<%= article.title %>" loading="lazy" />
+        </picture>
+      </div>
       <div class="ag-article-container global-width global-grid">
         <%- include('layouts/categoryNav', articleCategories) %>
         <!-- Article  -->
@@ -23,9 +28,6 @@
                 <%- include('layouts/social', article) %>
               </div>
             </div>
-            <picture class="ag-article-img-container">
-              <img class="ag-article-img" src="<%= article.image %>" alt="<%= article.title %>" loading="lazy" />
-            </picture>
             <!-- Article Body -->
             <div class="ag-article-body"><%- article.body %></div>
           </article>
