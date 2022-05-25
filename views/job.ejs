@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/newsroomArchive.css" />
+    <%- include('layouts/head') %>
+    <style>
+      .job-section {
+        margin-top: 100px;
+      }
+      .job-title {
+        font-size: 32px;
+        margin: 18px 0;
+        padding: 0;
+      }
+      .job-subtitle {
+        margin-bottom: 64px;
+        font-size: 20px;
+        font-weight: normal;
+      }
+      .job-subtitle .job-location::after {
+        content: " - ";
+      }
+      .j-back {
+        text-decoration: none;
+        font-size: 12px;
+      }
+      dt,
+      dd {
+        display: inline;
+        font-size: 15px;
+        font-family: "lato", sans-serif;
+      }
+      dt {
+        font-weight: bold;
+      }
+      dd {
+        margin: 0;
+      }
+
+      /* GRID */
+      .jd_grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        row-gap: 50px;
+        margin-top: 50px;
+      }
+      .jd_heading {
+        font-size: 20px;
+        margin: 0;
+      }
+      .jd_list {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        list-style-position: inside;
+      }
+      @media screen and (max-width: 780px) {
+        .jd_grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('layouts/navbar') %>
+    <main class="main" id="main">
+      <section class="ag-section job-section global-width">
+        <div><a href="#" class="underline j-back">← Go back</a></div>
+        <h1 class="title job-title">Web Developer</h1>
+        <h2 class="job-subtitle">
+          <span class="job-location">Tbilisi</span>
+          <span class="job-category">Information Technology</span>
+        </h2>
+        <dl>
+          <div>
+            <dt>Job Title:</dt>
+            <dd>Web Developer</dd>
+          </div>
+
+          <div>
+            <dt>Location:</dt>
+            <dd>Tbilisi, Georgia</dd>
+          </div>
+
+          <div>
+            <dt>Company:</dt>
+            <dd>Adjara Group</dd>
+          </div>
+
+          <div>
+            <dt>Department:</dt>
+            <dd>Information Technology</dd>
+          </div>
+
+          <div>
+            <dt>Remote:</dt>
+            <dd>False</dd>
+          </div>
+
+          <div>
+            <dt>Posted:</dt>
+            <dd>5/17/2022</dd>
+          </div>
+
+          <div>
+            <dt>Deadline:</dt>
+            <dd>5/17/2022</dd>
+          </div>
+        </dl>
+        <div class="jd_grid">
+          <h3 class="jd_heading">Duties and Responsibilities</h3>
+          <ul class="jd_list">
+            <li>Act as the resource for technological issues in their field; Assess issues in their field of expertise and be accountable for the technological choices and performances of the systems;</li>
+            <li>Be hands-on and define best practices in their field of expertise;</li>
+            <li>Being responsible for the quality of service and quality of deliverables, from a technical perspective;</li>
+            <li>Conduct regular code reviews and enforce the quality of reviews;</li>
+            <li>Oversee technical mandates from management or technical architect team;</li>
+            <li>Create whole system design and architecture;</li>
+            <li>Identify and overcome flaws in existing systems;</li>
+            <li>Assure compatibility and optimal performance between system components;</li>
+            <li>Help program high-risk elements in their field of expertise;</li>
+            <li>Be proactive in suggesting enhancements and technological choices in their field of expertise;</li>
+            <li>Assess performances on a regular basis and optimize systems in their field of expertise whenever necessary;</li>
+            <li>Resolve the most complex technical issues in their field of expertise;</li>
+            <li>Being responsible for the quality of service and quality of deliverables from a technical perspective;</li>
+            <li>Advise the technical teams by suggesting corrective measures to meet project objectives whenever necessary;</li>
+            <li>Be a mentor in their field of expertise;</li>
+            <li>Be a reference for team members for all technical issues in their field of expertise;</li>
+            <li>Demonstrated senior proficiency in a relevant product or product category;</li>
+            <li>Related duties as assigned.</li>
+          </ul>
+          <h3 class="jd_heading">Qualifications</h3>
+          <ul class="jd_list">
+            <li>Minimum 5 years of experience as a Back-end Developer;</li>
+            <li>Minimum 2 years of experience as a Senior Back-end Developer;</li>
+            <li>Experience in Agile projects and Scrum processes;</li>
+            <li>Experience performing code reviews and providing feedback to developers in a positive, constructive manner;</li>
+            <li>Experience implementing automated testing platforms and unit tests.</li>
+          </ul>
+          <h3 class="jd_heading">Benefits</h3>
+          <ul class="jd_list">
+            <li>Competitive compensation & benefits package;</li>
+            <li>Career and professional advancement;</li>
+            <li>Training and learning opportunities - Online Learning Portals, Public Lectures, Conferences;</li>
+            <li>Insurance package;</li>
+            <li>International work experience;</li>
+            <li>Travel opportunity;</li>
+            <li>Outstanding working environment;</li>
+            <li>Relocation Opportunity.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <%- include('layouts/footer') %>
+  </body>
+</html>
