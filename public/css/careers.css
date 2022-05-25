@@ -56,6 +56,7 @@ button:hover {
 .careers-container {
   margin-top: 70px;
   font-weight: 500;
+  gap: 0;
 }
 .careers-nav {
   grid-column: 1 / span 3;
