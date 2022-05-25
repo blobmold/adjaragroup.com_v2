@@ -34,9 +34,6 @@
 .ag-news-related {
   grid-column: 10 / end;
 }
-.ag-news-related-viewport {
-  background-color: rgb(0, 0, 0, 0.02);
-}
 .ag-news-related-title {
   margin: 0 0 30px 0;
   padding: 10px;

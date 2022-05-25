@@ -115,7 +115,7 @@ select {
 .global-grid {
   display: grid;
   grid-template-columns: var(--global-grid-columns);
-  column-gap: var(--global-grid-gap);
+  gap: var(--global-grid-gap);
 }
 .ag-section {
   overflow: hidden;
