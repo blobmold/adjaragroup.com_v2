@@ -10,7 +10,7 @@
   --global-columns: 3;
   --footer-grid-columns: repeat(5, 1fr);
   --footer-content-max-width: 980px;
-  --border-color: rgb(36, 33, 36, 0.1);
+  --border-color: rgb(219, 219, 219);
   --border-color-fade: 1px solid linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, var(--global-black) 50%, rgba(0, 0, 0, 0) 100%);
   --conatiner-background-color: rgb(0, 0, 0, 0.02);
   --article-width: 830px;
@@ -265,8 +265,6 @@ select {
   background-color: var(--conatiner-background-color);
   position: relative;
   overflow-x: hidden;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
-  transition: box-shadow 0.6s cubic-bezier(0, 1, 0.6, 0.98);
 }
 .ag-news-card .container {
   padding: 40px 25px;
@@ -312,27 +310,23 @@ select {
 }
 /* Newsroom */
 .recent-news .title {
-  grid-column: 1 / span 11;
+  grid-column: 1 / -1;
+}
+/* Newsroom Category Navigation TESTING*/
+.ag-news-categoryNav {
+  grid-column-end: span 3;
 }
 .recent-news-container {
   grid-column-end: span 9;
 }
 .ag-news-recent-item {
-  transition: background 0.3s ease;
   padding: 20px 5px;
-  margin-top: -1px;
-  border: 1px solid transparent;
 }
-.ag-news-recent-item:not(:last-of-type) {
+.ag-news-recent-item {
   border-bottom: 1px solid var(--border-color);
-}
-.ag-news-recent-item:hover {
-  background: rgba(36, 33, 36, 0.01);
-  border: 1px solid var(--border-color);
 }
 .ag-news-recent-article {
   display: flex;
-  transition: all 0.2s ease;
 }
 .ag-news-recent-link {
   text-decoration: none;
@@ -362,9 +356,24 @@ select {
   font-size: 12px;
   margin-bottom: 0;
 }
-.ag-news-recent-item:hover .ag-news-recent-article,
-.ag-news-recent-item:focus .ag-news-recent-article,
-.ag-news-recent-item:active .ag-news-recent-article {
+.translate-animation {
+  border: 1px solid transparent;
+  transition: background 0.3s ease, border 0.3s ease;
+  margin-top: -1px;
+}
+.translate-animation:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+.translate-animation:hover {
+  background: var(--conatiner-background-color);
+  border: 1px solid var(--border-color);
+}
+.translate-animation article {
+  transition: transform 0.2s ease;
+}
+.translate-animation:hover article,
+.translate-animation:focus article,
+.translate-animation:active article {
   transform: translateX(5px);
 }
 #loadMore,

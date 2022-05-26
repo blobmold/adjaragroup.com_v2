@@ -18,11 +18,7 @@
   }
   /* RELATED NEWS */
   .ag-news-related {
-    margin-top: 50px;
     grid-column: 1 / -1;
-  }
-  .ag-news-related-article h3 {
-    font-size: 16px;
   }
   .ag-news-related-article-img {
     width: 200px;
@@ -162,6 +158,9 @@
   .ag-news-recent-item:active .ag-news-recent-article {
     transform: translateX(0px);
   }
+  .ag-article-img {
+    height: 300px;
+  }
   /* JOBS */
   .ag-careers-hero-content {
     flex-direction: column;
@@ -202,5 +201,9 @@
   }
   .ag-intro-content {
     padding: 20px;
+  }
+  /* Single Article */
+  .ag-article-img {
+    height: 200px;
   }
 }

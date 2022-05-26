@@ -1,12 +1,7 @@
 /* News Category Navigation */
-.ag-news-categoryNav {
-  grid-column-end: span 3;
-}
 .ag-news-catnav-viewport {
   position: sticky;
   top: 30px;
-}
-.ag-news-catnav-content {
 }
 .ag-news-cat-title {
   margin: 0 0 20px 0;
@@ -16,8 +11,6 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-.ag-news-cat-item {
 }
 .ag-news-cat-all {
   padding-bottom: 10px;
@@ -32,11 +25,10 @@
 }
 /* Related News */
 .ag-news-related {
-  grid-column: 10 / end;
+  margin-top: 50px;
 }
 .ag-news-related-title {
   margin: 0 0 30px 0;
-  padding-left: 10px;
   font-size: 20px;
 }
 .ag-news-related-list {
@@ -46,13 +38,9 @@
 }
 .ag-news-related-item {
   padding: 20px 0;
-  transition:  background 0.2s ease;
 }
 .ag-news-related-item:not(:first-child) {
-  border-top: 1px solid rgba(36, 33, 36, 0.1);
-}
-.ag-news-related-item:hover {
-  background: rgba(36, 33, 36, 0.05);
+  border-top: 1px solid var(--border-color);
 }
 .ag-news-related-link {
   text-decoration: none;
@@ -64,14 +52,11 @@
 .ag-news-related-article-img {
   vertical-align: top;
   object-fit: cover;
-  filter: saturate(0);
-  transition: filter 0.2s ease;
-}
-.ag-news-related-item:hover .ag-news-related-article-img {
-  filter: saturate(100%);
+  width: 200px;
+  height: 100px;
 }
 .ag-news-related-article-copy {
-  padding-left: 7px;
+  padding-left: 15px;
   width: 100%;
 }
 .ag-related-article-data {
@@ -89,18 +74,14 @@
   opacity: 0.8;
 }
 .ag-news-related-article h3 {
-  font-size: 12px;
+  font-size: 16px;
 }
 .ag-article-container {
   margin-top: 50px;
-}
-.ag-section-article {
-  grid-column-end: span 6;
+  max-width: 980px;
 }
 .ag-articleDetail {
-  /* overflow-x: hidden; */
   width: 100%;
-  grid-column: 1 / end;
 }
 .ag-article-headingBlock {
   margin: 25px 0;
@@ -135,15 +116,12 @@
 .ag-article-title {
   font-weight: 700;
   font-size: 45px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin: 20px 0;
 }
 .ag-article-subheadling-container {
   display: flex;
   align-items: center;
-}
-.ag-article-subheadling-container .ag-article-social-container {
-  margin-left: 20px;
 }
 .ag-article-date {
   font-weight: normal;
@@ -187,8 +165,11 @@ progressBar.ag-article-progressBar {
 .ag-article-social {
   height: 20px;
 }
+.ag-article-social-anchor {
+  opacity: 0.6;
+}
 .ag-article-social-anchor:not(:first-child) {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 .ag-article-subheadling-container .ag-article-date {
   padding-right: 20px;

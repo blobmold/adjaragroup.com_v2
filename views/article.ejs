@@ -7,7 +7,7 @@
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
       <progressBar role="progressbar" class="ag-article-progressBar"></progressBar>
-      <div class="ag-article-container global-width global-grid">
+      <div class="ag-article-container global-width">
         <%- include('layouts/categoryNav', articleCategories) %>
         <!-- Article  -->
         <section class="ag-section-article">
@@ -20,11 +20,9 @@
               <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>">
                 <a href="/newsroom?category=<%= article.category %>" class="underline" style="text-decoration: none"><%= article.category %></a>
               </div>
+              <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
               <h1 class="ag-article-title"><%= article.title %></h1>
-              <div class="ag-article-subheadling-container">
-                <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
-                <%- include('layouts/social', article) %>
-              </div>
+              <%- include('layouts/social', article) %>
             </div>
             <!-- Article Body -->
             <div class="ag-article-body"><%- article.body %></div>
@@ -41,7 +39,7 @@
             <div class="ag-news-related-content">
               <ol class="ag-news-related-list">
                 <% for(let article of relatedArticles) { %> <% if(!article) { break } %>
-                <li class="ag-news-related-item">
+                <li class="ag-news-related-item translate-animation">
                   <a href="/newsroom/<%= article._id %>" class="ag-news-related-link">
                     <article class="ag-news-related-article">
                       <picture class="ag-news-related-article-img-container">

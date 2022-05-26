@@ -115,7 +115,7 @@ export default class PageGenerator {
       listItem.querySelector(".ag-recent-article-descr").textContent = article.description;
       list.append(listItem);
     } else {
-      let elem = `<li class="ag-news-recent-item"><a class="ag-news-recent-link" href="/newsroom/${article._id}">
+      let elem = `<li class="ag-news-recent-item translate-animation"><a class="ag-news-recent-link" href="/newsroom/${article._id}">
         <article class="ag-news-recent-article">
           <picture class="ag-news-recent-article-img-container"><img class="ag-news-recent-article-img"
               src="${article.image}" loading="lazy"></picture>
