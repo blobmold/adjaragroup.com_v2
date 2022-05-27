@@ -182,6 +182,9 @@ select {
   justify-content: center;
   position: relative;
 }
+.hero-container.global-width {
+  width: 100%;
+}
 .ag-section.hero .hero-video-container {
   position: absolute;
   top: 0;
