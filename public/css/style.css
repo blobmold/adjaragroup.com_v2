@@ -90,13 +90,13 @@ select {
 }
 .btn {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   color: var(--global-black);
   padding: 15px 25px;
   margin: 20px auto;
   background: transparent;
-  border: 1px solid var(--global-black);
+  border: 1px solid var(--border-color);
   transition: background 0.3s ease, color 0.3s ease;
 }
 .btn:hover {
@@ -403,7 +403,7 @@ select {
 #loader {
   margin: 20px auto;
   padding: 15px 25px;
-  border: 0.5px solid var(--global-black);
+  border: 1px solid var(--border-color);
   background: transparent;
   cursor: pointer;
   color: var(--global-black);
@@ -411,7 +411,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 #loader {
   border: 0;
