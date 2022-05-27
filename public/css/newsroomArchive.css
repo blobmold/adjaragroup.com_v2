@@ -1,18 +1,16 @@
-.ag-section.archive {
-  display: grid;
+.ag-archive-container.global-grid {
   grid-template-columns: repeat(var(--global-columns), 1fr);
-  gap: 20px;
 }
 .ag-archive-article {
   margin: 20px 0;
   display: grid;
   grid-template-columns: 1fr;
 }
-.ag-article-category {
+.ag-archive-article .ag-article-category {
   display: inline-block;
-  font-weight: 500;
+  opacity: 0.6;
 }
 .ag-article-link {
-  text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
 }

@@ -7,21 +7,23 @@
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <h1 class="title global-width">News Archive</h1>
-      <section class="ag-section archive global-width global-grid">
-        <% for (let date of sortedArticles.keys()) { %>
-        <div class="ag-archive-column">
-          <h2><%= date %></h2>
-          <% for(let article of sortedArticles.get(date)) { %>
-          <article class="ag-archive-article">
-            <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-            <div>
-              <a class="ag-article-link underline" href="/newsroom/<%= article._id %>"> <%= article.title %></a>
-            </div>
-          </article>
+      <section class="ag-section archive global-width">
+        <h1 class="title global-width">News Archive</h1>
+        <div class="ag-archive-container global-grid">
+          <% for (let date of sortedArticles.keys()) { %>
+          <div class="ag-archive-column">
+            <h2><%= date %></h2>
+            <% for(let article of sortedArticles.get(date)) { %>
+            <article class="ag-archive-article">
+              <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
+              <div>
+                <a class="ag-article-link underline" href="/newsroom/<%= article._id %>"> <%= article.title %></a>
+              </div>
+            </article>
+            <% } %>
+          </div>
           <% } %>
         </div>
-        <% } %>
       </section>
     </main>
     <%- include('layouts/footer') %>
