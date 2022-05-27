@@ -135,6 +135,7 @@ select {
 }
 .underline {
   position: relative;
+  text-decoration: none;
   width: calc(100%);
   background-image: linear-gradient(var(--global-black) 0%, var(--global-black) 100%);
   background-repeat: no-repeat;
