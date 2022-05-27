@@ -170,8 +170,7 @@ select {
 }
 .title {
   font-size: 25px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  margin: 50px 0 25px 0;
   text-transform: capitalize;
 }
 /* Homepage */
@@ -319,6 +318,9 @@ select {
 }
 .recent-news-container {
   grid-column-end: span 9;
+}
+.ag-news-recent-list {
+  margin-top: 0;
 }
 .ag-news-recent-item {
   padding: 20px 5px;
