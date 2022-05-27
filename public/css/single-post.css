@@ -167,12 +167,17 @@ progressBar.ag-article-progressBar {
   font-weight: 700;
   margin: 50px 0 20px 0;
 }
-.ag-article-social {
-  height: 20px;
-}
 .ag-article-social-anchor {
   opacity: 0.6;
+  transition: opacity 0.1s ease;
 }
+.ag-article-social-anchor:hover {
+  opacity: 1;
+}
+.ag-article-social {
+  height: 18px;
+}
+
 .ag-article-social-anchor:not(:first-child) {
   margin-left: 15px;
 }
