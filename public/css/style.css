@@ -88,6 +88,21 @@ select {
   padding-left: 0;
   list-style-type: none;
 }
+.btn {
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--global-black);
+  padding: 15px 25px;
+  margin: 20px auto;
+  background: transparent;
+  border: 1px solid var(--global-black);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+  color: var(--global-white);
+  background: var(--global-black);
+}
 .visuallyhidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
