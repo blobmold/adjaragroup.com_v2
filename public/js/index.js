@@ -88,7 +88,8 @@
     await articleAPILoader.checkNextPage();
     loadMoreBtn.dataset.loading = 0;
 
-    loadMoreBtn.addEventListener("click", async () => {
+    loadMoreBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
       loadMoreBtn.dataset.loading = 1;
       articleAPILoader.loadMore().then(lazyLoader);
       loadMoreBtn.dataset.loading = 0;
