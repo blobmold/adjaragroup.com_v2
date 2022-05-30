@@ -4,7 +4,6 @@
     <div class="navbar-overlay" style="position: fixed; left: 0; right: 0; bottom: 0; top: 0; height: 100vh;"></div>
     <div class="ag-gn-list-container">
       <ul class="ag-gn-list">
-        <li class="ag-gn-item"><a href="/" class="ag-gn-link underline">Home</a></li>
         <% for(let el of gn) { %>
         <li class="ag-gn-item"><a href="/<%= el.toLowerCase() %>" class="ag-gn-link underline"><%= el %></a></li>
         <% } %>
