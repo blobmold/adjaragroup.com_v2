@@ -27,14 +27,16 @@
 .ag-news-related {
   margin-top: 50px;
 }
-.ag-news-related-title {
-  margin: 0 0 15px 0;
-  font-size: 25px;
+.ag-news-related-title-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: var(--border-color) 1px solid;
   padding-bottom: 10px;
+}
+.ag-news-related-title {
+  margin: 0;
+  font-size: 25px;
 }
 .ag-news-related-list {
   list-style-type: none;
