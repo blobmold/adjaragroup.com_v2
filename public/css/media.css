@@ -189,6 +189,9 @@
     --global-padding: 0 20px;
     --global-columns: 1;
   }
+  .ag-btn {
+    max-width: unset;
+  }
   /* Newsroom */
   .ag-news-recent-article-img-container {
     height: 200px;
