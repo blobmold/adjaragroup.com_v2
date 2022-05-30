@@ -136,26 +136,34 @@ select {
 .underline {
   position: relative;
   text-decoration: none;
-  width: calc(100%);
-  background-image: linear-gradient(var(--global-black) 0%, var(--global-black) 100%);
-  background-repeat: no-repeat;
-  background-size: 0% 1px;
-  background-position: 0 bottom;
-  transition: background-size 200ms ease-in-out;
 }
-.u-light {
-  background-image: linear-gradient(var(--global-white) 0%, var(--global-white) 100%);
+.underline::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--global-black);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform .3s ease;
+}
+.u-light::after {
+  background: var(--global-white);
 }
 .u-light::after,
 .u-light::before {
   color: var(--global-white);
 }
-.underline:hover {
-  background-size: 100% 1px;
+.underline:hover::after {
+  transition-duration: .3s;
+  transform: scaleX(1);
+  transform-origin: left center;
 }
 /* ** Current Link ** */
 .underline[data-current="true"] {
-  background-size: 100% 1px;
+  transform: scaleX(1);
 }
 .overlay {
   position: absolute;

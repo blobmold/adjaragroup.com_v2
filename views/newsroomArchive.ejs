@@ -16,8 +16,8 @@
             <% for(let article of sortedArticles.get(date)) { %>
             <article class="ag-archive-article">
               <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-              <div>
-                <a class="ag-article-link underline" href="/newsroom/<%= article._id %>"> <%= article.title %></a>
+              <div class="ag-arch-article-title">
+                <a class="ag-article-link" href="/newsroom/<%= article._id %>"> <%= article.title %></a>
               </div>
             </article>
             <% } %>
