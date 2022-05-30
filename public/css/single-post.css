@@ -56,19 +56,10 @@
   padding-right: 10px;
   display: flex;
 }
-.ag-news-related-article-img {
-  vertical-align: top;
-  object-fit: cover;
-  width: 200px;
-  height: 100px;
-}
-.ag-news-related-article-copy {
+
+.ag-article-copy {
   padding-left: 15px;
   width: 100%;
-}
-.ag-related-article-data {
-  display: flex;
-  justify-content: space-between;
 }
 .ag-news-related-article .ag-article-date {
   font-size: 11px;

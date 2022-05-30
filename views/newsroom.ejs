@@ -26,10 +26,10 @@
               <a href="/newsroom/<%= article._id %>" class="ag-news-recent-link">
                 <article class="ag-news-recent-article">
                   <picture class="ag-news-recent-article-img-container">
-                    <img class="ag-news-recent-article-img lazy" src="" data-src="<%= article.image %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
+                    <img class="ag-news-recent-article-img article-img lazy" src="" data-src="<%= article.image %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
                   </picture>
-                  <div class="ag-news-recent-article-copy">
-                    <div class="ag-recent-article-data">
+                  <div class="ag-news-recent-article-copy ag-article-copy">
+                    <div class="ag-recent-article-data ag-article-data">
                       <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
                       <time class="ag-article-date" datetime="<%= article.postDate.toLocaleDateString() %>"><%= article.postDate.toLocaleDateString() %></time>
                     </div>
