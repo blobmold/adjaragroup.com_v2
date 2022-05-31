@@ -77,7 +77,7 @@
     loadMoreBtn.addEventListener("click", async (e) => {
       e.preventDefault();
       loadMoreBtn.dataset.loading = 1;
-      articleAPILoader.loadMore().then(lazyLoader).then(articleObserver);
+      await articleAPILoader.loadMore().then(lazyLoader).then(articleObserver);
       loadMoreBtn.dataset.loading = 0;
     });
   }

@@ -382,7 +382,7 @@ select {
 }
 .translate-animation {
   border: 1px solid transparent;
-  transition: background .3s ease, border .3s ease, transform .7s ease, opacity .6s ease;
+  transition: background .3s ease, border .3s ease, transform .7s cubic-bezier(0, 1, 0.6, 0.98), opacity .6s cubic-bezier(0, 1, 0.6, 0.98);
   margin-top: -1px;
 }
 .translate-animation:not(:last-of-type) {
