@@ -433,13 +433,15 @@ select {
 #loadMore[data-loading="1"]::before,
 #loader[data-loading="1"]::before {
   content: "";
-  display: block;
+  position: absolute;
   background: url("/assets/img/brand/favicon.svg") no-repeat center / contain;
   height: 30px;
   width: 30px;
   animation: loader 1s ease-in-out forwards infinite;
+  border-radius: 100%;
 }
 .ag-btn {
+  position: relative;
   text-align: center;
   max-width: 200px;
   width: 100%;
