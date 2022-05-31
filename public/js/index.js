@@ -12,31 +12,15 @@
     }
   }
 
-  gsap.registerPlugin(ScrollTrigger);
-
   // Hamburger button toggler
   let hamburgerContainer = document.querySelector(".ag-gn-hamburger_container");
   let navbarOverlay = document.querySelector(".navbar-overlay");
-
-  let tl = gsap.timeline();
-
-  tl.from(".ag-gn-item", {
-    opacity: 0,
-    xPercent: 100,
-    duration: 0.5,
-    stagger: {
-      amount: 0.2,
-    },
-    ease: "ease",
-  });
-  tl.seek(1);
 
   navbarOverlay.addEventListener("click", closeNav);
   hamburgerContainer.addEventListener("click", closeNav);
 
   function closeNav() {
     document.body.classList.toggle("nav-visible");
-    tl.play(0);
   }
 
   // Launch Lazy Loader
@@ -69,6 +53,8 @@
   let categories = document.querySelectorAll(".ag-news-cat-item");
   let APIPATH = "/api/articles/list";
 
+  await articleObserver();
+
   if (recentList) {
     if (!recentList && !loadMoreBtn && !categories.length >= 0) return;
 
@@ -91,51 +77,31 @@
     loadMoreBtn.addEventListener("click", async (e) => {
       e.preventDefault();
       loadMoreBtn.dataset.loading = 1;
-      articleAPILoader.loadMore().then(lazyLoader);
+      articleAPILoader.loadMore().then(lazyLoader).then(articleObserver);
       loadMoreBtn.dataset.loading = 0;
     });
   }
-})();
 
-// gsap
-(async () => {
-  let newsCards = document.querySelectorAll(".ag-news-card");
+  async function articleObserver() {
+    let articles = document.querySelectorAll(".ag-news-recent-item");
 
-  if (newsCards.length === 0) return;
-
-  gsap.from(".ag-news-card", {
-    scrollTrigger: ".ag-news-card",
-    opacity: 0,
-    x: 30,
-    duration: 0.5,
-    stagger: {
-      amount: 0.4,
-    },
-    ease: "ease",
-  });
-})();
-
-async function lazyLoader() {
-  let lazyImages = document.querySelectorAll("img.lazy");
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
+    if ("IntersectionObserver" in window) {
+      let articleObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let article = entry.target;
+            article.classList.replace("hidden", "visible");
+            articleObserver.unobserve(article);
+          }
+        });
       });
-    });
 
-    lazyImages.forEach((lazyImage) => {
-      lazyImageObserver.observe(lazyImage);
-    });
+      articles.forEach((article) => {
+        articleObserver.observe(article);
+      });
+    }
   }
-}
+})();
 
 (async () => {
   const careersSelector = document.getElementById("jobFilter");
@@ -187,16 +153,16 @@ async function lazyLoader() {
     },
 
     async generatePage() {
-      if(this.cache.has(this.filter.category)) {
+      if (this.cache.has(this.filter.category)) {
         let startCached = Date.now();
         this.page = await this.cache.get(this.filter.category);
-        console.log('Called from cache');
+        console.log("Called from cache");
         console.log(`Non-cached: took ${Date.now() - startCached}`);
       } else {
         let startNonCached = Date.now();
         this.page = await jobAPILoader.generatePageArray(undefined, jobAPILoader.createJobEl, "careers");
         this.cache.set(this.filter.category, this.page);
-        console.log('Not called from cache');
+        console.log("Not called from cache");
         console.log(`Non-cached: took ${Date.now() - startNonCached}`);
       }
 
@@ -268,3 +234,25 @@ async function lazyLoader() {
     }
   }
 })();
+
+async function lazyLoader() {
+  let lazyImages = document.querySelectorAll("img.lazy");
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach((lazyImage) => {
+      lazyImageObserver.observe(lazyImage);
+    });
+  }
+}

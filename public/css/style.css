@@ -340,9 +340,15 @@ select {
 }
 .ag-news-recent-item {
   padding: 20px 5px;
-}
-.ag-news-recent-item {
   border-bottom: 1px solid var(--border-color);
+}
+.recent-news .hidden {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.recent-news .visible {
+  transform: translateX(0);
+  opacity: 1;
 }
 .ag-news-recent-article {
   display: flex;
@@ -376,7 +382,7 @@ select {
 }
 .translate-animation {
   border: 1px solid transparent;
-  transition: background 0.3s ease, border 0.3s ease;
+  transition: background .3s ease, border .3s ease, transform .7s ease, opacity .6s ease;
   margin-top: -1px;
 }
 .translate-animation:not(:last-of-type) {
