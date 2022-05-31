@@ -241,11 +241,12 @@ async function lazyLoader() {
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        let lazyImage = entry.target;
+        lazyImage.style.transition = "opacity 0.5s ease";
+        lazyImage.style.opacity = 0;
         if (entry.isIntersecting) {
-          let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
           lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
           lazyImageObserver.unobserve(lazyImage);
         }
       });
@@ -253,6 +254,7 @@ async function lazyLoader() {
 
     lazyImages.forEach((lazyImage) => {
       lazyImageObserver.observe(lazyImage);
+      lazyImage.addEventListener("load", () => (lazyImage.style.opacity = 1));  // Don't display images until they are fully loaded
     });
   }
 }
