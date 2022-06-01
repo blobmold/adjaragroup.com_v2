@@ -247,6 +247,7 @@ async function lazyLoader() {
         if (entry.isIntersecting) {
           lazyImage.src = lazyImage.dataset.src;
           lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove('lazy');
           lazyImageObserver.unobserve(lazyImage);
         }
       });
