@@ -181,6 +181,10 @@ select {
   margin: 50px 0 25px 0;
   text-transform: capitalize;
 }
+.title-border {
+  border-bottom: var(--border-color) 1px solid;
+  padding-bottom: 10px;
+}
 /* Homepage */
 .ag-section.hero {
   height: 90vh;
@@ -330,7 +334,7 @@ select {
   gap: 20px;
 }
 .recent-news {
-  row-gap: 0;
+  max-width: 980px;
 }
 .recent-news .title {
   grid-column: 1 / -1;

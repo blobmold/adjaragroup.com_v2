@@ -9,16 +9,15 @@
       <h1 class="visuallyhidden">Newsroom</h1>
       <% if(typeof featuredArticles !== 'undefined') { %>
       <section class="ag-section featured-news global-width">
-        <h2 class="title">Featured News</h2>
+        <h2 class="title visuallyhidden">Featured News</h2>
         <div class="featured-news-container">
           <%- include('layouts/recentArticles', {recentArticles: featuredArticles}) %>
         </div>
       </section>
       <% } %>
   
-      <section class="recent-news global-width global-grid">
-        <h2 class="title">Recent News</h2>
-        <%- include('layouts/categoryNav', articleCategories) %>
+      <section class="recent-news global-width">
+        <h2 class="title title-border">Recent News</h2>
         <div class="recent-news-container">
           <ol class="ag-news-recent-list list-nobullet">
             <% for(let article of articles) { %>
