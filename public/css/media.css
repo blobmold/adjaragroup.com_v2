@@ -96,10 +96,6 @@
   .ag-news-categoryNav {
     display: none;
   }
-  .ag-news-cards.global-grid {
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-  }
   .ag-news-card {
     height: auto;
     min-height: 300px;

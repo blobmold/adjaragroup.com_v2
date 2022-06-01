@@ -9,8 +9,8 @@
       <h1 class="visuallyhidden">Newsroom</h1>
       <% if(typeof featuredArticles !== 'undefined') { %>
       <section class="ag-section featured-news global-width">
-        <div class="news-container">
-          <h2 class="title">Featured News</h2>
+        <h2 class="title">Featured News</h2>
+        <div class="featured-news-container">
           <%- include('layouts/recentArticles', {recentArticles: featuredArticles}) %>
         </div>
       </section>
