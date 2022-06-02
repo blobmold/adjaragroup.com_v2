@@ -322,8 +322,11 @@ select {
   color: var(--global-white-darker);
 }
 /* Newsroom */
+.featured-news {
+  margin-top: 70px;
+}
 .recent-news {
-  row-gap: 0;
+  max-width: 980px;
 }
 .recent-news .title {
   grid-column: 1 / -1;
