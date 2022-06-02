@@ -366,6 +366,7 @@ select {
   width: 250px;
   height: 130px;
   object-fit: cover;
+  border-radius: 3px;
 }
 .ag-article-data {
   display: flex;
