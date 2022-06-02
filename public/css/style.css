@@ -147,7 +147,7 @@ select {
   background: var(--global-black);
   transform: scaleX(0);
   transform-origin: right center;
-  transition: transform .3s ease;
+  transition: transform .6s cubic-bezier(.49,.01,.04,.94);
 }
 .u-light::after {
   background: var(--global-white);
