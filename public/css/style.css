@@ -61,9 +61,6 @@ img {
 p {
   line-height: 2;
 }
-.main {
-  margin-top: 50px;
-}
 .form-control {
   display: grid;
   grid-template-columns: 200px 1fr;

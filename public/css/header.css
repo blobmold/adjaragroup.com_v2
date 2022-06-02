@@ -1,6 +1,6 @@
 /* Global Navigation (GN) */
 .ag-gh {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -11,6 +11,11 @@
   align-items: center;
   z-index: 999999;
   background-color: var(--global-white);
+  transform: translateY(0);
+  transition: transform .6s cubic-bezier(.49,.01,.04,.94);
+}
+.gh-hidden {
+  transform: translateY(-100%);
 }
 .ag-gn {
   width: 100%;
@@ -18,6 +23,11 @@
   justify-content: space-between;
   align-items: center;
   z-index: 99999;
+  transition: transform .6s cubic-bezier(.49,.01,.04,.94) .1s, opacity .6s cubic-bezier(.49,.01,.04,.94) .25s;
+}
+.ag-gh.gh-hidden .ag-gn {
+  opacity: 0;
+  transform: translateY(-100%);
 }
 .ag-gn-list {
   padding: 0;

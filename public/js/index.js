@@ -259,3 +259,17 @@ async function lazyLoader() {
     });
   }
 }
+
+// Toggle header visibility;
+(async () => {
+  let lastYScroll = 0;
+  let header = document.getElementById('gh');
+  document.addEventListener('scroll', () => {
+    if(lastYScroll >= window.scrollY) {
+      header.classList.remove('gh-hidden');
+    } else {
+      header.classList.add('gh-hidden');
+    }
+    lastYScroll = window.scrollY;
+  });
+})();
