@@ -265,7 +265,7 @@ async function lazyLoader() {
   let lastYScroll = 0;
   let header = document.getElementById('gh');
   document.addEventListener('scroll', () => {
-    if(lastYScroll >= window.scrollY) {
+    if(lastYScroll >= window.scrollY || window.scrollY <= 0) {
       header.classList.remove('gh-hidden');
     } else {
       header.classList.add('gh-hidden');
