@@ -1,0 +1,8 @@
+:root {
+  --global-black: rgb(244, 244, 244);
+  --global-white: #161616;
+  --global-white-darker: rgb(226, 226, 226);
+  --global-hover-black: rgba(36, 33, 36, 0.03);
+  --border-color: rgb(75, 75, 75);
+  --image-overlay: rgb(33, 33, 33);
+}
