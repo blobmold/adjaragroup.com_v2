@@ -263,7 +263,7 @@ select {
   position: relative;
   color: var(--global-black);
   border: 1px solid var(--border-color);
-  height: 450px;
+  min-height: 450px;
   background-color: var(--conatiner-background-color);
   transition: color 0.6s cubic-bezier(0, 1, 0.6, 0.98);
   overflow-x: hidden;
@@ -280,7 +280,7 @@ select {
   font-weight: 400;
 }
 .ag-news-card .ag-article-title {
-  font-size: 20px;
+  font-size: 30px;
   margin: 30px 0;
 }
 .ag-news-card .ag-article-descr {
