@@ -269,7 +269,7 @@ async function lazyLoader() {
 
   if (header) {
     document.addEventListener("scroll", () => {
-      if (lastYScroll >= window.scrollY) {
+      if(lastYScroll >= window.scrollY || window.scrollY <= 0) {
         header.classList.remove("gh-hidden");
         if(progressBar){
           progressBar.style.transform = `translateY(${headerHeight}px)`;
