@@ -247,7 +247,7 @@ async function lazyLoader() {
         if (entry.isIntersecting) {
           lazyImage.src = lazyImage.dataset.src;
           lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove('lazy');
+          lazyImage.classList.remove("lazy");
           lazyImageObserver.unobserve(lazyImage);
         }
       });
@@ -255,7 +255,7 @@ async function lazyLoader() {
 
     lazyImages.forEach((lazyImage) => {
       lazyImageObserver.observe(lazyImage);
-      lazyImage.addEventListener("load", () => (lazyImage.style.opacity = 1));  // Don't display images until they are fully loaded
+      lazyImage.addEventListener("load", () => (lazyImage.style.opacity = 1)); // Don't display images until they are fully loaded
     });
   }
 }
@@ -263,13 +263,21 @@ async function lazyLoader() {
 // Toggle header visibility;
 (async () => {
   let lastYScroll = 0;
-  let header = document.getElementById('gh');
-  document.addEventListener('scroll', () => {
-    if(lastYScroll >= window.scrollY) {
-      header.classList.remove('gh-hidden');
-    } else {
-      header.classList.add('gh-hidden');
-    }
-    lastYScroll = window.scrollY;
-  });
+  let header = document.getElementById("gh");
+  let headerHeight = header.offsetHeight;
+  let progressBar = document.querySelector(".ag-article-progressBar");
+
+  if (header) {
+    document.addEventListener("scroll", () => {
+      if (lastYScroll >= window.scrollY) {
+        header.classList.remove("gh-hidden");
+        console.log(progressBar);
+        progressBar.style.transform = `translateY(${headerHeight}px)`;
+      } else {
+        header.classList.add("gh-hidden");
+        progressBar.style.transform = `translateY(0)`;
+      }
+      lastYScroll = window.scrollY;
+    });
+  }
 })();
