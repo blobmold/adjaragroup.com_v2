@@ -14,7 +14,7 @@
   transform: translateY(0);
   transition: transform .6s cubic-bezier(.49,.01,.04,.94);
 }
-.gh-hidden {
+.ag-gh.gh-hidden {
   transform: translateY(-100%);
 }
 .ag-gn {

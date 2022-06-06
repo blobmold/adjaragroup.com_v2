@@ -264,21 +264,15 @@ async function lazyLoader() {
 (async () => {
   let lastYScroll = 0;
   let header = document.getElementById("gh");
-  let headerHeight = header.offsetHeight;
-  let progressBar = document.querySelector(".ag-article-progressBar");
 
   if (header) {
     document.addEventListener("scroll", () => {
       if(lastYScroll >= window.scrollY || window.scrollY <= 0) {
         header.classList.remove("gh-hidden");
-        if(progressBar){
-          progressBar.style.transform = `translateY(${headerHeight}px)`;
-        }
+        document.body.classList.remove('gh-hidden');
       } else {
         header.classList.add("gh-hidden");
-        if (progressBar) {
-          progressBar.style.transform = `translateY(0)`;
-        }
+        document.body.classList.add('gh-hidden');
       }
       lastYScroll = window.scrollY;
     });

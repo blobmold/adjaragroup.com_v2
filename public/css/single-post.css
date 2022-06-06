@@ -153,6 +153,10 @@ progressBar.ag-article-progressBar {
   transition: width 0.1s ease, opacity 0.1s ease-in-out, transform .6s cubic-bezier(.49,.01,.04,.94);
   background-color: #2874fc;
   z-index: 999;
+  transform: translateY(50px);
+}
+.gh-hidden progressBar.ag-article-progressBar {
+  transform: translateY(0);
 }
 /* Share Container */
 .ag-article-share-copy {
