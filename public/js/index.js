@@ -267,14 +267,24 @@ async function lazyLoader() {
 
   if (header) {
     document.addEventListener("scroll", () => {
-      if(lastYScroll >= window.scrollY || window.scrollY <= 0) {
+      if (lastYScroll >= window.scrollY || window.scrollY <= 0) {
         header.classList.remove("gh-hidden");
-        document.body.classList.remove('gh-hidden');
+        document.body.classList.remove("gh-hidden");
       } else {
         header.classList.add("gh-hidden");
-        document.body.classList.add('gh-hidden');
+        document.body.classList.add("gh-hidden");
       }
       lastYScroll = window.scrollY;
+    });
+  }
+})();
+
+(async () => {
+  let newsroomNav = document.getElementById("newsroomNav");
+
+  if (newsroomNav) {
+    newsroomNav.addEventListener("click", () => {
+      newsroomNav.closest("nav").classList.toggle("open");
     });
   }
 })();

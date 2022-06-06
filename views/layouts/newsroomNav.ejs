@@ -2,7 +2,14 @@
   <div class="newsroom_nav-content">
     <nav>
       <div class="" id="newsroomNav">All News</div>
-      <div class="newsroom_nav-drawer"></div>
+      <div class="newsroom_nav-drawer">
+        <ul class="ag-news-cat-list list-nobullet">
+          <li class="ag-news-cat-item"><a href="/newsroom" class="ag-news-cat-link underline">All news</a></li>
+          <% for(let category of articleCategories) { %>
+          <li class="ag-news-cat-item"><a href="/newsroom?category=<%= category %>" class="ag-news-cat-link underline"><%= category %></a></li>
+          <% } %>
+        </ul>
+      </div>
     </nav>
     <a href="/newsroom/archive" class="underline">
       <span id="newsroomArchive">Newsroom Archive</span>
