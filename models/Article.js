@@ -6,6 +6,7 @@ const ArticleSchema = new Schema({
   title: String,
   body: String,
   image: String,
+  imageSmall: String,
   description: String,
   category: String,
   postDate: {

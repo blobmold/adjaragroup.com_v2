@@ -2,6 +2,7 @@ import { Router } from "express";
 import fs from "fs/promises";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
+import sharp from "sharp";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import Article from "../models/Article.js";
@@ -68,10 +69,17 @@ router.get("/articles/new", authMiddleware, async (req, res) => {
 // Store a new article
 router.post("/articles/store", async (req, res) => {
   let image = req.files.image;
+
+  // Sharp takes a buffer therefore data is being passed
+  await sharp(req.files.image.data)
+    .resize(250, 130)
+    .toFile(resolve(__dirname, "../public/assets/img/articles", `${image.name}-250x130.jpeg`));
+
   await image.mv(resolve(__dirname, "../public/assets/img/articles", image.name));
   await Article.create({
     ...req.body,
     image: "/assets/img/articles/" + image.name,
+    imageSmall: "/assets/img/articles/" + `${image.name}-250x130.jpeg`
   });
 
   res.redirect("/");
@@ -87,12 +95,12 @@ router.get("/careers/new", authMiddleware, async (req, res) => {
 });
 
 // Store new job
-router.post('/careers/store', async (req, res) => {
+router.post("/careers/store", async (req, res) => {
   await Career.create({
     ...req.body,
   });
 
-  res.redirect('/careers');
+  res.redirect("/careers");
 });
 
 export default router;
