@@ -16,7 +16,7 @@
   let hamburgerContainer = document.querySelector(".ag-gn-hamburger_container");
   let navbarOverlay = document.querySelector(".navbar-overlay");
 
-  navbarOverlay.addEventListener("click", () => { document.body.classList.remove("nav-visible"); });
+  navbarOverlay.addEventListener("click", closeNav);
   hamburgerContainer.addEventListener("click", closeNav);
 
   function closeNav() {

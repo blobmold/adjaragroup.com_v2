@@ -1,19 +1,22 @@
-<div class="newsroom_nav global-width">
-  <div class="newsroom_nav-content">
-    <nav>
-      <div class="" id="newsroomTopics">All News</div>
-    </nav>
-    <a href="/newsroom/archive" class="underline">
-      <span id="newsroomArchive">Newsroom Archive</span>
-    </a>
-  </div>
-  <div class="newsroom_nav-tray">
-    <ul class="ag-news-cat-list list-nobullet">
-      <li class="ag-news-cat-item"><a href="/newsroom" class="ag-news-cat-link underline">All news</a></li>
-      <% for(let category of articleCategories) { %>
-      <li class="ag-news-cat-item"><a href="/newsroom?category=<%= category %>" class="ag-news-cat-link underline"><%= category %></a></li>
-      <% } %>
-    </ul>
+<div class="newsroom_nav">  
+  <div class="newsroon_nav-container global-width">
+    <div class="newsroom_nav-content">
+      <nav>
+        <div class="" id="newsroomTopics">All News</div>
+      </nav>
+      <a href="/newsroom/archive" class="underline">
+        <span id="newsroomArchive">Newsroom Archive</span>
+      </a>
+    </div>
+    <div class="newsroom_nav-tray">
+      <ul class="ag-news-cat-list list-nobullet">
+        <li class="ag-news-cat-item"><a href="/newsroom" class="ag-news-cat-link underline">All news</a></li>
+        <% for(let category of articleCategories) { %>
+        <li class="ag-news-cat-item"><a href="/newsroom?category=<%= category %>" class="ag-news-cat-link underline"><%= category %></a></li>
+        <% } %>
+      </ul>
+    </div>
   </div>
 </div>
-<div class="categoryNav-curtain" id="categoryNav-curtain" style="position: fixed; left: 0; right: 0; bottom: 0; top: 0; height: 100vh; z-index: 999;"></div>
+  <div class="categoryNav-curtain" id="categoryNav-curtain" style="position: fixed; left: 0; right: 0; bottom: 0; top: 0; height: 100vh; z-index: 999;"></div>
+</div>
