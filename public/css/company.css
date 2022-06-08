@@ -47,9 +47,6 @@
 .company-btn:hover .text {
   color: var(--global-black);
 }
-.company-btn {
-  display: inline-block;
-}
 /* Company - Hero */
 .ag-section.company-hero {
   margin-top: 50px;
