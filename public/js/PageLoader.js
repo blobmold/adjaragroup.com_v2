@@ -100,8 +100,8 @@ export default class PageGenerator {
     if ("content" in document.createElement("template")) {
       let listItem = document.getElementById("articleLiTemplate").content.cloneNode(true);
       listItem.querySelector(".ag-news-recent-link").href = `/newsroom/${article._id}`;
-      listItem.querySelector(".ag-news-recent-article-img").dataset.src = article.image;
-      listItem.querySelector(".ag-news-recent-article-img").dataset.srcset = article.image;
+      listItem.querySelector(".ag-news-recent-article-img").dataset.src = article.imageSmall;
+      listItem.querySelector(".ag-news-recent-article-img").dataset.srcset = article.imageSmall;
 
       let category = listItem.querySelector(".ag-article-category");
       category.textContent = article.category;
@@ -118,7 +118,7 @@ export default class PageGenerator {
       let elem = `<li class="ag-news-recent-item translate-animation"><a class="ag-news-recent-link" href="/newsroom/${article._id}">
         <article class="ag-news-recent-article">
           <picture class="ag-news-recent-article-img-container"><img class="ag-news-recent-article-img"
-              src="${article.image}" loading="lazy"></picture>
+              src="${article.imageSmall}" loading="lazy"></picture>
           <div class="ag-news-recent-article-copy">
             <div class="ag-recent-article-data">
               <div class="ag-article-category" data-category="${article.category.toLowerCase()}">${article.category}</div>
