@@ -2,24 +2,20 @@
 <html lang="en">
   <head>
     <%- include('layouts/head') %>
+    <link rel="stylesheet" href="/css/company.css">
   </head>
-  <style>
-    .ag-section {
-      max-width: 980px;
-      margin-top: 100px;
-    }
-    .about h1 {
-      font-size: 100px;
-    }
-    .ag-section h2 {
-      font-size: 30px;
-    }
-  </style>
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <section class="global-width ag-section about">
-        <h1>About Adjara Group</h1>
+
+      <section class="ag-section company-hero company">
+        <h1>Adjara Group</h1>
+        <div class="company-hero-img"></div>
+        <div class="overlay"></div>
+      </section>
+
+      <section class="global-width ag-section company-about company">
+        <h2>About Company</h2>
         <div class="reveal">
           <p>Adjara Group is a leading Georgian company in hospitality, lifestyle development and agropreneurship.</p>
           <p>It has gained worldwide recognition for trend-setting establishments and entrepreneurial projects through developing and managing lifestyle brands. Restaurants created by the company combine international gastronomic talent with fresh, locally sourced produce.</p>
@@ -27,50 +23,110 @@
           <p>A pioneer in urban and rural development, the company has reshaped the face of the capital as a result of the ecosystems which organically grow around each of the enterprises it creates. Adjara Group has the ability to turn even the most remote and underdeveloped regions throughout the country into sustainable tourism destinations.</p>
         </div>
       </section>
-      <section class="global-width ag-section stats"></section>
-      <section class="global-width ag-section history">
+
+      <section class="global-width ag-section company-stats company">
+        <h2>Adjara Group in Numbers</h2>
+        <div class="stats-container">
+          <div class="stat-container">
+            <div class="stat-amount">1500</div>
+            <div class="stat-title">Employees</div>
+          </div>
+          <div class="stat-container">
+            <div class="stat-amount">6</div>
+            <div class="stat-title">Hotels</div>
+          </div>
+          <div class="stat-container">
+            <div class="stat-amount">10</div>
+            <div class="stat-title">Restaurants</div>
+          </div>
+          <div class="stat-container">
+            <div class="stat-amount">350</div>
+            <div class="stat-title">Guestrooms</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="global-width ag-section company-history company company-grid">
         <div class="reveal">
-          <h2 class="title title-border">History</h2>
+          <h2>History</h2>
           <p>Adjara Group was founded by the visionary and trend-setting entrepreneur, Temur Ugulava, along with a team of dedicated professionals.</p>
           <p>In 2010, the company entered the Georgian hospitality sector by introducing and managing the first local Holiday Inn franchise, which successfully pushed design and concept boundaries for the international brand.</p>
           <p>In 2012, Adjara Group converted an abandoned Soviet-era sanatorium in the mountainous region of Kazbegi into the first Georgian lifestyle brand of Rooms Hotels. It has since gained global recognition and praise for its unparalleled location, architecture and design.</p>
           <p>Two years later, in 2014, a historic publishing house would become the second Rooms Hotel, this time in the heart of the Georgian capital, Tbilisi. The design concept of the hotel combines brutalist chic architecture with elements of contemporary décor.</p>
           <p>In 2016, a former Soviet sewing factory was revived and transformed into the colorful Fabrika Hostel, bringing together young travelers and art enthusiasts as well as a diverse community of local vendors and cafes.</p>
           <p>Stamba hotel is an indulgent luxury addition to the Group and is in a separate building of the same former publishing house complex as Rooms Hotel Tbilisi. In 2018, the hotel opened its doors offering exceptional features including a rooftop swimming pool, Chocolaterie & Roastery, Café Stamba, Shio Ramen, along with galleries and exhibition spaces.</p>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">Explore Timeline</span>
+          </a>
         </div>
+        <img class="company-img" src="/assets/img/imgs-of-bldings/Upstaris-1200x800.jpg"></img>
       </section>
-      <section class="global-width ag-section csr">
+
+      <section class="global-width ag-section company-csr company">
         <div class="reveal">
-          <h2 class="title title-border">Corporate Social Responsibility</h2>
+          <h2>Corporate Social Responsibility</h2>
           <p>Adjara Group is a member of the UN Global Compact's initiative and a WEPs signatory company.</p>
           <p>It shares the UN principles on Human Rights, Labor, Anti-Corruption, and Environmental Responsibility. Adjara Group's policies and business practices reflect a commitment to making a positive impact in communities around the country.</p>
           <p>Social, economic, and environmental sustainability are central to the company's corporate culture and its decision-making processes.</p>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">People</span>
+          </a>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">Nature & places</span>
+          </a>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">Covid-19 response</span>
+          </a>
         </div>
       </section>
-      <section class="global-width ag-section team">
+
+      <section class="global-width ag-section company-team company">
         <div class="reveal">
-          <h2 class="title title-border">Team</h2>
+          <h2>Team</h2>
           <p>The success of Adjara Group comes from its people, who share the same values, strategy and vision. Creative, passionate, dedicated and forward-thinking professionals are behind the brands, projects and initiatives which have placed Georgia on the world map. Building modern Georgia is what drives each and every one of them.</p>
           <p>The company started operating in 2010 with a handful of staff members and now it has reached over 2500 employees. One of Adjara Group's top priorities is developing regional projects through which local people have found new professional paths and turned underdeveloped areas into sustainable destinations. Equality, open-mindedness, opportunities to grow as well as a safe and fair environment are at the heart of the company's corporate culture by which every team member aspires to contribute to the country's development.</p>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">Explore team</span>
+          </a>
+
         </div>
       </section>
-      <section class="global-width ag-section collective-dev">
+
+      <section class="global-width ag-section company-collective-dev company company-grid">
+        <img class="company-img" src="/assets/img/imgs-of-bldings/Upstaris-1200x800.jpg"></img>
         <div class="reveal">
-          <h2 class="title title-border">Collective Development</h2>
+          <h2>Collective Development</h2>
           <p>Under the guidance of the Founder and Owner Temur Ugulava, Collective is the development company of Adjara Group Holding, that creates and curates new, unique spaces and local brands, which empower creative communities while establishing entrepreneurial culture.</p>
           <p>The team specializes in turning brownfield projects into internationally acclaimed, trend-setting hotels, restaurants, as well as cultural and social hotspots. Collective takes a collaborative, holistic approach towards projects combining design, architecture, and customers' experiences of space.</p>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">Read further</span>
+          </a>
         </div>
       </section>
-      <section class="global-width ag-section atelier">
+
+      <section class="global-width ag-section company-atelier company company-grid">
         <div class="reveal">
-          <h2 class="title title-border">The Atelier</h2>
+          <h2>The Atelier</h2>
           <p>While working on the first Rooms Hotel in Kazbegi, the team realized the importance of uniforms and fabrics to conceptually fit spatial dispositions. As a result, the company started working with an innovative designer Tina Kvinikadze who specializes in costume design for theatre and film.</p>
           <p>She is heading the company's in-house Atelier, which has been integral to building Adjara Group's internationally celebrated hospitality projects. Currently, a team of 15 tailors use high quality fabrics and make clothing including signature uniforms and other creative pieces, guest-room accessories and interior design elements. The Atelier's products are also sold in The Shop at Stamba Hotel and Rooms Hotel Kokhta.</p>
+          <a href="#" class="company-btn">
+            <div class="box"></div>
+            <span class="text">Read further</span>
+          </a>
         </div>
+        <img class="company-img" src="/assets/img/imgs-of-bldings/atelier.jpg"></img>
       </section>
-      <section class="global-width ag-section arts-n-culture">
+
+      <section class="global-width ag-section company-arts_n_culture company company-grid">
+        <img class="company-img" src="/assets/img/imgs-of-bldings/arts and culture.jpg"></img>
         <div class="reveal">
-          <h2 class="title title-border">Arts & Culture</h2>
+          <h2>Arts & Culture</h2>
           <p>Adjara Group is an important contributor to the development of the Georgian art scene. The company's brands are each associated with a diverse group of contemporary Georgian artists and have extensive spaces across the properties designed for residencies, exhibitions, cultural workshops and art fairs.</p>
           <p>The complex and extensive facilities have established a cultural hub with an open amphitheater, a vast outdoor area and public spaces used for pop up events and public talks with internationally celebrated writers, photographers, painters, architects and designers. Furthermore, Tbilisi Photo and Multimedia Museum at Stamba Hotel displays decades worth of photographic material by international, regional and local artists.</p>
           <p>The company collaborates with prominent art institutions such as Artarea, Propaganda Network - behind Oxygen art festival - and Innovation Lab by Center of Contemporary Art in Tbilisi, all of which are composed of daring artists, critics and curators, who are pushing the country's artistic and cultural boundaries.</p>
@@ -78,6 +134,7 @@
           <p>The company, also involved in Tbilisi Architectural Biennial, has elevated Tbilisi to the top of the emerging architecture and design scenes. The company regularly collaborates with the Georgian National Opera, Rustaveli Theatre and International film and photography festivals.</p>
         </div>
       </section>
+
     </main>
     <%- include('layouts/footer') %>
   </body>
