@@ -32,6 +32,16 @@
   .job-results {
     grid-column: 4 / end;
   }
+  /* Company page */
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+  .company-grid img {
+    order: 1;
+  }
+  .company-grid .company-content {
+    order: 2;
+  }
 }
 @media screen and (min-width: 1280px) {
   .ag-news-related-article-img.article-img {
@@ -183,6 +193,13 @@
   [data-jobcol="employmentType"] {
     display: none;
   }
+  /* Company page*/
+  .stats-container {
+    flex-direction: column;
+  }
+  .stat-container {
+    margin: 25px;
+  }
 }
 @media screen and (max-width: 480px) {
   :root {
@@ -208,5 +225,9 @@
   /* Single Article */
   .ag-article-img {
     height: 200px;
+  }
+  /* Company page */
+  .ag-section.company-hero h1 {
+    font-size: 42px;
   }
 }
