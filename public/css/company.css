@@ -47,6 +47,18 @@
 .ag-btn:hover .text {
   color: var(--global-black);
 }
+.ag-section.company:nth-child(odd) img {
+  order: 2;
+}
+.ag-section.company:nth-child(odd) div {
+  order: 1;
+}
+.ag-section.company:nth-child(even) img {
+  order: 1;
+}
+.ag-section.company:nth-child(even) div {
+  order: 2;
+}
 /* Company - Hero */
 .ag-section.company-hero {
   margin-top: 50px;
