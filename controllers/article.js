@@ -12,7 +12,7 @@ export default async (req, res) => {
       },
     })
       .limit(6)
-      .sort({ postDate: -1 });
+      .sort({ createdAt: -1 });
 
     const articleCategories = await Article.distinct("category");
 

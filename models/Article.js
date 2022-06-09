@@ -9,15 +9,12 @@ const ArticleSchema = new Schema({
   imageSmall: String,
   description: String,
   category: String,
-  postDate: {
-    type: Date,
-    default: new Date().toDateString(),
-  },
   user: {
     type: String,
     default: "N/A",
   },
-});
+},
+{ timestamps: true });
 
 // Create a category index to reduce the amount of documents exemined
 // example query on mongoDB to see executionStats
