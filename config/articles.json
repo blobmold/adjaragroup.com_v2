@@ -7,7 +7,7 @@
   "image": "/assets/img/articles/Rooms-Hotel-Kokhta-for-website.webp",
   "description": "Adjara Group is opening a new Rooms Hotel in the picturesque mountainous region of Kokhta-Mitarbi.",
   "category": "Hotels",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1558987200000"
     }
@@ -23,7 +23,7 @@
   "image": "/assets/img/articles/Abastumani_web-1.webp",
   "description": "Adjara Group announces the development of a new project in the historic resort of Abastumani",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1570737600000"
     }
@@ -39,7 +39,7 @@
   "image": "/assets/img/articles/supra.webp",
   "description": "To celebrate the long-lasting friendship between Georgia and France, the company Adjara Group has recreated a traditional Georgian Supra in Paris. ",
   "category": "Restaurants",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1562875200000"
     }
@@ -55,7 +55,7 @@
   "image": "/assets/img/articles/TPMM-OPENING.webp",
   "description": "Tbilisi Photography & Multimedia Museum, founded by Nestan Nizharadze and Tusi Kapanadze, opened its doors to the public on September 16th 2019",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1568750400000"
     }
@@ -71,7 +71,7 @@
   "image": "/assets/img/articles/for-radiocitypost.webp",
   "description": "Adjara Group is transforming the former radio factory in Tbilisi’s Mukhiani neighborhood into a new creative economy platform.",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1575662400000"
     }
@@ -87,7 +87,7 @@
   "image": "/assets/img/articles/1anoba-glovo-wolt.webp",
   "description": "Adjara Group has been joined by Wolt and Glovo in supporting the Fund 1anoba.",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1587672000000"
     }
@@ -103,7 +103,7 @@
   "image": "/assets/img/articles/ცუგეზა-უცუგეზოდ.webp",
   "description": "Adjara Group has joined the UNTWO’s #TravelTomorrow campaign with a new initiative.",
   "category": "Hotels",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1588881600000"
     }
@@ -119,7 +119,7 @@
   "image": "/assets/img/articles/Stamba-Hotel.webp",
   "description": "In June, Adjara Group opens your favorite restaurants, cafes, and hotels",
   "category": "Restaurants",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1589832000000"
     }
@@ -135,7 +135,7 @@
   "image": "/assets/img/articles/Photo-Apr-16-6-04-33-AM-e1593001.webp",
   "description": "We are now reopening our restaurants, bars and hotels, which we had to temporarily put on hold due to the recent global developments.",
   "category": "Agriculture",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1591300800000"
     }
@@ -151,7 +151,7 @@
   "image": "/assets/img/articles/Travel-Updates-_-Health-Safety.webp",
   "description": "Travel Updates & Health Safety",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1592942400000"
     }
@@ -167,7 +167,7 @@
   "image": "/assets/img/articles/Hosting Events Resumed at Stamba Hotel, Rooms Hotel Tbilisi & Holiday Inn Tbilisi.webp",
   "description": "Hosting Events Resumed at Stamba Hotel, Rooms Hotel Tbilisi & Holiday Inn Tbilisi",
   "category": "Restaurants",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1594152000000"
     }
@@ -183,7 +183,7 @@
   "image": "/assets/img/articles/Adjara Group’s Contribution to t.webp",
   "description": "Adjara Group’s Contribution to the 1anoba Fund ",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1594929600000"
     }
@@ -199,7 +199,7 @@
   "image": "/assets/img/articles/Adjara-Group-Academy’s-new-project.webp",
   "description": "The Culinary School, part of the Adjara Group Academy, is now open for applications until August 17. ",
   "category": "Restaurants",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1596225600000"
     }
@@ -215,7 +215,7 @@
   "image": "/assets/img/articles/Times Like These – Adjara Group and Visa’s joint campaign.webp",
   "description": "Times Like These - Adjara Group and Visa’s joint campaign",
   "category": "Hotels",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1596830400000"
     }
@@ -231,7 +231,7 @@
   "image": "/assets/img/articles/Adjara Group turns toward a new path.webp",
   "description": "Adjara Group turns toward a new path",
   "category": "Hotels",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1599595200000"
     }
@@ -247,7 +247,7 @@
   "image": "/assets/img/articles/Photo-Jul-31-3-21-58-AM-e1606313.webp",
   "description": "Adjara Group joins the annual global campaign against gender-based violence",
   "category": "Hotels",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1606334400000"
     }
@@ -263,7 +263,7 @@
   "image": "/assets/img/articles/image00001_1_.webp",
   "description": "We are happy to announce that Adjara Group Holding has won a prize in this competition for the second time.",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1617048000000"
     }
@@ -279,7 +279,7 @@
   "image": "/assets/img/articles/Photo-Apr-23-5-27-53-PM.webp",
   "description": "Adjara Group Holding will invest approximately USD 13.5 million in the rehabilitation and development of the historic sanatorium, which is being transformed into Rooms Hotel Abastumani.",
   "category": "Hotels",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1619208000000"
     }
@@ -295,7 +295,7 @@
   "image": "/assets/img/articles/DSC06344-1-11.webp",
   "description": "USAID/Georgia Mission Director Peter Wiebler and the directors of Adjara Group signed a Memorandum of Understanding (MOU) on July 21, 2021, affirming their commitment to jointly advancing sustainable and inclusive economic development.",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1626984000000"
     }
@@ -311,7 +311,7 @@
   "image": "/assets/img/articles/MUA_RC_01-min.webp",
   "description": "Adjara Group’s development company Collective is creating Radio City, a new multifunctional space in Tbilisi’s Gldani-Mukhiani district.",
   "category": "Development",
-  "postDate": {
+  "createdAt": {
     "$date": {
       "$numberLong": "1632513600000"
     }

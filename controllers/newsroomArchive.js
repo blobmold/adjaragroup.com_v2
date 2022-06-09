@@ -1,18 +1,18 @@
 import Article from "../models/Article.js";
 
 export default async (req, res) => {
-  const articles = await Article.find({}).sort({postDate: -1});
+  const articles = await Article.find({}).sort({createdAt: -1});
 
   let map = new Map();
 
   for (let article of articles) {
-    let postDate = article.postDate.getFullYear();
+    let createdAt = article.createdAt.getFullYear();
 
     // If map object does not contain the given date, create one and push
-    if (!map.has(postDate)) map.set(postDate, []);
+    if (!map.has(createdAt)) map.set(createdAt, []);
 
     // otherwise find and push
-    map.get(postDate).push(article);
+    map.get(createdAt).push(article);
   }
 
   res.render("newsroomArchive", {

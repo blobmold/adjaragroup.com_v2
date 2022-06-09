@@ -5,7 +5,7 @@ let router = express.Router();
 
 router.get("/api/articles", async (req, res) => {
   try {
-    let articles = await Article.find(req.query);
+    let articles = await Article.find(req.query).sort( { createdAt: -1 });
     res.status(201);
     res.send(articles);
   } catch (error) {
@@ -28,7 +28,7 @@ router.get("/api/articles/list", async (req, res) => {
 
   let articlesModified = {
     articles: await Article.find(req.query, { body: 0 })
-      .sort({ postDate: -1 })
+      .sort({ createdAt: -1 })
       .limit(pageSize)
       .skip(pageNum * pageSize - pageSize),
     pageType,

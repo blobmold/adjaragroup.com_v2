@@ -108,8 +108,8 @@ export default class PageGenerator {
       category.dataset.category = article.category.toLowerCase();
 
       let time = listItem.querySelector(".ag-article-date");
-      time.textContent = new Date(article.postDate).toLocaleDateString();
-      time.datetime = new Date(article.postDate);
+      time.textContent = new Date(article.createdAt).toLocaleDateString();
+      time.datetime = new Date(article.createdAt);
 
       listItem.querySelector("h3").textContent = article.title;
       listItem.querySelector(".ag-recent-article-descr").textContent = article.description;
@@ -122,7 +122,7 @@ export default class PageGenerator {
           <div class="ag-news-recent-article-copy">
             <div class="ag-recent-article-data">
               <div class="ag-article-category" data-category="${article.category.toLowerCase()}">${article.category}</div>
-              <time class="ag-article-date" datetime="${article.postDate}>${article.postDate.toLocaleDateString()}</time>
+              <time class="ag-article-date" datetime="${article.createdAt}>${article.createdAt.toLocaleDateString()}</time>
             </div>
             <h3 class="">${article.title}</h3>
             <p class="ag-recent-article-descr">${article.description}</p>
