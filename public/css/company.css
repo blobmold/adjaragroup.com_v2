@@ -38,7 +38,7 @@
   transform: scale(1, 0);
   -webkit-transform: scale(1, 0);
   background: var(--global-white);
-  transition: transform .6s cubic-bezier(0, 1, 0.6, 0.98),-webkit-transform .6s cubic-bezier(0, 1, 0.6, 0.98);
+  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1),-webkit-transform .6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ag-btn:hover .box {
   transform: scale(1, 1);
