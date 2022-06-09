@@ -461,6 +461,9 @@ select {
 .ag-news-recent-link {
   text-decoration: none;
 }
+.ag-btn.all-news {
+  margin: 25px auto;
+}
 .article-img {
   vertical-align: top;
   width: 250px;
