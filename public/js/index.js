@@ -330,3 +330,25 @@ async function lazyLoader() {
     }
   }
 })();
+
+(async () => {
+  let amounts = document.querySelectorAll('.stat-amount');
+
+  for(let amount of amounts) {
+    let start = Date.now();
+    let animationDuration = 2000;
+    let max = document.dataset.amount;
+
+    let animation = setInterval(function() {
+
+      let timePassed = Date.now() - start;
+
+      if(timePassed > animationDuration) {
+        clearInterval(animation);
+        return;
+      }
+    }, 20);
+  }
+
+  function count(timePassed, a) {};
+})();
