@@ -5,7 +5,7 @@
 .company-img {
   object-fit: cover;
   width: 100%;
-  max-height: 500px;
+  height: 100%;
 }
 .company-grid {
   display: grid;
@@ -47,16 +47,16 @@
 .ag-btn:hover .text {
   color: var(--global-black);
 }
-.ag-section.company:nth-child(odd) img {
+.ag-section.company:nth-child(odd) .company-img {
   order: 2;
 }
-.ag-section.company:nth-child(odd) div {
+.ag-section.company:nth-child(odd) .company-content {
   order: 1;
 }
-.ag-section.company:nth-child(even) img {
+.ag-section.company:nth-child(even) .company-img {
   order: 1;
 }
-.ag-section.company:nth-child(even) div {
+.ag-section.company:nth-child(even) .company-content {
   order: 2;
 }
 /* Company - Hero */
@@ -87,12 +87,11 @@
 .company h2 {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin: 0 0 25px 0;
 }
 .company p {
   color: #5F6368;
   font-size: 0.875rem;
-  line-height: 1.3rem;
 }
 /* Company - Stats */
 .company-stats {
