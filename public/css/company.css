@@ -125,12 +125,12 @@
 /* Company - CSR */
 /* Company - Team */
 
-.company-content.reveal {
+.reveal {
   transform: translateY(50px);
   opacity: 0;
 }
 
-.company-content.revealed {
+.revealed {
   transform: translateY(0);
   opacity: 1;
   transition-property: transform, opacity;
