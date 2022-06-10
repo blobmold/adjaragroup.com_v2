@@ -577,9 +577,6 @@ select {
 #loader[data-loading="1"] {
   display: flex;
 }
-#loadMore:hover {
-  background: var(--global-black);
-}
 #loadMore[data-loading="1"] {
   background-color: transparent;
   border: 0;
