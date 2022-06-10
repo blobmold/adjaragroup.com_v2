@@ -1,6 +1,15 @@
 [
   {
-    "Hospitality": [
+    "Hotels": [
+      "Rooms Hotel Tbilisi",
+      "Rooms Hotel Kazbegi",
+      "Rooms Hotel Kokhta",
+      "Hostel Fabrika",
+      "Holiday Inn Tbilisi"
+    ]
+  },
+  {
+    "Restaurants & Bars": [
       "Hotels",
       "Restaurants",
       "Events",
@@ -8,12 +17,10 @@
     ]
   },
   {
-    "Hotels": [
-      "Rooms Hotel Tbilisi",
-      "Rooms Hotel Kazbegi",
-      "Rooms Hotel Kokhta",
-      "Hostel Fabrika",
-      "Holiday Inn Tbilisi"
+    "Co-working": [
+      "Tes",
+      "Rustavi",
+      "Kutaisi"
     ]
   },
   {
