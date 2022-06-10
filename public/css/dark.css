@@ -11,7 +11,8 @@
 /* LIGHT THEME */
 :root {
   --global-black: rgb(22, 22, 22);
-  --global-white: rgb(244, 244, 255);
+  --global-white: rgb(255, 255, 255);
+  --global-orange: rgb(250, 100, 87);
   --global-white-darker: rgb(226, 226, 226);
   --global-hover-black: rgba(22, 22, 22, 0.03);
   --border-color: rgb(219, 219, 219);

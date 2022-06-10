@@ -14,40 +14,6 @@
   gap: 50px;
   align-items: center;
 }
-.ag-btn {
-  min-width: 150px;
-  padding: 10px 5px;
-  background: #242124;
-  display: inline-block;
-  font-size: 14px;
-  text-decoration: none;
-  position: relative;
-  border: 1px solid var(--border-color);
-  text-align: center;
-}
-.ag-btn .text {
-  color: var(--global-white);
-  position: relative;
-}
-.box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: top center;
-  transform: scale(1, 0);
-  -webkit-transform: scale(1, 0);
-  background: var(--global-white);
-  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1),-webkit-transform .6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.ag-btn:hover .box {
-  transform: scale(1, 1);
-  transform-origin: bottom center;
-}
-.ag-btn:hover .text {
-  color: var(--global-black);
-}
 .ag-section.company:nth-child(odd) .company-img {
   order: 2;
 }
@@ -124,16 +90,3 @@
 /* Company - History */
 /* Company - CSR */
 /* Company - Team */
-
-.reveal {
-  transform: translateY(50px);
-  opacity: 0;
-}
-
-.revealed {
-  transform: translateY(0);
-  opacity: 1;
-  transition-property: transform, opacity;
-  transition-duration: .6s, .6s;
-  transition-timing-function: ease-in-out;
-}
