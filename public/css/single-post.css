@@ -111,10 +111,6 @@
   height: 400px;
   object-fit: cover;
 }
-.ag-article-body {
-  font-size: 1rem;
-  line-height: 200%;
-}
 .ag-article-body * {
   max-width: 100%;
 }

@@ -53,7 +53,9 @@ img {
   vertical-align: top;
 }
 p {
-  line-height: 2;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 1.5em 0;
 }
 .form-control {
   display: grid;
