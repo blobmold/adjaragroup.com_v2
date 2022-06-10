@@ -280,24 +280,53 @@ async function lazyLoader() {
 })();
 
 (async () => {
-  let newsroomNav = document.querySelector('.newsroom_nav');
+  let newsroomNav = document.querySelector(".newsroom_nav");
   let newsroomTopics = document.getElementById("newsroomTopics");
-  let newsroonList = document.querySelector('.ag-news-cat-list');
-  let newsroomTray = document.querySelector('.newsroom_nav-tray');
-  let newroomNavCurtain = document.getElementById('categoryNav-curtain');
+  let newsroonList = document.querySelector(".ag-news-cat-list");
+  let newsroomTray = document.querySelector(".newsroom_nav-tray");
+  let newroomNavCurtain = document.getElementById("categoryNav-curtain");
 
   if (newsroomTopics) {
     newsroomTopics.addEventListener("click", () => {
       newsroomNav.classList.toggle("open");
-      if(newsroomNav.classList.contains("open")) {
+      if (newsroomNav.classList.contains("open")) {
         newsroomTray.style.maxHeight = `${newsroonList.clientHeight}px`;
       } else {
         newsroomTray.style.maxHeight = `0`;
       }
     });
 
-    newroomNavCurtain.addEventListener('click', () => {
+    newroomNavCurtain.addEventListener("click", () => {
       newsroomNav.classList.remove("open");
     });
+  }
+})();
+
+(async () => {
+  let revealElements = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    let callback = (entries) => {
+      entries.forEach((entry) => {
+        let revealElement = entry.target;
+
+        if (entry.isIntersecting) {          
+          revealElement.classList.remove('reveal');
+          revealElement.classList.add('revealed');
+        }
+      });
+    };
+
+    let options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    };
+
+    let revealObserver = new IntersectionObserver(callback, options);
+
+    for (let revealElement of revealElements) {
+      revealObserver.observe(revealElement);
+    }
   }
 })();

@@ -1,6 +1,7 @@
 /* Company */
 .ag-section.company {
   margin: 150px auto;
+  overflow: visible;
 }
 .company-img {
   object-fit: cover;
@@ -123,3 +124,16 @@
 /* Company - History */
 /* Company - CSR */
 /* Company - Team */
+
+.company-content.reveal {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.company-content.revealed {
+  transform: translateY(0);
+  opacity: 1;
+  transition-property: transform, opacity;
+  transition-duration: .6s, .6s;
+  transition-timing-function: ease-in-out;
+}
