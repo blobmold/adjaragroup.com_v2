@@ -4,7 +4,7 @@
   --global-grid-gap: 20px;
   --global-grid-columns: repeat(12, 1fr);
   --global-columns: 3;
-  --footer-grid-columns: repeat(4, 1fr);
+  --footer-grid-columns: repeat(5, 1fr);
   --footer-content-max-width: 980px;
   --border-color-fade: 1px solid linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, var(--global-black) 50%, rgba(0, 0, 0, 0) 100%);
   --conatiner-background-color: rgb(0, 0, 0, 0.02);
