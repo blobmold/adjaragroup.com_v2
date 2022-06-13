@@ -41,6 +41,7 @@ app.use(navigationMiddleware);
 // User pages
 import homeCtrl from "./controllers/home.js";
 import companyCtrl from "./controllers/company.js";
+import companyTimelineCtrl from "./controllers/companyTimeline.js";
 import hotelsCtrl from "./controllers/hotels.js";
 import restaurantsCtrl from "./controllers/restaurants.js";
 import sitemapCtrl from "./controllers/sitemap.js";
@@ -53,6 +54,7 @@ import jobCtrl from "./controllers/job.js";
 
 app.get("/", homeCtrl);
 app.get("/company", companyCtrl);
+app.get('/company/timeline', companyTimelineCtrl);
 app.get("/hotels", hotelsCtrl);
 app.get("/restaurants", restaurantsCtrl);
 app.get("/sitemap", sitemapCtrl);

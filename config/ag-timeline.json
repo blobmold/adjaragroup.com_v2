@@ -1,0 +1,32 @@
+[
+  {
+    "headline": "Holiday Inn",
+    "year": "2010",
+    "image": "/assets/img/imgs-of-bldings/holiday-inn.jpg",
+    "copy": "In 2010, the company entered the Georgian hospitality sector by introducing and managing the first local Holiday Inn franchise, which successfully pushed design and concept boundaries for the international brand."
+  },
+  {
+    "headline": "Rooms Kazbegi",
+    "year": "2012",
+    "image": "/assets/img/imgs-of-bldings/rh-kazbegi.jpg",
+    "copy": "In 2012, Adjara Group converted an abandoned Soviet-era sanatorium in the mountainous region of Kazbegi into the first Georgian lifestyle brand of Rooms Hotels. It has since gained global recognition and praise for its unparalleled location, architecture and design."
+  },
+  {
+    "headline": "Rooms Tbilisi",
+    "year": "2014",
+    "image": "/assets/img/imgs-of-bldings/rh-tbilisi.jpg",
+    "copy": "Two years later, in 2014, a historic publishing house would become the second Rooms Hotel, this time in the heart of the Georgian capital, Tbilisi. The design concept of the hotel combines brutalist chic architecture with elements of contemporary décor."
+  },
+  {
+    "headline": "Fabrika",
+    "year": "2016",
+    "image": "/assets/img/imgs-of-bldings/fabrika.png",
+    "copy": "In 2016, a former Soviet sewing factory was revived and transformed into the colorful Fabrika Hostel, bringing together young travelers and art enthusiasts as well as a diverse community of local vendors and cafes."
+  },
+  {
+    "headline": "Stamba",
+    "year": "2018",
+    "image": "/assets/img/imgs-of-bldings/stamba.jpg",
+    "copy": "Stamba hotel is an indulgent luxury addition to the Group and is in a separate building of the same former publishing house complex as Rooms Hotel Tbilisi. In 2018, the hotel opened its doors offering exceptional features including a rooftop swimming pool, Chocolaterie & Roastery, Café Stamba, Shio Ramen, along with galleries and exhibition spaces."
+  }
+]
