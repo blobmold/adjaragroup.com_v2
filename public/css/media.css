@@ -142,6 +142,9 @@
   .company-img {
     max-height: 400px;
   }
+  .ag-section.company-hero .company-content .content {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 740px) {
   :root {
