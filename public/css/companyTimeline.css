@@ -1,0 +1,94 @@
+.ct-sect {
+  position: relative;
+  max-height: 100vh;
+  height: 100vh;
+  text-align: center;
+}
+.ct-sect span {
+  font-family: "Lato", 'sans serif';
+}
+.ct-nav {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+.ct-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.ct-nav a {
+  display: block;
+  text-decoration: none;
+  font-size: 0;
+  width: 15px;
+  height: 15px;
+  background: #161616;
+  border-radius: 100%;
+  opacity: 0.15;
+  margin: 10px 0;
+  transition: opacity .4s ease;
+}
+.ct-nav a:hover {
+  opacity: 1;
+}
+.scroll-down {
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+  text-align: center;
+}
+.scroll-down div {
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "Lato", 'sans serif';
+}
+.arr-down {
+  transform: rotate(180deg);
+  width: 35px;
+}
+.ct-hero h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 48px;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ct-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.ct-headline {
+  font-size: 40px;
+  font-weight: bold;
+}
+.ct-year {
+  font-size: 150px;
+  font-weight: 900;
+  opacity: .15;
+}
+.ct-img {
+  width: 530px;
+  height: 345px;
+  opacity: .7;
+  transition: .6s ease-in-out;
+}
+.ct-img:hover {
+  opacity: 1;
+}
+.ct-p {
+  margin-top: 70px;
+  padding: 70px 0;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+.ct-p p {
+  width: 50%;
+  margin: 0 auto;
+}
