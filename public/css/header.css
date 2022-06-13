@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   z-index: 999999;
+  filter: grayscale(1%);
   background-color: var(--global-white);
   transform: translateY(0);
   transition: transform .6s cubic-bezier(.49,.01,.04,.94);
