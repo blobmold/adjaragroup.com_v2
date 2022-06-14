@@ -1,7 +1,6 @@
 .ct-sect {
   position: relative;
   min-height: 100vh;
-  height: 100vh;
   text-align: center;
 }
 .ct-sect span {
