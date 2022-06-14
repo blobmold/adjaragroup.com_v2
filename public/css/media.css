@@ -11,6 +11,10 @@
   .careers-nav-link {
     font-size: 14px;
   }
+  /* Company */
+  .ag-section.company-hero .company-content .content {
+    width: 66%;
+  }
 }
 @media screen and (max-width: 1280px) {
   :root {
