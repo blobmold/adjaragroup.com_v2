@@ -57,6 +57,10 @@ p {
   font-size: 1rem;
   margin: 1.5em 0;
 }
+::selection {
+  color: var(--global-white);
+  background: var(--global-orange);
+}
 .form-control {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -106,7 +110,7 @@ select {
   transform: translateY(0);
   opacity: 1;
   transition-property: transform, opacity;
-  transition-duration: .6s, .6s;
+  transition-duration: 0.6s, 0.6s;
   transition-timing-function: ease-in-out;
 }
 /* Sets global width accroding to the variable */
@@ -194,17 +198,23 @@ select {
   min-width: 150px;
   padding: 10px 5px;
   margin: 5px;
-  background: var(--global-orange);
   display: inline-block;
   font-size: 14px;
   text-decoration: none;
   position: relative;
-  border: 1px solid var(--global-orange);
+  border: 1px solid var(--global-white);
   text-align: center;
+  transition: border 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ag-btn .text {
   color: var(--global-white);
   position: relative;
+}
+.ag-btn.dark {
+  border: 1px solid var(--global-black);
+}
+.ag-btn.dark .text{
+  color: var(--global-black);
 }
 .box {
   position: absolute;
@@ -212,19 +222,21 @@ select {
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--global-orange);
   transform-origin: top center;
-  transform: scale(1, 0);
-  -webkit-transform: scale(1, 0);
-  background: var(--global-white);
-  /* background: var(--global-white); */
-  transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1),-webkit-transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale3d(1, 0, 1);
+  -webkit-transform: scale3d(1, 0, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), -webkit-transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ag-btn:hover {
+  border: 1px solid var(--global-orange);
 }
 .ag-btn:hover .box {
   transform: scale(1, 1);
   transform-origin: bottom center;
 }
 .ag-btn:hover .text {
-  color: var(--global-black);
+  color: var(--global-white);
 }
 /* Homepage */
 .ag-section.hero {
@@ -284,6 +296,11 @@ select {
 }
 .ag-intro-content {
   padding: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
 }
 .ag-intro.title {
   margin: 30px 0;
@@ -329,7 +346,7 @@ select {
   font-weight: 400;
 }
 .ag-news-card .ag-article-title {
-  font-size: 30px;
+  font-size: 20px;
   margin: 30px 0;
 }
 .ag-news-card .ag-article-descr {
@@ -533,6 +550,7 @@ select {
 }
 .ag-news-recent-article h3 {
   font-size: 18px;
+  text-transform: capitalize;
 }
 .ag-recent-article-descr {
   font-size: 12px;
