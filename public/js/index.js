@@ -310,9 +310,9 @@ async function lazyLoader() {
       entries.forEach((entry) => {
         let revealElement = entry.target;
 
-        if (entry.isIntersecting) {          
-          revealElement.classList.remove('reveal');
-          revealElement.classList.add('revealed');
+        if (entry.isIntersecting) {
+          revealElement.classList.remove("reveal");
+          revealElement.classList.add("revealed");
         }
       });
     };
@@ -332,23 +332,9 @@ async function lazyLoader() {
 })();
 
 (async () => {
-  let amounts = document.querySelectorAll('.stat-amount');
+  let stats = document.querySelectorAll(".stats-container");
 
-  for(let amount of amounts) {
-    let start = Date.now();
-    let animationDuration = 2000;
-    let max = document.dataset.amount;
-
-    let animation = setInterval(function() {
-
-      let timePassed = Date.now() - start;
-
-      if(timePassed > animationDuration) {
-        clearInterval(animation);
-        return;
-      }
-    }, 20);
+  if (stats) {
+    await import('./StatsAnimation.js');
   }
-
-  function count(timePassed, a) {};
 })();

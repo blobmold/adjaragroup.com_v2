@@ -89,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 .stat-amount {
   font-size: 42px;
