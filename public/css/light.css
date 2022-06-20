@@ -1,5 +1,7 @@
 :root {
   --global-black: rgb(22, 22, 22);
+  --color-text: rgb(22, 22, 22);
+  --color-text-low-emphasis: rgb(108, 109, 105);
   --global-white: rgb(255, 255, 255);
   --global-orange: #e96e5e;
   --global-white-darker: rgb(226, 226, 226);

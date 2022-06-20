@@ -352,6 +352,7 @@ select {
 .ag-news-card .ag-article-descr {
   font-size: 14px;
   line-height: 2;
+  color: var(--color-text-low-emphasis);
 }
 .ag-article-card-background {
   width: 100%;
@@ -555,6 +556,7 @@ select {
 .ag-recent-article-descr {
   font-size: 12px;
   margin-bottom: 0;
+  color: var(--color-text-low-emphasis);
 }
 .translate-animation {
   border: 1px solid transparent;

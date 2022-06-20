@@ -35,7 +35,7 @@
   margin: 0 0 25px 0;
 }
 .company p {
-  color: #5F6368;
+  color: var(--color-text-low-emphasis);
   font-size: 0.875rem;
 }
 /* Company - Hero */
