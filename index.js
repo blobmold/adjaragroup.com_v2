@@ -52,6 +52,10 @@ import articleCtrl from "./controllers/article.js";
 import careersCtrl from "./controllers/careers.js";
 import jobCtrl from "./controllers/job.js";
 
+// Alternative Homepage
+import homepageAlt from "./controllers/homepageAlt.js";
+app.get("/homepageAlt", homepageAlt);
+
 app.get("/", homeCtrl);
 app.get("/company", companyCtrl);
 app.get('/company/timeline', companyTimelineCtrl);
@@ -64,6 +68,7 @@ app.get("/newsroom/archive", newsroomArchiveCtrl);
 app.get("/newsroom/:id", articleCtrl);
 app.get("/careers", careersCtrl);
 app.get("/careers/job", jobCtrl);
+
 
 import articleAPICtrl from "./controllers/API/articleAPI.js";
 import careerAPICtrl from "./controllers/API/careersAPI.js";

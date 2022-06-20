@@ -51,8 +51,7 @@
   width: 40%;
 }
 .ag-section.company-hero h1, 
-.ag-section.company-hero h2, 
-.ag-section.company-hero p {
+.ag-section.company-hero h2 {
   color: var(--global-white);
 }
 .ag-section.company-hero h1 {
@@ -63,7 +62,7 @@
   z-index: 9999;
 }
 .ag-section.company-hero p {
-  color: var(--global-white-darker);
+  color: var(--color-text-low-emphasis);
 }
 .company-hero-img {
   width: 100%;

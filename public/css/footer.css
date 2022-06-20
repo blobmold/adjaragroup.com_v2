@@ -26,11 +26,11 @@
   list-style: none;
 }
 .ag-gf-grp-link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   text-decoration: none;
   color: var(--global-black);
-  opacity: 0.8;
+  line-height: 2;
 }
 .ag-gf-base {
   display: flex;

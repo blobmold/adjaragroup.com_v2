@@ -1,12 +1,12 @@
 :root {
-  --global-black: rgb(22, 22, 22);
-  --color-text: rgb(22, 22, 22);
-  --color-text-low-emphasis: rgb(108, 109, 105);
-  --global-white: rgb(255, 255, 255);
+  --global-black: #000000;
+  --color-text: #000000;
+  --color-text-low-emphasis:#6c6d69;
+  --color-text-inverted: #ffffff;
+  --global-white: #ffffff;
   --global-orange: #e96e5e;
-  --global-white-darker: rgb(226, 226, 226);
   --global-hover-black: rgba(22, 22, 22, 0.03);
-  --border-color: rgb(219, 219, 219);
-  --image-overlay: rgb(22, 22, 22);
-  --conatiner-background-color: rgb(0, 0, 0, 0.02);
+  --border-color: #dbdbdb;
+  --image-overlay: #0a0a0a;
+  --conatiner-background-color: rgba(10, 10, 10, 0.02);
 }
