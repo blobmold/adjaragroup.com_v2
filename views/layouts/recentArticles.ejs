@@ -8,7 +8,7 @@
     <div class="container">
       <div class="content">
         <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-        <time class="ag-article-date" datetime="<%= article.createdAt.toLocaleDateString() %>"><%= article.createdAt.toLocaleDateString() %></time>
+        <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
         <h3 class="ag-article-title"><%= article.title %></h3>
         <p class="ag-article-descr"><%- article.description %></p>
       </div>
