@@ -49,11 +49,11 @@ export default class PageGenerator {
 
   async generatePageArray(pageAPI, singleItemFunc, row) {
     // if page is loaded separately, assign default APIURL;
-    if(!pageAPI) pageAPI = await this.getPage(this.APIURL);
+    if (!pageAPI) pageAPI = await this.getPage(this.APIURL);
 
     let page = new DocumentFragment();
 
-    for(let el of pageAPI[row]) {
+    for (let el of pageAPI[row]) {
       page.appendChild(await singleItemFunc(el));
     }
     return page;
@@ -97,6 +97,8 @@ export default class PageGenerator {
   }
 
   async createArticleRow(list, article) {
+    let postTime = new Date(article.createdAt);
+    let dateFormatOptions = { year: "numeric", month: "long", day: "numeric" };
     if ("content" in document.createElement("template")) {
       let listItem = document.getElementById("articleLiTemplate").content.cloneNode(true);
       listItem.querySelector(".ag-news-recent-link").href = `/newsroom/${article._id}`;
@@ -108,21 +110,20 @@ export default class PageGenerator {
       category.dataset.category = article.category.toLowerCase();
 
       let time = listItem.querySelector(".ag-article-date");
-      time.textContent = new Date(article.createdAt).toLocaleDateString();
-      time.datetime = new Date(article.createdAt);
+      time.textContent = postTime.toLocaleDateString(undefined, dateFormatOptions);
+      time.datetime = postTime.toISOString();
 
       listItem.querySelector("h3").textContent = article.title;
       listItem.querySelector(".ag-recent-article-descr").textContent = article.description;
       list.append(listItem);
     } else {
-      let elem = `<li class="ag-news-recent-item translate-animation"><a class="ag-news-recent-link" href="/newsroom/${article._id}">
+    let post = `<li class="ag-news-recent-item translate-animation"><a class="ag-news-recent-link" href="/newsroom/${article._id}">
         <article class="ag-news-recent-article">
-          <picture class="ag-news-recent-article-img-container"><img class="ag-news-recent-article-img"
-              src="${article.imageSmall}" loading="lazy"></picture>
+          <picture class="ag-news-recent-article-img-container"><img class="ag-news-recent-article-img" src="${article.imageSmall}" loading="lazy" /></picture>
           <div class="ag-news-recent-article-copy">
-            <div class="ag-recent-article-data">
+            <div class="ag-recent-article-data ag-article-data">
               <div class="ag-article-category" data-category="${article.category.toLowerCase()}">${article.category}</div>
-              <time class="ag-article-date" datetime="${article.createdAt}>${article.createdAt.toLocaleDateString()}</time>
+              <time class="ag-article-date" datetime="${postTime.toISOString()}">${postTime.toLocaleDateString(undefined, dateFormatOptions)}</time>
             </div>
             <h3 class="">${article.title}</h3>
             <p class="ag-recent-article-descr">${article.description}</p>
@@ -130,7 +131,7 @@ export default class PageGenerator {
         </article>
       </a></li>`;
 
-      list.insertAdjacentHTML("beforeend", elem);
+    list.insertAdjacentHTML("beforeend", post);
     }
   }
 }
