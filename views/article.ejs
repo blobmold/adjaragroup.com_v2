@@ -18,7 +18,7 @@
                 <a href="/newsroom?category=<%= article.category %>" class="underline" style="text-decoration: none"><%= article.category %></a>
               </div>
               <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
-              <h1 class="ag-article-title"><%= article.title %></h1>
+              <h1 class="ag-article-title title"><%= article.title %></h1>
               <%- include('layouts/social', article) %>
             </div>
             <!-- Article Body -->
@@ -31,10 +31,11 @@
         <!-- Related Articles -->
         <% if(relatedArticles.length > 0) { %>
         <aside class="ag-news-related">
-          <div class="ag-news-related-title-container">
-            <h2 class="ag-news-related-title" style="font-family: 'Lato', sans-serif">Related News</h2>
+          <h2 class="ag-news-related-title title">Related News</h2>
+
+          <!-- <div class="ag-news-related-title-container">
             <span style="font-size: 14px; font-weight: normal"><a href="/newsroom" class="underline">All News</a></span>
-          </div>
+          </div> -->
           <div class="ag-news-related-viewport">
             <div class="ag-news-related-content">
               <ol class="ag-news-related-list">
@@ -57,7 +58,7 @@
                 </li>
                 <% } %>
               </ol>
-              <div style="text-align: center">
+              <div style="text-align: center; margin: 50px 0;">
                 <a class="ag-cta large underline" href="/newsroom">All News →</a>
               </div>
             </div>

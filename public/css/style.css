@@ -195,11 +195,11 @@ select {
 .overlay.darker {
   opacity: 0.6;
 }
-.title {
+/* .title {
   font-size: 25px;
   margin: 50px 0 25px 0;
   text-align: center;
-}
+} */
 .title-border {
   border-bottom: var(--border-color) 1px solid;
   padding-bottom: 10px;

@@ -152,16 +152,9 @@
 .ag-news-related {
   margin-top: 50px;
 }
-.ag-news-related-title-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: var(--border-color) 1px solid;
-  padding-bottom: 10px;
-}
-.ag-news-related-title {
-  margin: 0;
-  font-size: 25px;
+.ag-news-related-title.title {
+  margin: 50px 0;
+  font-size: 3rem;
 }
 .ag-news-related-list {
   list-style-type: none;
@@ -221,11 +214,9 @@
 .ag-article-category[data-category="restaurants"]::before {
   background-color: var(--article-category-restaurants);
 } */
-.ag-article-title {
-  font-weight: 700;
-  font-size: 45px;
-  text-transform: capitalize;
+.ag-article-title.title {
   margin: 20px 0;
+  text-align: start;
 }
 .ag-article-subheadling-container {
   display: flex;

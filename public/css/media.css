@@ -113,7 +113,10 @@
     grid-column-end: -1;
   }
   .ag-article-title {
-    font-size: 35px;
+    font-size: 2rem;
+  }
+  .ag-news-related-title.title {
+    font-size: 1.875rem;
   }
   /* JOBS */
   .careers-nav-list {
@@ -157,7 +160,7 @@
   /* HOMEPAGE */
   .ag-section.hero .hero.title {
     width: 100%;
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   /* Newsroom */
   .featured-news .global-grid,
@@ -182,8 +185,8 @@
     width: 100%;
   }
   /* ARTICLES */
-  .ag-article-title {
-    font-size: 26px;
+  .ag-article-title.title {
+    font-size: 1.875rem;
   }
   .ag-news-recent-item:hover .ag-news-recent-article,
   .ag-news-recent-item:focus .ag-news-recent-article,
