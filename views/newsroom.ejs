@@ -9,14 +9,14 @@
       <% if(typeof featuredArticles !== 'undefined') { %>
       <section class="featured-news global-width featured-news-compact">
         <div class="news-container">
-          <h2 class="alt-title" style="margin-top: 150px;">Featured News</h2>
+          <h2 class="title" style="margin-top: 150px;">Featured News</h2>
           <%- include('layouts/recentArticles', {recentArticles: featuredArticles}) %>
         </div>
       </section>
       <% } %>
   
       <section class="recent-news global-width">
-        <h2 class="alt-title">Recent News</h2>
+        <h2 class="title">Recent News</h2>
         <div class="recent-news-container">
           <ol class="ag-news-recent-list list-nobullet">
             <% for(let article of articles) { %>
