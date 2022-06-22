@@ -17,7 +17,7 @@
               <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>">
                 <a href="/newsroom?category=<%= article.category %>" class="underline" style="text-decoration: none"><%= article.category %></a>
               </div>
-              <time class="ag-article-date" datetime="<%= article.createdAt.toLocaleDateString() %>"><%= article.createdAt.toLocaleDateString() %></time>
+              <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
               <h1 class="ag-article-title"><%= article.title %></h1>
               <%- include('layouts/social', article) %>
             </div>
@@ -48,7 +48,7 @@
                       <div class="ag-news-related-article-copy ag-article-copy">
                         <div class="ag-related-article-data ag-article-data">
                           <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-                          <time class="ag-article-date" datetime="<%= article.createdAt.toLocaleDateString() %>"><%= article.createdAt.toLocaleDateString() %></time>
+                          <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
                         </div>
                         <h3><%= article.title %></h3>
                       </div>
@@ -58,10 +58,7 @@
                 <% } %>
               </ol>
               <div style="text-align: center">
-                <a class="ag-btn all-news dark" href="/newsroom">
-                  <div class="box"></div>
-                  <span class="text">All news</span>
-                </a>
+                <a class="ag-cta large underline" href="/newsroom">All News →</a>
               </div>
             </div>
           </div>
