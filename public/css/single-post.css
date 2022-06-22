@@ -73,7 +73,7 @@
   height: 100%;
   position: absolute;
   top: 0;
-  transform: translateX(10%);
+  transform: translateX(3%);
   z-index: -1;
   visibility: hidden;
   opacity: 0;
