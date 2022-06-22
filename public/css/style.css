@@ -359,9 +359,6 @@ select {
   font-size: 14px;
   font-weight: bold;
 }
-.newsroom_nav-content * {
-  font-family: "Lato", sans-serif;
-}
 #newsroomTopics,
 #newsroomArchive {
   display: flex;
@@ -429,7 +426,6 @@ select {
   transition-delay: 0.1s;
 }
 .categoryNav-curtain {
-  cursor: pointer;
   display: none;
   background: rgba(0, 0, 0, 0.7);
 }

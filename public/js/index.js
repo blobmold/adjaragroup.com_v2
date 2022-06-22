@@ -287,7 +287,8 @@ async function lazyLoader() {
   let newroomNavCurtain = document.getElementById("categoryNav-curtain");
 
   if (newsroomTopics) {
-    newsroomTopics.addEventListener("click", () => {
+    newsroomTopics.addEventListener("click", (e) => {
+      e.preventDefault();
       newsroomNav.classList.toggle("open");
       if (newsroomNav.classList.contains("open")) {
         newsroomTray.style.maxHeight = `${newsroonList.clientHeight}px`;

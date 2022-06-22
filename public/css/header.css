@@ -80,7 +80,6 @@
   transform: translateY(5px);
 }
 .navbar-overlay {
-  cursor: pointer;
   display: none;
   background: rgba(0, 0, 0, 0.7);
 }
