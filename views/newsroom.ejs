@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('layouts/head') %>
-  </head>
+  <%- include('layouts/head') %>
   <body>
     <%- include('layouts/navbar') %>
     <%- include('layouts/newsroomNav') %>
     <main class="main" id="main">
       <h1 class="visuallyhidden">Newsroom</h1>
       <% if(typeof featuredArticles !== 'undefined') { %>
-      <section class="ag-section featured-news global-width">
+      <section class="featured-news global-width featured-news-compact">
         <div class="news-container">
-          <h2 class="title visuallyhidden">Featured News</h2>
+          <h2 class="alt-title" style="margin-top: 150px;">Featured News</h2>
           <%- include('layouts/recentArticles', {recentArticles: featuredArticles}) %>
         </div>
       </section>
       <% } %>
   
       <section class="recent-news global-width">
-        <h2 class="title">Recent News</h2>
+        <h2 class="alt-title">Recent News</h2>
         <div class="recent-news-container">
           <ol class="ag-news-recent-list list-nobullet">
             <% for(let article of articles) { %>
@@ -31,7 +29,7 @@
                   <div class="ag-news-recent-article-copy ag-article-copy">
                     <div class="ag-recent-article-data ag-article-data">
                       <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-                      <time class="ag-article-date" datetime="<%= article.createdAt.toLocaleDateString() %>"><%= article.createdAt.toLocaleDateString() %></time>
+                      <time class="ag-article-date" datetime="<%= new Date(article.createdAt); %>"><%= article.createdAt.toLocaleDateString() %></time>
                     </div>
                     <h3><%= article.title %></h3>
                     <p class="ag-recent-article-descr"><%= article.description %></p>

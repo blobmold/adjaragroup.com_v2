@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('layouts/head') %>
-  </head>
+  <%- include('layouts/head') %>
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
@@ -91,7 +89,7 @@
         </div>
       </section>
 
-      <section class="ag-section news global-width">
+      <section class="ag-section featured-news global-width">
         <div class="news-container">
           <h2 class="title">Latest News</h2>
           <ul class="ag-news-list list-nobullet">
@@ -100,7 +98,7 @@
           </ul>
           <%- include('layouts/recentArticles', {recentArticles}) %>
         </div>
-        <div style="text-align: center; margin: 25px 0;">
+        <div style="text-align: center; margin: 25px 0">
           <a href="/newsroom" class="ag-btn dark">
             <div class="box"></div>
             <span class="text">All News</span>
