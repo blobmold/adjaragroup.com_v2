@@ -304,6 +304,15 @@ async function lazyLoader() {
 })();
 
 (async () => {
+  new SplitText(".ag-article-body > p", { linesClass: "line++" });
+
+  let lines = document.querySelectorAll(".ag-article-body > p > div");
+  for (let line of lines) {
+    line.classList.add("reveal");
+  }
+})();
+
+(async () => {
   let revealElements = document.querySelectorAll(".reveal");
 
   if ("IntersectionObserver" in window) {
@@ -321,7 +330,7 @@ async function lazyLoader() {
     let options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.3,
+      threshold: 0.5,
     };
 
     let revealObserver = new IntersectionObserver(callback, options);
@@ -336,6 +345,6 @@ async function lazyLoader() {
   let stats = document.querySelectorAll(".stats-container");
 
   if (stats) {
-    await import('./StatsAnimation.js');
+    await import("./StatsAnimation.js");
   }
 })();
