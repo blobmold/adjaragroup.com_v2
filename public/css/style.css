@@ -32,7 +32,7 @@ body {
 }
 main {
   max-width: 2560px;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   position: relative;
 }
 h1,

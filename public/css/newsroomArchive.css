@@ -1,3 +1,9 @@
+.ag-section.archive {
+  margin-top: 50px;
+}
+.archive > .title {
+  margin: 50px 0;
+}
 .ag-archive-container.global-grid {
   grid-template-columns: repeat(var(--global-columns), 1fr);
 }
@@ -12,9 +18,7 @@
 }
 .ag-article-link {
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: .1s ease;
+  transition: color .1s ease;
 }
 .ag-article-link:hover {
   color: var(--global-orange);
