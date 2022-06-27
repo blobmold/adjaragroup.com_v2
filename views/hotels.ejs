@@ -5,25 +5,6 @@
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
-      <section class="ag-section hotels">
-        <h1 class="global-width title visuallyhidden">Hotels</h1>
-        <div class="ag-hotels-sect-container global-grid">
-          <% for(let hotel of hotels) { %>
-          <div class="el <%= hotel.toObject().largeHotel ? 'el1' : 'el-small' %>">
-            <figure>
-              <img class="ag-hotel-background" src="<%= hotel.image %>" alt="<% hotel.property %>" />
-              <div class="ag-hotels-overlay"></div>
-            </figure>
-
-            <img class="ag-hotel-logo" src="<%= hotel.logoWhite %>" alt="<%= hotel.property %>" width="100" height="100" />
-            <div class="ag-hotel-links">
-              <a class="ag-cta underline u-light" href="https://roomshotels.com/" target="_blank" style="color: var(--global-white)">Visit website</a>
-              <a class="ag-cta underline u-light" href="#!" style="color: var(--global-white)">Read more</a>
-            </div>
-          </div>
-          <% } %>
-        </div>
-      </section>
     </main>
     <%- include('layouts/footer') %>
   </body>
