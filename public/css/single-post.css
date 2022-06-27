@@ -60,6 +60,7 @@
   font-family: 'Noto Serif', serif;
   font-style: italic;
   font-size: 12px;
+  letter-spacing: 0.09rem;
 }
 .ag-news-card .ag-article-title {
   font-size: 20px;
@@ -137,7 +138,7 @@
   width: 100%;
 }
 .ag-news-recent-article h3 {
-  font-size: 18px;
+  font-size: 1.2rem;
   text-transform: capitalize;
 }
 .ag-recent-article-descr {
