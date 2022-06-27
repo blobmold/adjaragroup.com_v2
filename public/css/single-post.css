@@ -147,7 +147,6 @@
   /* color: var(--color-text-low-emphasis); */
 }
 
-
 /* Related News */
 .ag-news-related {
   margin-top: 50px;
@@ -182,13 +181,11 @@
 .ag-news-related-article h3 {
   font-size: 16px;
 }
-.ag-article-container {
-  margin-top: 50px;
-  max-width: 980px;
+.ag-articleDetail .img-container,
+.ag-articleDetail .ag-article-content {
+  margin: 0 auto;
 }
-.ag-articleDetail {
-  width: 100%;
-}
+
 .ag-article-headingBlock {
   margin: 25px 0;
 }
@@ -228,7 +225,7 @@
 }
 .ag-article-img {
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 .ag-article-body * {

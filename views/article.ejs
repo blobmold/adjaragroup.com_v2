@@ -5,72 +5,70 @@
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
       <progressBar role="progressbar" class="ag-article-progressBar"></progressBar>
-      <div class="ag-article-container global-width">
-        <!-- Article  -->
-        <section class="ag-section-article">
-          <article class="ag-articleDetail" data-id="817341">
-            <div class="img-container">
-              <picture class="ag-article-img-container">
-                <img class="ag-article-img lazy" src="" data-src="<%= article.image %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
-              </picture>
-              <div class="image-anim-box"></div>
+      <!-- Article  -->
+      <article class="ag-articleDetail global-width" data-id="817341">
+        <div class="img-container" style="max-width: 1200px;">
+          <picture class="ag-article-img-container">
+            <img class="ag-article-img lazy" src="" data-src="<%= article.image %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
+          </picture>
+          <div class="image-anim-box"></div>
+        </div> 
+        <div class="ag-article-content" style="max-width: 980px;">
+          <!-- Article Heading -->
+          <div class="ag-article-headingBlock">
+            <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>">
+              <a href="/newsroom?category=<%= article.category %>" class="underline" style="text-decoration: none"><%= article.category %></a>
             </div>
-            <!-- Article Heading -->
-            <div class="ag-article-headingBlock">
-              <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>">
-                <a href="/newsroom?category=<%= article.category %>" class="underline" style="text-decoration: none"><%= article.category %></a>
-              </div>
-              <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
-              <h1 class="ag-article-title title"><%= article.title %></h1>
-              <%- include('layouts/social', article) %>
-            </div>
-            <!-- Article Body -->
-            <div class="ag-article-body reveal"><%- article.body %></div>
-          </article>
-          <div class="ag-article-divider"></div>
+            <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
+            <h1 class="ag-article-title title"><%= article.title %></h1>
+            <%- include('layouts/social', article) %>
+          </div>
+          <!-- Article Body -->
+          <div class="ag-article-body reveal"><%- article.body %></div>
           <div class="ag-article-share-copy">Share this page:</div>
           <%- include('layouts/social', article) %>
-        </section>
-        <!-- Related Articles -->
-        <% if(relatedArticles.length > 0) { %>
-        <aside class="ag-news-related">
-          <h2 class="ag-news-related-title title">Related News</h2>
+        </div>
+      </article>
 
-          <!-- <div class="ag-news-related-title-container">
+      <!-- Related Articles -->
+      <% if(relatedArticles.length > 0) { %>
+      <aside class="ag-news-related global-width" style="max-width: 980px;">
+        <h2 class="ag-news-related-title title">Related News</h2>
+
+        <!-- <div class="ag-news-related-title-container">
             <span style="font-size: 14px; font-weight: normal"><a href="/newsroom" class="underline">All News</a></span>
           </div> -->
-          <div class="ag-news-related-viewport">
-            <div class="ag-news-related-content">
-              <ol class="ag-news-related-list">
-                <% for(let article of relatedArticles) { %> <% if(!article) { break } %>
-                <li class="ag-news-related-item translate-animation">
-                  <a href="/newsroom/<%= article._id %>" class="ag-news-related-link">
-                    <article class="ag-news-related-article">
-                      <div class="img-container">
-                        <picture class="ag-news-related-article-img-container">
-                          <img class="ag-news-related-article-img article-img lazy" width="100" height="60" src="" data-src="<%= article.imageSmall %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
-                        </picture>
+        <div class="ag-news-related-viewport">
+          <div class="ag-news-related-content">
+            <ol class="ag-news-related-list">
+              <% for(let article of relatedArticles) { %> <% if(!article) { break } %>
+              <li class="ag-news-related-item translate-animation">
+                <a href="/newsroom/<%= article._id %>" class="ag-news-related-link">
+                  <article class="ag-news-related-article">
+                    <div class="img-container">
+                      <picture class="ag-news-related-article-img-container">
+                        <img class="ag-news-related-article-img article-img lazy" width="100" height="60" src="" data-src="<%= article.imageSmall %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
+                      </picture>
+                    </div>
+                    <div class="ag-news-related-article-copy ag-article-copy">
+                      <div class="ag-related-article-data ag-article-data">
+                        <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
+                        <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
                       </div>
-                      <div class="ag-news-related-article-copy ag-article-copy">
-                        <div class="ag-related-article-data ag-article-data">
-                          <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
-                          <time class="ag-article-date" datetime="<%= new Date(article.createdAt).toISOString(); %>"><%= new Date(article.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" }) %></time>
-                        </div>
-                        <h3><%= article.title %></h3>
-                      </div>
-                    </article>
-                  </a>
-                </li>
-                <% } %>
-              </ol>
-              <div style="text-align: center; margin: 50px 0">
-                <a class="ag-cta large underline" href="/newsroom">All News →</a>
-              </div>
+                      <h3><%= article.title %></h3>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <% } %>
+            </ol>
+            <div style="text-align: center; margin: 50px 0">
+              <a class="ag-cta large underline" href="/newsroom">All News →</a>
             </div>
           </div>
-        </aside>
-        <% } %>
-      </div>
+        </div>
+      </aside>
+      <% } %>
     </main>
 
     <%- include('layouts/footer') %>
