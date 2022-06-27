@@ -338,4 +338,33 @@ async function lazyLoader() {
 (async () => {
   // eslint-disable-next-line no-undef
   gsap.registerPlugin(ScrollTrigger);
+
+  let contents = document.querySelectorAll(".content");
+
+  let contentObserver = new IntersectionObserver(
+    (entries, observer) => {
+      let targets = entries.map((entry) => {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
+          return entry.target;
+        }
+      });
+      // eslint-disable-next-line no-undef
+      gsap.from(targets, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        // eslint-disable-next-line no-undef
+        ease: Power3.easeOut,
+        stagger: 0.1,
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  for (let content of contents) {
+    contentObserver.observe(content);
+  }
 })();
