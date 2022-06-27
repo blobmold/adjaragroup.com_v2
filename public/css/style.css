@@ -110,7 +110,7 @@ select {
   font-weight: 500;
 }
 .reveal {
-  transform: translateY(30px);
+  transform: translateY(50px);
   opacity: 0;
 }
 
@@ -118,8 +118,8 @@ select {
   transform: translateY(0);
   opacity: 1;
   transition-property: transform, opacity;
-  transition-duration: 0.6s, 0.6s;
-  transition-timing-function: ease-in-out;
+  transition-duration: 1s, 1s;
+  transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);;
 }
 /* Sets global width accroding to the variable */
 .global-width {

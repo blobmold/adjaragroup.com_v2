@@ -304,40 +304,26 @@ async function lazyLoader() {
 })();
 
 (async () => {
-  new SplitText(".ag-article-body > p", { linesClass: "line++" });
-
-  let lines = document.querySelectorAll(".ag-article-body > p > div");
-  for (let line of lines) {
-    line.classList.add("reveal");
-  }
-})();
-
-(async () => {
   let revealElements = document.querySelectorAll(".reveal");
 
-  if ("IntersectionObserver" in window) {
-    let callback = (entries) => {
-      entries.forEach((entry) => {
-        let revealElement = entry.target;
-
-        if (entry.isIntersecting) {
-          revealElement.classList.remove("reveal");
-          revealElement.classList.add("revealed");
-        }
-      });
-    };
-
-    let options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
-
-    let revealObserver = new IntersectionObserver(callback, options);
-
-    for (let revealElement of revealElements) {
-      revealObserver.observe(revealElement);
+  let callback = (entries, observer) => {
+    for (let entry of entries) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        entry.target.classList.remove("reveal");
+        entry.target.classList.add("revealed");
+      }
     }
+  };
+
+  let options = {
+    threshold: 0.5,
+  };
+
+  let revealObserver = new IntersectionObserver(callback, options);
+
+  for (let revealElement of revealElements) {
+    revealObserver.observe(revealElement);
   }
 })();
 
@@ -347,4 +333,9 @@ async function lazyLoader() {
   if (stats) {
     await import("./StatsAnimation.js");
   }
+})();
+
+(async () => {
+  // eslint-disable-next-line no-undef
+  gsap.registerPlugin(ScrollTrigger);
 })();
