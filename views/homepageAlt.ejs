@@ -23,19 +23,21 @@
       </section>
 
       <% for(let section of homeContent) { %>
-        <section class="ag-section global-width alt-home-section reveal" id="hotels">
-          <div class="content">
-            <h2 class="title"><%= section.title %></h2>
+      <section class="ag-section global-width alt-home-section reveal" id="hotels">
+        <div class="content">
+          <div>
+            <h2><%= section.title %></h2>
             <p class="paragraph"><%= section.content %></p>
+          </div>
+          <div style="display: inline-block">
             <a href="<%= section.ctaLink %>" class="underline ag-cta"><%= section.ctaText %></a>
           </div>
-          <div class="img-container">
-            <picture>
-              <img class="alt-home-img lazy" src="" data-src="<%= section.image %>" data-srcset="" alt="asdf" loading="lazy" />
-            </picture>
-            <div class="image-anim-box"></div>
-          </div>
-        </section>
+        </div>
+        <div class="img-container">
+          <img class="alt-home-img lazy" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs" data-src="<%= section.image %>" data-srcset="" alt="asdf" loading="lazy" />
+          <div class="image-anim-box"></div>
+        </div>
+      </section>
       <% } %>
 
       <section class="ag-section featured-news global-width">
@@ -44,11 +46,11 @@
           <div class="news-container-links">
             <a class="ag-news-link large underline ag-cta" href="/newsroom">All News</a>
             <span class="slasher"></span>
-            <a class="ag-news-link large underline ag-cta" href="/newsroom/archive">News Archive</a>  
+            <a class="ag-news-link large underline ag-cta" href="/newsroom/archive">News Archive</a>
           </div>
           <%- include('layouts/recentArticles', {recentArticles}) %>
         </div>
-        <div style="text-align: center; margin: 25px 0;">
+        <div style="text-align: center; margin: 25px 0">
           <a href="/newsroom" class="ag-cta large underline">All News →</a>
         </div>
       </section>

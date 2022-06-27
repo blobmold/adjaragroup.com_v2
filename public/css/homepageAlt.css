@@ -49,10 +49,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 40px;
-  margin: 200px auto;
+  margin: 100px auto;
 }
 .alt-home-section .img-container {
   overflow: hidden;
+}
+.alt-home-section .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .alt-home-section:nth-child(even) .content {
   order: 1;
@@ -75,7 +80,6 @@
 }
 .title {
   margin-top: 0;
-  font-size: 3.75rem;
   text-align: center;
   text-transform: capitalize;
 }

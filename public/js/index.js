@@ -238,30 +238,34 @@
 async function lazyLoader() {
   let lazyImages = document.querySelectorAll("img.lazy");
 
+  let callback = (entries, observer) => {
+    for (let entry of entries) {
+      let lazyImage = entry.target;
+      // lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+      lazyImage.style.opacity = 0;
+      console.log(entry.intersectionRatio);
+      if (entry.isIntersecting) {
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.srcset = lazyImage.dataset.srcset;
+        lazyImage.classList.remove("lazy");
+        observer.unobserve(lazyImage);
+      }
+    }
+  };
+
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        let lazyImage = entry.target;
-        lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
-        lazyImage.style.opacity = 0;
-        if (entry.isIntersecting) {
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
+    let lazyImageObserver = new IntersectionObserver(callback, {threshold: 0.5 });
 
     lazyImages.forEach((lazyImage) => {
       lazyImageObserver.observe(lazyImage);
       lazyImage.addEventListener("load", () => {
+        // Don't display images until they are fully loaded
         lazyImage.style.opacity = 1;
-        let box = lazyImage.closest('.img-container').querySelector('.image-anim-box');
-        if(box) {
+        let box = lazyImage.closest(".img-container").querySelector(".image-anim-box");
+        if (box) {
           box.style.transform = "translate(100%, -100%)";
         }
-      }); // Don't display images until they are fully loaded
+      });
     });
   }
 }
@@ -323,7 +327,7 @@ async function lazyLoader() {
   };
 
   let options = {
-    threshold: 0.5,
+    threshold: 0.2,
   };
 
   let revealObserver = new IntersectionObserver(callback, options);
