@@ -40,6 +40,7 @@ app.use(navigationMiddleware);
 // Routes
 // User pages
 import homeCtrl from "./controllers/home.js";
+import homeOld from "./controllers/homeOld.js";
 import companyCtrl from "./controllers/company.js";
 import companyTimelineCtrl from "./controllers/companyTimeline.js";
 import hotelsCtrl from "./controllers/hotels.js";
@@ -52,11 +53,8 @@ import articleCtrl from "./controllers/article.js";
 import careersCtrl from "./controllers/careers.js";
 import jobCtrl from "./controllers/job.js";
 
-// Alternative Homepage
-import homepageAlt from "./controllers/homepageAlt.js";
-app.get("/homepageAlt", homepageAlt);
-
 app.get("/", homeCtrl);
+app.get("/homeOld", homeOld);
 app.get("/company", companyCtrl);
 app.get('/company/timeline', companyTimelineCtrl);
 app.get("/hotels", hotelsCtrl);
