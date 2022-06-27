@@ -242,7 +242,7 @@ async function lazyLoader() {
     let lazyImageObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         let lazyImage = entry.target;
-        lazyImage.style.transition = "opacity 0.5s ease";
+        lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
         lazyImage.style.opacity = 0;
         if (entry.isIntersecting) {
           lazyImage.src = lazyImage.dataset.src;
@@ -255,7 +255,13 @@ async function lazyLoader() {
 
     lazyImages.forEach((lazyImage) => {
       lazyImageObserver.observe(lazyImage);
-      lazyImage.addEventListener("load", () => (lazyImage.style.opacity = 1)); // Don't display images until they are fully loaded
+      lazyImage.addEventListener("load", () => {
+        lazyImage.style.opacity = 1;
+        let box = lazyImage.closest('.img-container').querySelector('.image-anim-box');
+        if(box) {
+          box.style.transform = "translate(100%, -100%)";
+        }
+      }); // Don't display images until they are fully loaded
     });
   }
 }
@@ -336,35 +342,61 @@ async function lazyLoader() {
 })();
 
 (async () => {
+  // let contents = document.querySelectorAll(".content");
+
+  // let contentObserver = new IntersectionObserver(
+  //   (entries, observer) => {
+  //     let targets = entries.map((entry) => {
+  //       if (entry.isIntersecting) {
+  //         observer.unobserve(entry.target);
+  //         return entry.target;
+  //       }
+  //     });
+
+  //     revealContent(targets);
+  //   },
+  //   {
+  //     threshold: 0.5,
+  //   }
+  // );
+
+  // function revealContent(targets) {
+  //   // eslint-disable-next-line no-undef
+  //   gsap.set(targets, {
+  //     opacity: 0,
+  //     y: 100,
+  //   });
+  //   // eslint-disable-next-line no-undef
+  //   gsap.to(targets, {
+  //     opacity: 1,
+  //     y: 0,
+  //     duration: 1,
+  //     // eslint-disable-next-line no-undef
+  //     ease: Power3.easeOut,
+  //     stagger: 0.1,
+  //   });
+  // }
+
+  // for (let content of contents) {
+  //   contentObserver.observe(content);
+  // }
+
+  // content scrub gsap scrolltrigger
   // eslint-disable-next-line no-undef
   gsap.registerPlugin(ScrollTrigger);
 
-  let contents = document.querySelectorAll(".content");
+  // eslint-disable-next-line no-undef
+  const contents = gsap.utils.toArray(".alt-home-section .content");
 
-  let contentObserver = new IntersectionObserver(
-    (entries, observer) => {
-      let targets = entries.map((entry) => {
-        if (entry.isIntersecting) {
-          observer.unobserve(entry.target);
-          return entry.target;
-        }
-      });
-      // eslint-disable-next-line no-undef
-      gsap.from(targets, {
-        opacity: 0,
-        y: 100,
-        duration: 1,
-        // eslint-disable-next-line no-undef
-        ease: Power3.easeOut,
-        stagger: 0.1,
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
-
-  for (let content of contents) {
-    contentObserver.observe(content);
-  }
+  contents.forEach((content) => {
+    // eslint-disable-next-line no-undef
+    gsap.to(content, {
+      scrollTrigger: {
+        trigger: content,
+        scrub: 1,
+        start: "top bottom",
+      },
+      y: 50,
+    });
+  });
 })();

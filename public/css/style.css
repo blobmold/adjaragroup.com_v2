@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-weight: 700;
   color: var(--color-text);
   text-transform: capitalize;
@@ -119,7 +119,7 @@ select {
   opacity: 1;
   transition-property: transform, opacity;
   transition-duration: 1s, 1s;
-  transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);;
+  transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
 }
 /* Sets global width accroding to the variable */
 .global-width {
@@ -142,7 +142,7 @@ select {
   box-sizing: border-box;
 }
 .ag-cta {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-weight: bold;
 }
 .ag-cta.large {
@@ -205,7 +205,7 @@ select {
   padding-bottom: 10px;
 }
 .subtitle {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
 }
 .ag-btn {
   min-width: 150px;
@@ -240,6 +240,17 @@ select {
   transform: scale3d(1, 0, 1);
   -webkit-transform: scale3d(1, 0, 1);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), -webkit-transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-container {
+  position: relative;
+}
+.image-anim-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: translateY(-100%);
+  transition: transform 1s cubic-bezier(0.83, 0, 0.17, 1);
 }
 .ag-btn:hover {
   border: 1px solid var(--global-orange);

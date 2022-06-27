@@ -2,19 +2,18 @@
 <html lang="en">
   <%- include('layouts/head') %>
   <body>
-    <%- include('layouts/navbar') %>
-    <%- include('layouts/newsroomNav') %>
+    <%- include('layouts/navbar') %> <%- include('layouts/newsroomNav') %>
     <main class="main" id="main">
       <h1 class="visuallyhidden">Newsroom</h1>
       <% if(typeof featuredArticles !== 'undefined') { %>
       <section class="featured-news global-width featured-news-compact">
         <div class="news-container">
-          <h2 class="title" style="margin-top: 150px;">Featured News</h2>
+          <h2 class="title" style="margin-top: 150px">Featured News</h2>
           <%- include('layouts/recentArticles', {recentArticles: featuredArticles}) %>
         </div>
       </section>
       <% } %>
-  
+
       <section class="recent-news global-width">
         <h2 class="title">Recent News</h2>
         <div class="recent-news-container">
@@ -23,9 +22,11 @@
             <li class="ag-news-recent-item translate-animation hidden">
               <a href="/newsroom/<%= article._id %>" class="ag-news-recent-link">
                 <article class="ag-news-recent-article">
-                  <picture class="ag-news-recent-article-img-container">
-                    <img class="ag-news-recent-article-img article-img lazy" src="" data-src="<%= article.imageSmall %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
-                  </picture>
+                  <div class="img-container">
+                    <picture class="ag-news-recent-article-img-container">
+                      <img class="ag-news-recent-article-img article-img lazy" src="" data-src="<%= article.imageSmall %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
+                    </picture>
+                  </div>
                   <div class="ag-news-recent-article-copy ag-article-copy">
                     <div class="ag-recent-article-data ag-article-data">
                       <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>
@@ -43,9 +44,11 @@
             <li class="ag-news-recent-item translate-animation hidden">
               <a href="" class="ag-news-recent-link">
                 <article class="ag-news-recent-article">
-                  <picture class="ag-news-recent-article-img-container">
-                    <img class="ag-news-recent-article-img article-img lazy" src="" data-src="" data-srcset="" alt="" loading="lazy" />
-                  </picture>
+                  <div class="img-container">
+                    <picture class="ag-news-recent-article-img-container">
+                      <img class="ag-news-recent-article-img article-img lazy" src="" data-src="" data-srcset="" alt="" loading="lazy" />
+                    </picture>
+                  </div>
                   <div class="ag-news-recent-article-copy ag-article-copy">
                     <div class="ag-recent-article-data ag-article-data">
                       <div class="ag-article-category" data-category=""></div>
@@ -63,7 +66,7 @@
             <span class="text">Load More</span>
           </a>
         </div>
-      </section>  
+      </section>
     </main>
     <%- include('layouts/footer') %>
   </body>

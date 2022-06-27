@@ -124,7 +124,6 @@
   margin: 25px auto;
 }
 .article-img {
-  vertical-align: top;
   width: 250px;
   height: 130px;
   object-fit: cover;
@@ -227,7 +226,6 @@
   padding: 0;
 }
 .ag-article-img {
-  vertical-align: top;
   width: 100%;
   height: 400px;
   object-fit: cover;
