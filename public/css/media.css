@@ -237,6 +237,9 @@
     max-width: unset;
   }
   /* Newsroom */
+  .ag-article-data {
+    flex-direction: column;
+  }
   /* Related Articles */
   .ag-article-copy h3 {
     font-size: 14px;
