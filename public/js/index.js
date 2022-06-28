@@ -247,7 +247,7 @@ async function lazyLoader() {
         lazyImage.style.opacity = 0;
         // lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
       }
-      
+
       if (entry.isIntersecting) {
         lazyImage.src = lazyImage.dataset.src;
         lazyImage.srcset = lazyImage.dataset.srcset;
@@ -270,7 +270,7 @@ async function lazyLoader() {
         if (box) {
           box.style.transform = "translate(100%, -100%)";
         } else {
-          lazyImage.style.opacity = 0;
+          lazyImage.style.opacity = 1;
         }
       });
     });
