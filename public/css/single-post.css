@@ -184,40 +184,15 @@
 .ag-articleDetail .img-container,
 .ag-articleDetail .ag-article-content {
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .ag-article-headingBlock {
   margin: 25px 0;
 }
-/* .ag-article-category::before {
-  content: "";
-  display: inline-block;
-  margin-right: 5px;
-  width: 10px;
-  height: 10px;
-} */
-/* .ag-article-category[data-category="development"]::before {
-  background-color: var(--article-category-development);
-}
-.ag-article-category[data-category="agriculture"]::before {
-  background-color: var(--article-category-agriculture);
-}
-.ag-article-category[data-category="company"]::before {
-  background-color: var(--article-category-company);
-}
-.ag-article-category[data-category="hotels"]::before {
-  background-color: var(--article-category-hotels);
-}
-.ag-article-category[data-category="restaurants"]::before {
-  background-color: var(--article-category-restaurants);
-} */
 .ag-article-title.title {
   margin: 20px 0;
   text-align: start;
-}
-.ag-article-subheadling-container {
-  display: flex;
-  align-items: center;
 }
 .ag-article-img-container {
   margin: 0;
@@ -265,8 +240,4 @@ progressBar.ag-article-progressBar {
 
 .ag-article-social-anchor:not(:first-child) {
   margin-left: 15px;
-}
-.ag-article-subheadling-container .ag-article-date {
-  padding-right: 20px;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
