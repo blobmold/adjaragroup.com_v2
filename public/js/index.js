@@ -241,9 +241,13 @@ async function lazyLoader() {
   let callback = (entries, observer) => {
     for (let entry of entries) {
       let lazyImage = entry.target;
-      // lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
-      lazyImage.style.opacity = 0;
-      console.log(entry.intersectionRatio);
+      let box = lazyImage.closest(".img-container").querySelector(".image-curtain");
+
+      if (!box) {
+        lazyImage.style.opacity = 0;
+        // lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+      }
+      
       if (entry.isIntersecting) {
         lazyImage.src = lazyImage.dataset.src;
         lazyImage.srcset = lazyImage.dataset.srcset;
@@ -254,16 +258,19 @@ async function lazyLoader() {
   };
 
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(callback, {threshold: 0.5 });
+    let lazyImageObserver = new IntersectionObserver(callback, { threshold: 0.5 });
 
     lazyImages.forEach((lazyImage) => {
       lazyImageObserver.observe(lazyImage);
+
+      let box = lazyImage.closest(".img-container").querySelector(".image-curtain");
+
       lazyImage.addEventListener("load", () => {
         // Don't display images until they are fully loaded
-        lazyImage.style.opacity = 1;
-        let box = lazyImage.closest(".img-container").querySelector(".image-curtain");
         if (box) {
           box.style.transform = "translate(100%, -100%)";
+        } else {
+          lazyImage.style.opacity = 0;
         }
       });
     });
