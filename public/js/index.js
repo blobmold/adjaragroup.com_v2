@@ -261,7 +261,7 @@ async function lazyLoader() {
       lazyImage.addEventListener("load", () => {
         // Don't display images until they are fully loaded
         lazyImage.style.opacity = 1;
-        let box = lazyImage.closest(".img-container").querySelector(".image-anim-box");
+        let box = lazyImage.closest(".img-container").querySelector(".image-curtain");
         if (box) {
           box.style.transform = "translate(100%, -100%)";
         }
