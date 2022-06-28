@@ -254,6 +254,7 @@ select {
 }
 .img-container {
   position: relative;
+  overflow: hidden;
 }
 .image-curtain {
   position: absolute;

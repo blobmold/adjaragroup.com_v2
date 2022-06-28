@@ -119,7 +119,7 @@ export default class PageGenerator {
     } else {
     let post = `<li class="ag-news-recent-item translate-animation"><a class="ag-news-recent-link" href="/newsroom/${article._id}">
         <article class="ag-news-recent-article">
-          <picture class="ag-news-recent-article-img-container"><img class="ag-news-recent-article-img" src="${article.imageSmall}" loading="lazy" /></picture>
+          <picture class="ag-news-recent-article-img-container"><img class="ag-news-recent-article-img lazy anim-fade" src="${article.imageSmall}" loading="lazy" /></picture>
           <div class="ag-news-recent-article-copy">
             <div class="ag-recent-article-data ag-article-data">
               <div class="ag-article-category" data-category="${article.category.toLowerCase()}">${article.category}</div>

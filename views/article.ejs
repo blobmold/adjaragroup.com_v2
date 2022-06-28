@@ -7,13 +7,13 @@
       <progressBar role="progressbar" class="ag-article-progressBar"></progressBar>
       <!-- Article  -->
       <article class="ag-articleDetail global-width" data-id="817341">
-        <div class="img-container" style="max-width: 1200px;">
+        <div class="img-container" style="max-width: 1200px">
           <picture class="ag-article-img-container">
             <img class="ag-article-img lazy anim-curtain" src="" data-src="<%= article.image %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
           </picture>
           <div class="image-curtain"></div>
-        </div> 
-        <div class="ag-article-content" style="max-width: 980px;">
+        </div>
+        <div class="ag-article-content" style="max-width: 980px">
           <!-- Article Heading -->
           <div class="ag-article-headingBlock">
             <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>">
@@ -32,7 +32,7 @@
 
       <!-- Related Articles -->
       <% if(relatedArticles.length > 0) { %>
-      <aside class="ag-news-related global-width" style="max-width: 980px;">
+      <aside class="ag-news-related global-width" style="max-width: 980px">
         <h2 class="ag-news-related-title title">Related News</h2>
 
         <!-- <div class="ag-news-related-title-container">
@@ -45,11 +45,9 @@
               <li class="ag-news-related-item translate-animation">
                 <a href="/newsroom/<%= article._id %>" class="ag-news-related-link">
                   <article class="ag-news-related-article">
-                    <div class="img-container">
-                      <picture class="ag-news-related-article-img-container">
-                        <img class="ag-news-related-article-img article-img lazy anim-fade" width="100" height="60" src="" data-src="<%= article.imageSmall %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
-                      </picture>
-                    </div>
+                    <picture class="ag-news-related-article-img-container">
+                      <img class="ag-news-related-article-img article-img lazy anim-fade" width="100" height="60" src="" data-src="<%= article.imageSmall %>" data-srcset="" alt="<%= article.title %>" loading="lazy" />
+                    </picture>
                     <div class="ag-news-related-article-copy ag-article-copy">
                       <div class="ag-related-article-data ag-article-data">
                         <div class="ag-article-category" data-category="<%= article.category.toLowerCase() %>"><%= article.category %></div>

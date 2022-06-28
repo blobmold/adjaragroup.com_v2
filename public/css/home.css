@@ -51,9 +51,6 @@
   column-gap: 40px;
   margin: 100px auto;
 }
-.alt-home-section .img-container {
-  overflow: hidden;
-}
 .alt-home-section .content {
   display: flex;
   flex-direction: column;
