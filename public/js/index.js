@@ -238,42 +238,49 @@
 async function lazyLoader() {
   let lazyImages = document.querySelectorAll("img.lazy");
 
-  let callback = (entries, observer) => {
+  let callback = async (entries, observer) => {
     for (let entry of entries) {
       let lazyImage = entry.target;
-      let box = lazyImage.closest(".img-container").querySelector(".image-curtain");
-
-      if (!box) {
-        lazyImage.style.opacity = 0;
-        // lazyImage.style.transition = "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
-      }
 
       if (entry.isIntersecting) {
         lazyImage.src = lazyImage.dataset.src;
         lazyImage.srcset = lazyImage.dataset.srcset;
         lazyImage.classList.remove("lazy");
+
+        lazyImage.onload = () => transition(lazyImage);
+
         observer.unobserve(lazyImage);
       }
     }
   };
 
+  let options = {
+    threshold: 0.5,
+  };
+
   if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(callback, { threshold: 0.5 });
+    let lazyImageObserver = new IntersectionObserver(callback, options);
 
-    lazyImages.forEach((lazyImage) => {
+    for (let lazyImage of lazyImages) {
       lazyImageObserver.observe(lazyImage);
+    }
+  }
+}
 
-      let box = lazyImage.closest(".img-container").querySelector(".image-curtain");
+// Transition Controller
+async function transition(target) {
+  let imageContainer = target.closest('.img-container');
 
-      lazyImage.addEventListener("load", () => {
-        // Don't display images until they are fully loaded
-        if (box) {
-          box.style.transform = "translate(100%, -100%)";
-        } else {
-          lazyImage.style.opacity = 1;
-        }
-      });
-    });
+  // Curtain 
+  if(target.classList.contains('anim-curtain')) {
+
+    let curtain = imageContainer.querySelector('.image-curtain');
+    curtain.style.transform = "translate(100%, -100%)";
+
+  } 
+  // Fade (opacity)
+  else if (target.classList.contains('anim-fade')) {
+    target.style.opacity = 1;
   }
 }
 
