@@ -21,12 +21,12 @@
 
       <section class="global-width ag-section company-stats company">
         <h2 class="title">Adjara Group In Numbers</h2>
-        <% let stats = companyContent.find(content => content.history).stats %>
+        <% let stats = companyContent.find(content => content.stats).stats %>
         <div class="stats">
           <% for(let stat of stats) { %>
           <div class="stat">
-            <div class="stat-number" data-stat="1500">1500</div>
-            <p class="stat-text">Employees</p>
+            <div class="stat-number" data-stat="<%- stat.number %>"><%- stat.number %></div>
+            <p class="stat-text"><%- stat.text %></p>
           </div>
           <% } %>
         </div>
