@@ -129,6 +129,7 @@ padding: 50px 0;
   justify-self: center;
   align-self: center;
   height: 600px;
+  width: 100%;
 }
 .company-timeline-stage img {
   height: 100%;
