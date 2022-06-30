@@ -269,17 +269,15 @@ async function lazyLoader() {
 
 // Transition Controller
 async function transition(target) {
-  let imageContainer = target.closest('.img-container');
+  let imageContainer = target.closest(".img-container");
 
-  // Curtain 
-  if(target.classList.contains('anim-curtain')) {
-
-    let curtain = imageContainer.querySelector('.image-curtain');
+  // Curtain
+  if (target.classList.contains("anim-curtain")) {
+    let curtain = imageContainer.querySelector(".image-curtain");
     curtain.style.transform = "translate(100%, -100%)";
-
-  } 
+  }
   // Fade (opacity)
-  else if (target.classList.contains('anim-fade')) {
+  else if (target.classList.contains("anim-fade")) {
     target.style.opacity = 1;
   }
 }
@@ -323,6 +321,50 @@ async function transition(target) {
 
     newroomNavCurtain.addEventListener("click", () => {
       newsroomNav.classList.remove("open");
+    });
+  }
+})();
+
+(async () => {
+  let years = document.querySelectorAll(".company-timeline-years .year");
+  let slides = document.querySelectorAll(".company-timeline-stage-container");
+  let currentIndex;
+
+  updateCurrentIndex();
+
+  years.forEach((year, index) => {
+    year.addEventListener("click", () => {
+      let selected = years[currentIndex];
+
+      selected.classList.remove("selected");
+      year.classList.add("selected");
+
+      if (index > currentIndex) {
+        slides[currentIndex].dataset.timelineTransition = "leave-left";
+        slides[currentIndex].classList.remove("selected");
+        slides[index].dataset.timelineTransition = "enter-right";
+        slides[index].classList.add("selected");
+      }
+
+      if (index < currentIndex) {
+        slides[currentIndex].dataset.timelineTransition = "leave-right";
+        slides[currentIndex].classList.remove("selected");
+        slides[index].dataset.timelineTransition = "enter-left";
+        slides[index].classList.add("selected");
+      }
+
+      // Remove dataset from slides 
+      slides[index].addEventListener("animationend", () => {
+        slides.forEach(slide => slide.dataset.timelineTransition = "");
+      });
+
+      updateCurrentIndex();
+    });
+  });
+
+  function updateCurrentIndex() {
+    years.forEach((year, index) => {
+      if (year.classList.contains("selected")) return (currentIndex = index);
     });
   }
 })();

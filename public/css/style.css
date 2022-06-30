@@ -21,6 +21,7 @@
   --article-category-hotels: #cfc0bd;
   --article-category-restaurants: #4c191b;
   --article-grid-span: 10;
+  --company-slider-height: 700px;
 }
 body {
   margin: 0;
@@ -55,6 +56,8 @@ h6 {
   color: var(--color-text);
   text-transform: capitalize;
 }
+div,
+span,
 p,
 a,
 ul,
@@ -152,6 +155,10 @@ select {
 }
 .ag-section {
   overflow: hidden;
+  margin: 150px auto;
+}
+.ag-section:first-child {
+  margin-top: 50px;
 }
 /* CTA */
 .ag-cta-content {

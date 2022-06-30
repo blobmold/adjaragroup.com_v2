@@ -6,6 +6,7 @@
   gap: 50px;
   max-width: 980px;
   height: 100vh;
+  margin-top: 50px;
 }
 .alternative-hero .headline {
   font-size: 96px;
@@ -49,7 +50,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 40px;
-  margin: 100px auto;
 }
 .alt-home-section .content {
   display: flex;

@@ -1,95 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('layouts/head') %>
+  <%- include('layouts/head') %>
   <body>
     <%- include('layouts/navbar') %>
     <main class="main" id="main">
+      <section class="global-width ag-section company company-hero">
+        <video autoplay loop muted poster="/assets/img/imgs-of-bldings/architecture-and-design-2048x1342-1.webp">
+          <source src="/assets/vid/36sec-1.mp4" data-src="/assets/vid/36sec-1.mp4" type="video/mp4" />
+          We are sorry, but your browser does not support modern videos
+        </video>
+      </section>
 
-      <section class="ag-section company-hero company">
-        <div class="company-content global-width">
-          <div class="content reveal">
-            <h1>Adjara Group</h1>
-            <h2>About Company</h2>
-            <p>Adjara Group is a leading Georgian company in hospitality, lifestyle development and agropreneurship.</p>
-            <p>It has gained worldwide recognition for trend-setting establishments and entrepreneurial projects through developing and managing lifestyle brands. Restaurants created by the company combine international gastronomic talent with fresh, locally sourced produce.</p>
-            <p>In addition to redefining the country's hospitality industry, Adjara Group is leading the biggest agricultural and farming project in the Eastern region of Georgia.</p>
-            <p>A pioneer in urban and rural development, the company has reshaped the face of the capital as a result of the ecosystems which organically grow around each of the enterprises it creates. Adjara Group has the ability to turn even the most remote and underdeveloped regions throughout the country into sustainable tourism destinations.</p>  
-          </div>
-        </div>
-        <div class="company-hero-img lazy"></div>
-        <div class="overlay"></div>
+      <section class="global-width ag-section company-about company">
+        <h2 class="title">About Adjara Group</h2>
+        <p>Adjara Group is a leading Georgian company in hospitality, lifestyle development and agropreneurship.</p>
+        <p>It has gained worldwide recognition for trend-setting establishments and entrepreneurial projects through developing and managing lifestyle brands. Restaurants created by the company combine international gastronomic talent with fresh, locally sourced produce.</p>
+        <p>In addition to redefining the country&rsquo;s hospitality industry, Adjara Group is leading the biggest agricultural and farming project in the Eastern region of Georgia.</p>
+        <p>A pioneer in urban and rural development, the company has reshaped the face of the capital as a result of the ecosystems which organically grow around each of the enterprises it creates. Adjara Group has the ability to turn even the most remote and underdeveloped regions throughout the country into sustainable tourism destinations.</p>
       </section>
 
       <section class="global-width ag-section company-stats company">
-        <h2 class="reveal">Adjara Group in Numbers</h2>
-        <div class="stats-container reveal">
-          <div class="stat-container">
-            <div class="stat-amount" data-amount="1500">1500</div>
-            <div class="stat-title">Employees</div>
+        <h2 class="title">Adjara Group In Numbers</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number" data-stat="1500">1500</div>
+            <p class="stat-text">Employees</p>
           </div>
-          <div class="stat-container">
-            <div class="stat-amount" data-amount="6">6</div>
-            <div class="stat-title">Hotels</div>
+          <div class="stat">
+            <div class="stat-number" data-stat="1500">1500</div>
+            <p class="stat-text">Employees</p>
           </div>
-          <div class="stat-container">
-            <div class="stat-amount" data-amount="10">10</div>
-            <div class="stat-title">Restaurants</div>
+          <div class="stat">
+            <div class="stat-number" data-stat="1500">1500</div>
+            <p class="stat-text">Employees</p>
           </div>
-          <div class="stat-container">
-            <div class="stat-amount" data-amount="350">350</div>
-            <div class="stat-title">Guestrooms</div>
+          <div class="stat">
+            <div class="stat-number" data-stat="1500">1500</div>
+            <p class="stat-text">Employees</p>
           </div>
         </div>
       </section>
 
-      <section class="global-width ag-section company-history company company-grid">
-        <div class="company-content reveal">
-          <h2>History</h2>
-          <p>Adjara Group was founded by the visionary and trend-setting entrepreneur, Temur Ugulava, along with a team of dedicated professionals.</p>
-          <p>In 2010, the company entered the Georgian hospitality sector by introducing and managing the first local Holiday Inn franchise, which successfully pushed design and concept boundaries for the international brand.</p>
-          <p>In 2012, Adjara Group converted an abandoned Soviet-era sanatorium in the mountainous region of Kazbegi into the first Georgian lifestyle brand of Rooms Hotels. It has since gained global recognition and praise for its unparalleled location, architecture and design.</p>
-          <p>Two years later, in 2014, a historic publishing house would become the second Rooms Hotel, this time in the heart of the Georgian capital, Tbilisi. The design concept of the hotel combines brutalist chic architecture with elements of contemporary décor.</p>
-          <p>In 2016, a former Soviet sewing factory was revived and transformed into the colorful Fabrika Hostel, bringing together young travelers and art enthusiasts as well as a diverse community of local vendors and cafes.</p>
-          <p>Stamba hotel is an indulgent luxury addition to the Group and is in a separate building of the same former publishing house complex as Rooms Hotel Tbilisi. In 2018, the hotel opened its doors offering exceptional features including a rooftop swimming pool, Chocolaterie & Roastery, Café Stamba, Shio Ramen, along with galleries and exhibition spaces.</p>
-          <a href="/company/timeline" class="ag-btn dark">
-            <div class="box"></div>
-            <span class="text">Explore Timeline</span>
-          </a>
+      <section class="global-width ag-section company-history company">
+        <h2 class="title">History</h2>
+        <% let history = companyContent.find(content => content.history).history %>
+        <div class="company-timeline-container">
+          <div class="company-timeline-years" id="timeline">
+            <% history.forEach((stage, index) => { %>
+              <a href="#timeline" class="year<% if(index === 0) { %> selected<% } %>" id="<%- stage.year %>"><%- stage.year %></a>
+            <% }) %>
+          </div>
+          <ol class="company-stages list-nobullet">
+            <% history.forEach((stage, index) => { %>
+            <li class="company-timeline-stage-container<% if(index === 0) { %> selected<% } %>" data-timeline-transition="" id="yr-<%- stage.year %>">
+              <div class="company-timeline-selected-year"><%- stage.year %></div>
+              <div class="company-timeline-stage">
+                <div class="company-timeline-content">
+                  <div>
+                    <h3 class="stage-title"><%- stage.headline %></h3>
+                    <p class="stage-copy"><%- stage.copy %></p>
+                  </div>
+                  <div class="stage-cta">
+                    <a class="ag-cta underline" href="#">Website →</a>
+                  </div>
+                </div>
+                <div class="img-container">
+                  <img class="lazy anim-curtain" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs" alt="" src="" data-src="<%= stage.image %>" data-srcset="" alt="asdf" loading="lazy" />
+                  <div class="image-curtain"></div>
+                </div>
+              </div>
+            </li>
+            <% }) %>
+          </ol>
         </div>
-        <img class="company-img lazy" loading="lazy" src="" data-srcset="" data-src="/assets/img/imgs-of-bldings/Upstaris-1200x800.jpg"></img>
       </section>
 
       <section class="global-width ag-section company-csr company">
-        <div class="company-content reveal">
-          <h2>Corporate Social Responsibility</h2>
-          <p>Adjara Group is a member of the UN Global Compact's initiative and a WEPs signatory company.</p>
-          <p>It shares the UN principles on Human Rights, Labor, Anti-Corruption, and Environmental Responsibility. Adjara Group's policies and business practices reflect a commitment to making a positive impact in communities around the country.</p>
-          <p>Social, economic, and environmental sustainability are central to the company's corporate culture and its decision-making processes.</p>
-          <a href="#" class="ag-btn dark">
-            <div class="box"></div>
-            <span class="text">People</span>
-          </a><a href="#" class="ag-btn dark">
-            <div class="box"></div>
-            <span class="text">Nature & places</span>
-          </a><a href="#" class="ag-btn dark">
-            <div class="box"></div>
-            <span class="text">Covid-19 response</span>
-          </a>
-        </div>
+        <h2 class="title">Corporate Social Responsibility</h2>
+        <p>Adjara Group is a member of the UN Global Compact&rsquo;s initiative and a WEPs signatory company.</p>
+        <p>It shares the UN principles on Human Rights, Labor, Anti-Corruption, and Environmental Responsibility. Adjara Group&rsquo;s policies and business practices reflect a commitment to making a positive impact in communities around the country.</p>
+        <p>Social, economic, and environmental sustainability are central to the company&rsquo;s corporate culture and its decision-making processes.</p>
       </section>
 
       <section class="global-width ag-section company-team company">
-        <div class="company-content reveal">
-          <h2>Team</h2>
-          <p>The success of Adjara Group comes from its people, who share the same values, strategy and vision. Creative, passionate, dedicated and forward-thinking professionals are behind the brands, projects and initiatives which have placed Georgia on the world map. Building modern Georgia is what drives each and every one of them.</p>
-          <p>The company started operating in 2010 with a handful of staff members and now it has reached over 2500 employees. One of Adjara Group's top priorities is developing regional projects through which local people have found new professional paths and turned underdeveloped areas into sustainable destinations. Equality, open-mindedness, opportunities to grow as well as a safe and fair environment are at the heart of the company's corporate culture by which every team member aspires to contribute to the country's development.</p>
-          <a href="#" class="ag-btn dark">
-            <div class="box"></div>
-            <span class="text">Explore team</span>
-          </a>
-        </div>
+        <h2 class="title">Team</h2>
+        <p>The success of Adjara Group comes from its people, who share the same values, strategy and vision. Creative, passionate, dedicated and forward-thinking professionals are behind the brands, projects and initiatives which have placed Georgia on the world map. Building modern Georgia is what drives each and every one of them.</p>
+        <p>The company started operating in 2010 with a handful of staff members and now it has reached over 2500 employees. One of Adjara Group&rsquo;s top priorities is developing regional projects through which local people have found new professional paths and turned underdeveloped areas into sustainable destinations. Equality, open-mindedness, opportunities to grow as well as a safe and fair environment are at the heart of the company&rsquo;s corporate culture by which every team member aspires to contribute to the country&rsquo;s development.</p>
       </section>
-
     </main>
     <%- include('layouts/footer') %>
   </body>

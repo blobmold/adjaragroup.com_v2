@@ -1,7 +1,8 @@
 :root {
   --global-black: #000000;
   --color-text: #000000;
-  --color-text-low-emphasis:#6c6d69;
+  --global-grey: #a1a1a1;
+  --color-text-low-emphasis: #6c6d69;
   --color-text-inverted: #ffffff;
   --global-white: #ffffff;
   --global-orange: #e96e5e;

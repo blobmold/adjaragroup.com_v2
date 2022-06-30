@@ -1,103 +1,180 @@
 /* Company */
-.ag-section.company {
-  margin: 150px auto;
-  overflow: visible;
+
+.company-hero {
+
 }
-.company-img {
-  object-fit: cover;
+.company-hero video {
   width: 100%;
-  height: 100%;
+  height: 80vh;
 }
-.company-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-  align-items: center;
-}
-.company-content {
-  z-index: 999;
-}
-.ag-section.company:nth-child(odd) .company-img {
-  order: 2;
-}
-.ag-section.company:nth-child(odd) .company-content {
-  order: 1;
-}
-.ag-section.company:nth-child(even) .company-img {
-  order: 1;
-}
-.ag-section.company:nth-child(even) .company-content {
-  order: 2;
-}
-.company h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0 0 25px 0;
-}
-.company p {
-  color: var(--color-text-low-emphasis);
-  font-size: 0.875rem;
-}
-/* Company - Hero */
-.ag-section.company-hero {
-  margin-top: 50px;
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.ag-section.company-hero .company-content .content {
-  width: 40%;
-}
-.ag-section.company-hero h1, 
-.ag-section.company-hero h2 {
-  color: var(--global-white);
-}
-.ag-section.company-hero h1 {
-  font-size: 60px;
-  font-weight: bold;
-  margin: 0 0 17px 0;
-  padding: 0;
-  z-index: 9999;
-}
-.ag-section.company-hero p {
-  color: var(--color-text-low-emphasis);
-}
-.company-hero-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: url('/assets/img/imgs-of-bldings/architecture-and-design-2048x1342-1.webp') no-repeat center / cover;
-}
-/* Company - Stats */
-.company-stats {
+
+.company-team,
+.company-csr,
+.company-about {
   max-width: 980px;
 }
-.company-stats h2 {
-  text-align: center;
-}
-.stats-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 70px;
-}
-.stat-container {
-  display: flex;
-  flex-direction: column;
+
+/* Hero */
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
-.stat-amount {
-  font-size: 42px;
-  font-family: "Lato", sans-serif;
+.stat {
+  text-align: center;
 }
-.stat-title {
-  color: #5F6368;
-  font-size: 16px;
+.stat-number {
+  font-size: 6rem;
+  opacity: 0.15;
+  font-weight: 100;
 }
-/* Company - History */
-/* Company - CSR */
-/* Company - Team */
+.stat-text {
+  font-size: 1rem;
+}
+/* History */
+.company-history {
+  min-height: 100vh;
+}
+.company-timeline-years {
+padding: 50px 0;
+}
+.company-timeline-years .year {
+  font-size: 20px;
+  font-weight: 100;
+  color: var(--global-grey);
+  text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.49, 0.01, 0.04, 0.94);
+}
+.company-timeline-years .year:hover {
+  color: var(--global-orange);
+}
+.company-timeline-years .year.selected {
+  color: var(--global-orange);
+}
+.company-timeline-years .year:not(:first-child) {
+  padding-left: 32px;
+}
+.company-timeline-years .year.current {
+  color: var(--global-orange);
+}
+
+.company-stages {
+  position: relative;
+  height: var(--company-slider-height);
+}
+
+.company-timeline-stage-container {
+  position: absolute;
+  background-color: var(--global-white);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
+  height: inherit;
+  opacity: 0;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.company-timeline-stage-container.selected {
+  transform: translate(0);
+  opacity: 1;
+}
+
+.company-timeline-stage-container[data-timeline-transition="enter-right"],
+.company-timeline-stage-container[data-timeline-transition="leave-right"] {
+  -webkit-animation-name: cd-enter-right;
+  -moz-animation-name: cd-enter-right;
+  animation-name: cd-enter-right;
+}
+.company-timeline-stage-container[data-timeline-transition="enter-left"],
+.company-timeline-stage-container[data-timeline-transition="leave-left"] {
+  -webkit-animation-name: cd-enter-left;
+  -moz-animation-name: cd-enter-left;
+  animation-name: cd-enter-left;
+}
+.company-timeline-stage-container[data-timeline-transition="leave-right"],
+.company-timeline-stage-container[data-timeline-transition="leave-left"] {
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.company-timeline-selected-year {
+  font-size: 200px;
+  font-weight: 100;
+  color: var(--global-orange);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+.company-timeline-stage {
+  display: grid;
+  gap: 150px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: calc(var(--company-slider-height) - 100px );
+  overflow: hidden;
+}
+.company-timeline-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stage-title {
+  font-family: "Brandon Grotesque Bold", 'sans serif';
+  font-size: 32px;
+}
+.company-timeline-stage .img-container {
+  justify-self: center;
+  align-self: center;
+  height: 600px;
+}
+.company-timeline-stage img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.stage-cta {
+  
+}
+/* CSR */
+/* Team */
+
+@keyframes cd-enter-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes cd-enter-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
