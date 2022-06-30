@@ -21,23 +21,14 @@
 
       <section class="global-width ag-section company-stats company">
         <h2 class="title">Adjara Group In Numbers</h2>
+        <% let stats = companyContent.find(content => content.history).stats %>
         <div class="stats">
+          <% for(let stat of stats) { %>
           <div class="stat">
             <div class="stat-number" data-stat="1500">1500</div>
             <p class="stat-text">Employees</p>
           </div>
-          <div class="stat">
-            <div class="stat-number" data-stat="1500">1500</div>
-            <p class="stat-text">Employees</p>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-stat="1500">1500</div>
-            <p class="stat-text">Employees</p>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-stat="1500">1500</div>
-            <p class="stat-text">Employees</p>
-          </div>
+          <% } %>
         </div>
       </section>
 
@@ -47,7 +38,7 @@
         <div class="company-timeline-container">
           <div class="company-timeline-years" id="timeline">
             <% history.forEach((stage, index) => { %>
-              <a href="#timeline" class="year<% if(index === 0) { %> selected<% } %>" id="<%- stage.year %>"><%- stage.year %></a>
+            <a href="#timeline" class="year<% if(index === 0) { %> selected<% } %>" id="<%- stage.year %>"><%- stage.year %></a>
             <% }) %>
           </div>
           <ol class="company-stages list-nobullet">
