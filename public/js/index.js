@@ -23,8 +23,13 @@
     document.body.classList.toggle("nav-visible");
   }
 
-  // Launch Lazy Loader
-  await lazyLoader();
+  // Initialize Lazy Loader
+  lazyLoader();
+
+  // Initialize Company Timeline
+  if(document.querySelector('.company-timeline-container')) {
+    timeline();
+  }
 })();
 
 // Generate Article Progress Bar
@@ -235,53 +240,6 @@
   }
 })();
 
-async function lazyLoader() {
-  let lazyImages = document.querySelectorAll("img.lazy");
-
-  let callback = async (entries, observer) => {
-    for (let entry of entries) {
-      let lazyImage = entry.target;
-
-      if (entry.isIntersecting) {
-        lazyImage.src = lazyImage.dataset.src;
-        lazyImage.srcset = lazyImage.dataset.srcset;
-        lazyImage.classList.remove("lazy");
-
-        lazyImage.onload = () => transition(lazyImage);
-
-        observer.unobserve(lazyImage);
-      }
-    }
-  };
-
-  let options = {
-    threshold: 0.5,
-  };
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(callback, options);
-
-    for (let lazyImage of lazyImages) {
-      lazyImageObserver.observe(lazyImage);
-    }
-  }
-}
-
-// Transition Controller
-async function transition(target) {
-  let imageContainer = target.closest(".img-container");
-
-  // Curtain
-  if (target.classList.contains("anim-curtain")) {
-    let curtain = imageContainer.querySelector(".image-curtain");
-    curtain.style.transform = "translate(100%, -100%)";
-  }
-  // Fade (opacity)
-  else if (target.classList.contains("anim-fade")) {
-    target.style.opacity = 1;
-  }
-}
-
 // Toggle header visibility;
 (async () => {
   let lastYScroll = 0;
@@ -325,7 +283,7 @@ async function transition(target) {
   }
 })();
 
-(async () => {
+async function timeline () {
   let years = document.querySelectorAll(".company-timeline-years .year");
   let slides = document.querySelectorAll(".company-timeline-stage-container");
   let currentIndex;
@@ -367,7 +325,7 @@ async function transition(target) {
       if (year.classList.contains("selected")) return (currentIndex = index);
     });
   }
-})();
+}
 
 (async () => {
   let revealElements = document.querySelectorAll(".reveal");
@@ -400,3 +358,51 @@ async function transition(target) {
     await import("./StatsAnimation.js");
   }
 })();
+
+// Image Lazy Loader
+async function lazyLoader() {
+  let lazyImages = document.querySelectorAll("img.lazy");
+
+  let callback = async (entries, observer) => {
+    for (let entry of entries) {
+      let lazyImage = entry.target;
+
+      if (entry.isIntersecting) {
+        lazyImage.src = lazyImage.dataset.src;
+        lazyImage.srcset = lazyImage.dataset.srcset;
+        lazyImage.classList.remove("lazy");
+
+        lazyImage.onload = () => transition(lazyImage);
+
+        observer.unobserve(lazyImage);
+      }
+    }
+  };
+
+  let options = {
+    threshold: 0.5,
+  };
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(callback, options);
+
+    for (let lazyImage of lazyImages) {
+      lazyImageObserver.observe(lazyImage);
+    }
+  }
+}
+
+// Transition Controller
+async function transition(target) {
+  let imageContainer = target.closest(".img-container");
+
+  // Curtain
+  if (target.classList.contains("anim-curtain")) {
+    let curtain = imageContainer.querySelector(".image-curtain");
+    curtain.style.transform = "translateX(100%)";
+  }
+  // Fade (opacity)
+  else if (target.classList.contains("anim-fade")) {
+    target.style.opacity = 1;
+  }
+}

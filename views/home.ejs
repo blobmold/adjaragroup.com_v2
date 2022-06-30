@@ -23,8 +23,8 @@
       </section>
 
       <% for(let section of homeContent) { %>
-      <section class="ag-section global-width alt-home-section reveal" id="hotels">
-        <div class="content">
+      <section class="ag-section global-width alt-home-section" id="hotels">
+        <div class="content reveal">
           <div>
             <h2><%= section.title %></h2>
             <p class="paragraph"><%= section.content %></p>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="img-container">
-          <img class="alt-home-img lazy anim-curtain" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs" data-src="<%= section.image %>" data-srcset="" alt="asdf" loading="lazy" />
+          <img class="alt-home-img lazy anim-curtain" src="" data-src="<%= section.image %>" data-srcset="<%= section.image %>" alt="" loading="lazy" />
           <div class="image-curtain"></div>
         </div>
       </section>

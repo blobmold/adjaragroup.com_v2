@@ -265,10 +265,10 @@ select {
 }
 .image-curtain {
   position: absolute;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: white;
-  transform: translateY(-100%);
   transition: transform 1s cubic-bezier(0.83, 0, 0.17, 1);
 }
 .ag-btn:hover {
