@@ -352,7 +352,7 @@ async function timeline () {
 })();
 
 (async () => {
-  let stats = document.querySelectorAll(".stats-container");
+  let stats = document.querySelectorAll(".company-stats");
 
   if (stats) {
     await import("./StatsAnimation.js");
